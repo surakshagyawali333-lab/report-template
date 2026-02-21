@@ -106,7 +106,6 @@
 \RequirePackage{datetime2}      % For date management
 \RequirePackage{textcase}       % For managing text-cases
 \RequirePackage{multicol}       % For multi-column use
-\RequirePackage[subpreambles=true]{standalone}     % Standalone figures use their own preambles
 
 % LISTS
 \RequirePackage{enumitem}
@@ -369,10 +368,17 @@
 \newcommand{\cSubmittedII}{}
 \newcommand{\cSubmittedIII}{}
 \newcommand{\cSubmittedIV}{}
+\newcommand{\cSubmittedV}{}
+\newcommand{\cSubmittedVI}{}
+
+
 \newcommand{\cSubmittedIRoll}{}
 \newcommand{\cSubmittedIIRoll}{}
 \newcommand{\cSubmittedIIIRoll}{}
 \newcommand{\cSubmittedIVRoll}{}
+\newcommand{\cSubmittedVRoll}{}
+\newcommand{\cSubmittedVIRoll}{}
+
 
 % Dynamic author table - simple table format with left alignment
 % Outputs: Name ~~ Roll in a table
@@ -388,6 +394,12 @@
         \ifx\cSubmittedIV\@empty\else
         \cSubmittedIV  & ~~\cSubmittedIVRoll  \\
         \fi
+        \ifx\cSubmittedIV\@empty\else
+        \cSubmittedIV  & ~~\cSubmittedVRoll  \\
+        \fi
+        \ifx\cSubmittedVI\@empty\else
+        \cSubmittedVI  & ~~\cSubmittedVIRoll  \\
+        \fi
     \end{tabular}%
 }
 
@@ -397,6 +409,8 @@
     \ifx\cSubmittedII\@empty\else, \cSubmittedII\fi%
     \ifx\cSubmittedIII\@empty\else, \cSubmittedIII\fi%
     \ifx\cSubmittedIV\@empty\else, \cSubmittedIV\fi%
+    \ifx\cSubmittedV\@empty\else, \cSubmittedV\fi%
+    \ifx\cSubmittedVI\@empty\else, \cSubmittedVI\fi%
 }
 
 
