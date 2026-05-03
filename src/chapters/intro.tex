@@ -1,22 +1,167 @@
 \chapter{Introduction}
 
-\noindent\textbf{CHAPTER GUIDE:} Purpose: set context, define the problem, and state objectives + scope. Must include: Background, Problem statement, Objectives, Scope and limitations. How to write: mention domain + current approaches; quantify gaps with metrics. LaTeX: Cite with cite key, reference figures and tables. General rules: formal/technical style; cite non-trivial claims; reference figures/tables in text.
-
 \section{Background}
 
-% Test abbreviations and symbols
-This project uses \gls{ga} and \gls{ml} techniques \cite{deb2002nsga}. We also implement \gls{rl} with \gls{api} integration. The \gls{cpu} and \gls{gpu} work together for processing.
+Urban Traffic Congestion at signalized Intersection remains a Critical 
+challenge in modern transportation system. Traffic congestion is the 
+degradation of traffic flow condition on road and become slower speed 
+which increase the travel time and increased Vehicle queues. It occurs 
+when the demand of road space exceeds its capacity.  Intersection 
+Congestion is the main problem in urban area occurs when vehicle demand 
+exceeds the capacity of a signalized or unsignalized crossing, leading to 
+delays, queuing, and reduced traffic flow efficiency. Unlike general 
+intersection congestion is often caused by conflicting vehicle movements, 
+inefficient signal timing.  
 
-Research shows optimization methods are crucial in modern computing \cite{smith2020}. Following IEEE guidelines \cite{ieee2022author, ieee2021editorial}, we implement state-of-the-art algorithms.
+Congestion arises when there are more vehicles on the road than the 
+infrastructure can handle. Significant delays in urban areas frequently 
+originate at intersections, where conflicting traffic streams converge. 
+There is extensive experience with chronic gridlock and congestion in the Kathmandu Valley. (Tiwari et al., 2023). 
 
-The learning rate \gls{symb:alpha} is crucial, and we use discount factor \gls{symb:gamma}. Standard deviation \gls{symb:sigma} helps measure variance with mean \gls{symb:mu}.
+One of the popular concepts in traffic signalization is signalization is 
+Fixed time traffic signal. A Fixed- time traffic signal is a traditional 
+signal control system that operates on predetermined, unchanging timing plans.
+These signal cycle through preset green, yellow, and red phase at regular interval, regardless of real traffic demand.   
 
-\section{Problem Statement}
+Fixed time Traffic signal is wastes of times on empty approaches, which increases 
+the delays in peak hours. When traffic demand fluctuated, the efficacy of Optimum 
+Fixed-Time Management declined, resulting in significant increases in average 
+vehicle delay, fuel consumption, and exhaust emissions.  To solve the wastes of 
+times on empty approaches, we introduce the actuated traffic signal. An actuated 
+traffic signal is a signal control system that adjusts its timing in real-time
+based on vehicle or pedestrian demand, detected through sensor (e.g. inductive loops, camera, and radar). 
+
+A semi-Actuated Traffic signal is a type of Traffic Control system that combines 
+elements of both fixed-time and fully actuated signals. It is mostly designed for the intersection
+where the major road carries a significantly higher traffic volume most of the time,
+while intersecting road i.e. minor road have experience lower, variable traffic flow.
+Semi-actuated signals operate with vehicle detection only on the minor approaches.
+The major road usually receives a consistent green phase by default. Vehicle arriving
+on the minor road are detected by sensors (like inductive loops or cameras).
+
+Microsimulation tools like PTV VISSIM with VISVAP are widely used to modal 
+and optimize actuated signal control. VISSIM is best software to simulation
+capabilities enable precise evaluation of traffic dynamics, while VISVAP
+facilitates the programming of adaptive signal logic.  VISSIM simulation 
+program, the time intervals when the fluctuations in traffic demands occur 
+and the quantities (proportions) of the fluctuations at these time intervals
+can be determined by the users. Thus, changes in intersection performance
+resulting from short- or long-term fluctuations caused by concerts, sports
+events, traffic accidents, or adverse weather can be analyzed using VISSIM.
+(Cakici et al., 2021) .
+
+\section{Research Gaps and Problem Statement}
+Traffic congestion at major intersections throughout the Kathmandu Valley 
+has reached critical levels, significantly degrading urban mobility, the
+economy, and public well-being. The current situation at the Babarmahal 
+intersection is at a critical phase. The current fixed-time traffic signal 
+system operates inefficiently, failing to adapt to the highly asymmetric 
+traffic flows observed at this junction. The main issue of this intersection
+is the mismatched allocation of green signal time relative to actual Vehicle 
+demand.  The two major legs carry a high traffic volume, i.e., Baneshowr
+– Babarmahal leg and Maitighar-Babarmahal, whereas the two minor legs, 
+i.e., toward Department of Road and toward Arts Gallery, carry a low 
+traffic Volume. The inefficient Traffic light signal, i.e., long green 
+time interval to the minor legs during periods when these minor legs 
+experienced little or no Vehicular flow. Valuable green time is wasted 
+on this time, which leads to heavily congested major roads and increases 
+delay time.
+
+The absence of the demand-responsive signal control is the main problem 
+of this intersection. While a semi-actuated traffic signal system, which 
+dynamically adjusts minor leg green time based on real-time vehicle detection
+, i.e., changes the traffic light toward the minor leg and gives the green on
+the major leg while there are no vehicles on the minor leg.
 
 \section{Objectives}
-Objevtives should be SMART: Specific, Measurable, Achievable, Relevant, Time-bound. List primary and secondary objectives clearly.
+This study aims to:
+\begin{enumerate}
+    \item Assess the performance of a four-legged signalized intersection under existing fixed-time control using PTV VISSIM.
+    \item Optimize signal timings via actuated control in VISVAP, focusing on parameters like detector placement and green time allocation.
+    \item Compare the results with fixed-time control to quantify improvements in delay and queue length.
 
-\subsection{Scope of the Study}
+
+\end{enumerate}
+
+\subsection{Study Area}
+The study focuses on the critical Babarmahal Road intersection (27.692506N,85.323863E) 
+located in the administrative and cultural heart of Kathmandu, Nepal. It is a
+four-legged signalized intersection. The intersection features four distinct
+legs:
+
+\begin{enumerate}[label=\alph*.]
+    \item Major East leg: Carry a high-Volume Traffic along the Baneshwor-Babarmahal axis.
+    \item Major West leg: Carry a high-volume traffic along the Maitighar- Babarmahal axis.
+    \item Minor North leg: Leading directly towards the Department of Road (DOR). 
+    \item Minor south leg: leading towards the Arts Gallery.
+\end{enumerate}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics{src/images/figures/aerial.png}
+    \caption{Aerial view of Intersection from Google Earth Pro}
+\end{figure}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/visit.jpg}
+    \caption{Intersection during visit}
+    
+\end{figure}
+
+The traffic volume along the Maitighar (central) approach and the 
+Baneshwor approach is significantly higher, classifying them as 
+major roads within the intersection. In contrast, the Arts Gallery
+approach and the Department of Roads approach experience relatively 
+lower and more fluctuating traffic volumes throughout the day, making 
+them minor roads. Given this variation in traffic demand, implementing 
+a semi-actuated traffic signal control system at this intersection is 
+expected to be beneficial. Such a system can help reduce queue lengths, 
+minimize vehicle delays, improve the Level of Service (LOS), and 
+offer other operational advantages.
+
+\textbf{Geometric Specifications of Babarmahal Intersection}
+
+\begin{table}[h!]
+    \centering
+    \caption{Geometrical Parameters}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|V{8cm}|}
+        \hline
+        \textbf{Parameters} & \textbf{Specifications} \\
+        \hline
+        Number of Legs & 4(Four-legged intersection)\\
+        \hline
+        Approaches & Maitighar, Baneshwor, Arts Gallery, Department of Road (DOR)\\
+        \hline
+        Number of lanes Per Approach & Maitighar Approach: 8 lanes \\ 
+        & Baneshwor Approach: 8 lanes \\ 
+        & ArtsGallery Approach: 2 lanes \\ 
+        & DOR  Approach: 2 lanes \\
+        \hline
+        Lane Width & \textbf{Maitighar Approach:} \\ 
+        & Service Lane: 3.5m(Total 4 lanes) \\ 
+        & Main Lane: 3m(Total 4 lanes) \\
+        & \textbf{Baneshowr Approach:} \\
+        & Service Lane: 3.5m(Total 4 lanes) \\ 
+        & Main Lane: 3m(Total 4 lanes) \\
+        & \textbf{ArtsGallery Approach:} \\
+        & Main Lane: about 2.5m(Total 2 lanes) \\
+        & \textbf{DOR Approach:} \\
+        & Main Lane: 2.5m(Total 2 lanes) \\
+        \hline
+        Pedestrian Crosswalks & Present on two legs (Maitighar approach and Arts Gallery approach) \\
+        \hline
+        Crosswalk Length & About 3.1m \\
+        \hline
+        Existing Signal Poles & Present at all four corners (Fixed-Time Signal Control) \\
+        \hline
+    \end{tabular}
+    
+\end{table}
+
+NOTE: The above measurements are preliminary estimates obtained using Google Earth Pro 
+and will be verified through field surveys.
 
 \section{Research Questions}
 
