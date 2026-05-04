@@ -1,21 +1,514 @@
 \chapter{METHODOLOGY}
 
- \section{Detector Portion}
+ \section{Semi Actuated Control}
+ Semi-actuated control is a practical traffic management 
+ strategy designed specifically for intersections where a 
+ heavily traveled major street crosses a minor street with 
+ much lighter traffic. In these situations, the main goal is 
+ to keep traffic flowing smoothly on the major street while 
+ still allowing minor street traffic to proceed when needed. 
+ To achieve this, the major street is given priority and holds 
+ the green light by default. The right-of-way is only transferred 
+ to the minor street when a vehicle needs to cross or merge onto 
+ the major street and cannot find a safe gap in traffic. Because 
+ the major street automatically receives the green light, there 
+ is no need to install detectors (sensors) on it. Instead, detection 
+ equipment is placed only on the minor street approaches to 
+ monitor incoming traffic. This approach is both cost-effective 
+ and efficient, as it focuses monitoring resources where they 
+ are actually needed.
+
+ Semi-actuated control works best under specific traffic 
+ conditions. It is ideal when there is a clear difference in 
+ traffic volume between the two intersecting roads. If an intersection 
+ has two roads of similar importance and traffic levels, a 
+ fully-actuated system would be better. However, when there 
+ is a significant difference in traffic volume, semi-actuated 
+ control prevents the unnecessary delays that fixed-time systems 
+ often create on busy major streets.
+
+ Semi-actuated control is efficient because it keeps the green 
+ light on the major street most of the time. This means fewer 
+ stops for drivers on the busy road. The system is also simple 
+ to use. Drivers on the minor street just stop at the line 
+ and wait. When the sensor detects them, the controller 
+ transfers the green light to let them cross. This way, 
+ minor street traffic is never completely stuck, and the 
+ major road still gets priority. The system also costs less 
+ to install and maintain because it only needs sensors on the 
+ minor street, not on the major street (Ni, 2020).
+
+ \begin{figure}[ht]
+ \centering
+ \includegraphics[width=0.8\textwidth]{src/images/figures/Mappli.png}
+ \caption{Application scenario of Semi-Actuated}
+ \end{figure}
+
+ \section{Working Mechanism of Semi-Actuated Control}
+
+ When the side street receives a green light, it is guaranteed 
+ a minimum amount of time to remain green. If no vehicles 
+ are waiting or present after this minimum time, the light 
+ simply stays green for that duration and then changes back 
+ to the main road. This natural and safe transition is called 
+ a "Gap Out." However, if vehicles are still present after 
+ the minimum time, the sensor detects them. For every new 
+ vehicle that passes over the sensor, the system adds a small 
+ amount of extra time, called "Passage Time," to allow it 
+ through. This process continues until the arrival of vehicles 
+ stops, and none arrive within that passage time window. At 
+ that point, the light safely "Gaps Out" to return control 
+ to the main road. If a large queue of vehicles accumulates 
+ on the side street, they could potentially extend the green 
+ light indefinitely, causing traffic congestion on the busy 
+ main road. To prevent this, the system enforces an absolute 
+ time limit called "Maximum Green." Once this limit is reached, 
+ the system abruptly terminates the side street signal and 
+ forces the light to change. This forced termination is 
+ called a "Max Out. "If a ‘Max Out’ occurs and leaves a 
+ vehicle trapped beyond the sensor, the system creates an 
+ ‘artificial call’ to remember that vehicle. This ensures 
+ the signal returns to the side street as soon as possible, 
+ allowing the stranded vehicle to proceed safely and effectively 
+ (Ni, 2020)
+
+ \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.9\textwidth]{src/images/figures/Mwork.png}
+    \caption{Working Principle of Semi-Actuated signal control}
+ \end{figure}
+
+ \section{Basic Timing Parameters in Actuated Control}
+
+ In Semi-Actuated Traffic Signal Control (SATSC), signal 
+ timings are dynamically adjusted based on vehicle detection. 
+ However, several fundamental timing parameters must first 
+ be calculated to ensure proper operation of the signal 
+ system. These include the minimum green time, extension 
+ time (unit extension), passage time, maximum green time, 
+ and cycle length. These parameters ensure that queues are 
+ cleared efficiently while maintaining flexibility for 
+ varying traffic demand (Duraku \& Boshnjaku, 2024).
+
+ \subsection{Minimum Green Time ($G_{min}$)}
+ The minimum green time represents the shortest duration 
+ for which a signal phase remains green once activated. 
+ This parameter ensures that vehicles queued at the stop 
+ line have enough time to begin moving and pass through 
+ the intersection. It also accounts for the start-up lost 
+ time caused by driver reaction and vehicle acceleration 
+ (Duraku \& Boshnjaku, 2024).
+
+ The minimum green time is mathematically related to the 
+ detector placement and queue length. It is calculated 
+ using Equation \eqref{eq:gmin}:
+
+\begin{equation}
+    G_{min} = TL + [h * Integer(d / x)]
+    \label{eq:gmin}
+\end{equation}
+ 
+where:
+\begin{itemize}
+    \item Gmin = Minimum green time (seconds)
+    \item TL = Start-up time loss (typically 2.0 – 4.0 seconds)
+    \item h = Saturation headway (seconds/vehicle)
+    \item d = Distance between detector and stop line (m)
+    \item x = Average spacing between stored vehicles (typically 6–7 m)
+\end{itemize}
+	
+The integer function represents the number of vehicles
+stored between the detector and the stop line, which 
+determines the minimum time required for queue clearance.
+
+
+ \subsection{Extension Time or Unit Extension (U)}
+ The extension unit (U) represents the additional time added 
+ to the green interval when a vehicle is detected during the 
+ green phase. This allows the signal to remain green as long 
+ as vehicles continue arriving within a specified time gap. 
+ According to the Traffic Detector Manual, the recommended 
+ extension time is (Duraku \& Boshnjaku, 2024):
+ \begin{itemize}
+    \item 3.0 seconds for approach speeds $\le$ 45 km/h
+    \item 3.5 seconds for higher speeds
+ \end{itemize}
+
+ \subsection{Passage Time (P)}
+Passage time is the travel time required for a vehicle to 
+move from the detector location to the stop line. It is 
+calculated using Equation \eqref{eq:pcal}:
+
+\begin{equation}
+    P = \frac{d}{1.47 \times S_{15}}
+    \label{eq:pcal}
+\end{equation}
+
+
+where:
+\begin{itemize}
+    \item P = Passage time (seconds)
+    \item d = Distance between detector and stop line (ft)
+    \item $S_{15}$ = 15th percentile approach speed of vehicles (mph)
+\end{itemize}
+
+To ensure proper operation, the condition U $\ge$ P must be 
+satisfied, ensuring the green phase remains active long 
+enough for the approaching vehicle to reach the stop line.
+
+ \subsection{Maximum Green Time ($G_{max}$)}
+ The maximum green time defines the upper limit for a green 
+ phase, preventing excessive delay for conflicting movements. 
+ The effective green time ($g_i$) for each phase is distributed 
+ proportionally based on traffic demand using Equation \eqref{eq:gcal}:
+ \begin{equation}
+    g_i = (C_i - L) \times (VC_i / VC) 
+    \label{eq:gcal}
+ \end{equation}
+ Where:
+ \begin{itemize}
+    \item $g_i$ = Effective green time for phase i (s)
+    \item $C_i$ = Cycle length (s)
+    \item L = Total lost time in the cycle (s)
+    \item $VC_i$ = Traffic volume in the critical lane for phase i (pcu/h)
+    \item VC = Sum of volumes in all critical lanes (pcu/h)
+ \end{itemize}
+
+ \subsection{Critical Cycle Length ($C_c$)}
+ The critical cycle length is the total time for all phases 
+ to complete one sequence when the side street reaches Gmax. 
+ It is calculated using Equation \eqref{eq:Cc}
+
+ \begin{equation}
+    C_c = \sum( G_i + Y_i )
+    \label{eq:Cc}
+ \end{equation}
+
+
+ where:
+ \begin{itemize}
+    \item $C_c$ = Critical cycle length (seconds)
+    \item $G_i$ = Maximum green time for phase i
+    \item $Y_i$ = Yellow plus all-red interval for phase 
+ \end{itemize}
+
+ \subsection{Calculation of Parameters:}
+ To demonstrate the application of signal timing parameters 
+ for the Babarmahal intersection, detailed VisVAP calculations 
+ are performed for the off-peak condition. The calculations 
+ follow the HCM methodology and incorporate sustainability 
+ principles for enhancing signal controller flexibility.
+
+ The total cycle length was set at 169 seconds, matching the 
+ current timing at the intersection and confirmed through 
+ field measurements. Following the HCM (2022) guidelines, 
+ the start-up lost time was taken as 2 seconds. The saturation 
+ headway was also set at 2 seconds, referencing the work of 
+ Duraku and Boshnjaku (2024). Additionally, yellow change 
+ intervals were set to 3 seconds to ensure intersection 
+ clearance safety.
+
+ For vehicle detection, inductive loop detectors with dimensions 
+ of 1.8m x 5m were used. These were placed approximately 2m 
+ from the stop line based on calculations for the distance 
+ ahead. The approach speed for the minor road (DOR approach) 
+ was calculated at 10 km/h, and vehicle spacing was set 
+ between 6 and 7m based on field observations.
+
+ Multiple simulations and observations showed that the 
+ minimum green time assigned was enough to clear all 
+ vehicles and satisfy passage time conditions. Since the 
+ traffic volume on the minor road was low, providing a unit 
+ extension only led to wasted green time. Therefore, no 
+ extension time was included in the final control logic.
+
+ \textbf{Input Parameters:}
+
+ The following parameters have been assumed based on 
+ field observations and HCM guidelines:
+ \begin{itemize}
+    \item Total Cycle Length (C) = 169 seconds
+    \item Start-up Time Loss (TL) = 2.0 seconds 
+    \item Saturation Headway (h) = 2.0 seconds/vehicle
+    \item Distance from Detector to Stop Line (d) = 2.0 meters
+    \item Vehicle Spacing (x) = 6 to 7 meters
+    \item Approach Speed (S) of minor road= 10 km/h 
+ \end{itemize}
+
+
+\textbf{Minimum Green Time ($G_{min}$) Calculation}
+
+Using Equation \eqref{eq:gmin}
+
+\begin{align*}
+G_{min} &= TL + [h \times Integer(d / x)] \\
+G_{min} &= 2.0 + [2.0 \times Integer(2.0 / 6.5)] \\
+G_{min} &= 2.0 + [2.0 \times 0] \\
+G_{min} &= 2.0  \text{seconds  (minimum)}
+\end{align*}
+
+
+However, based on FHWA recommendations for off-peak operations, 
+the applied minimum green time is:
+
+\begin{center}
+    $G_{min}$= 4 sec
+\end{center}
+\textbf{Passage Time (P) and Unit Extension (U) Calculation}
+
+Using Equation \eqref{eq:pcal}:
+
+\begin{align*}
+P &= d / (1.47 \times S) \\
+P &= 2.0 / (1.47 \times 10) = 2.0 / 14.7 \\
+P &= 0.136 \text{seconds}
+\end{align*}
+
+
+ \textbf{Unit Extension (U) Selection}
+
+  No extension time was included in the final control logic.
+
+ \textbf{Maxmimum Green Time ($G_{max}$) Calculation}
+
+ Critical Traffic volume data for all phases is converted to Passenger Car 
+ Units (pcu/h) as follows, according to the HCM protocols:
+
+ \begin{table}[h!]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Phase} & \textbf{Volume in 15 mins} & \textbf{Factor} & \textbf{$VC_i$ (pcu/h)} \\
+        \hline
+        Phase 1 & 24.5& 4 & 98 \\
+        \hline
+        Phase 2 & 250.75 & 4 & 1003 \\
+
+        \hline
+        Phase 3 & 46 & 4 & 184 \\
+
+        \hline
+        Phase 4 & 6.68 & 4 & 26.72 \\
+
+        \hline
+        
+    \end{tabular}
+ \end{table}
+
+ 
+ Total Critical Movement (VC):
+\begin{align*}
+VC &= 98 + 1003 + 184 + 26.72 \\
+&= 1311.72 pcu/h 
+\end{align*}
+
+
+
+Using Equation \eqref{eq:gcal}, the effective green time for Phase 4  is calculated:
+\begin{align*}
+    g_i &= (C_i - L) \times (VC_i / VC) \\
+    g_i &= (169 - 4) \times (26.72 / 1311.72) \\
+    g_i &= 165 \times 0.02037 \\
+    g_i &= 3.36 seconds 
+\end{align*}
+
+
+
+ \textbf{Cycle-by-Cycle Adjustment}
+ According to  principles for enhancing controller flexibility to 
+ accommodate larger demands and enable cycle-by-cycle adjustments, 
+ the calculated green time is multiplied by an adjustment factor of 1.5:
+
+ \begin{center}
+   $g_i$ (adjusted) = 1.5 $\times$ 3.36 = 5.04 seconds
+ \end{center}
+
+
+Hence, we adopted 5sec Maximum Green Time for minor roads.
+
 
  \section{Vehicle Actuated Programming}
 
- \section{Conversion of Flow into Passenger Cat Unit(PCU)}
 
- \section{Determination of Peak Hour Factor}
+ Vehicle Actuated Programming (VAP) is a capability within PTV Vissim 
+ that enables signal control strategies to be triggered based on the 
+ detection and actuation of vehicles, allowing the software to replicate 
+ programmable, actuated traffic signal operations. The control logic, 
+ stored in a .VAP file, is developed using the VisVAP (Visual VAP) tool, 
+ which allows users to design and represent the underlying signal control 
+ logic through a flowchart-based programming interface. Alongside this, 
+ an Interstage file (.pua) is also generated, which holds the VAP signal 
+ data. This interstage definition file specifies the signal groups, intergreen 
+ times, individual signal stages, and the interstage transitions. It is 
+ manually created and then imported into the VISSIM environment.
 
- \section{Lane Grouping}
+ VisVAP enhances the use of freely definable signal control logics 
+ using the VAP language (Vehicle Actuated Programming) in offering a 
+ comfortable tool for creating and editing program logics as flow charts. 
+ The appearance and design of flow charts in VisVAP is similar to 
+ RiLSA 2010 (German de-facto law for signal controls) and has been 
+ enhanced to facilitate loops and other features. VisVAP can be used 
+ for both stage-based and signal group-oriented design.
 
- \section{Computation of Saturation Flow}
+ \begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.8\textwidth]{src/images/figures/Mflow.png}
+    \caption{VisVAP Flowchart}
+ \end{figure}
 
- \section{Determination of LOS Using Volume-to-Capacity(V/C) Ratio}
 
- \section{Microsimulation Model Using PTV Vissim}
- \subsection{Calibration}
- \subsection{Validation}
+ \begin{table}[h!]
+    \centering
+    \caption{ (PTV Planung Transport Verkehr AG, Karlsruhe, Germany)}
 
- \section{VISVAP Programming}
+    \begin{tabular}{|V{6cm}|V{8cm}|}
+        \hline
+        \textbf{Vap Functions} & \textbf{Meaning} \\
+        \hline
+        Interstage(<stage1>, <stage2>) & Runs an interstage \\
+        \hline
+        Interstage\_active(<stage1>, stage2>) & Returns 1 if any interstage is active, otherwise 0. \\
+        \hline
+        Start\_at(<timer>, <value>) & Starts the timer <timer> with starting value <value>. 
+        The first  timer increment will take place in the next simulation second. \\
+        \hline
+        Interstage\_duration(<stage1>, <stage2>) & Returns the current second of the interstage or 0 in case the interstage is not active. \\
+        \hline
+        Interstage\_length(<stage1>, <stage2> ) & Returns length of interstage \\
+        \hline 
+        Occup\_rate(<no>) &	Returns smoothened occupancy rate of detector <no> [0..1] \\
+        \hline
+        Occupancy(<no>) & Returns the elapsed time since detector <no> has been activated or 0 if no vehicle is present at end of time step. \\
+        \hline 
+        P\_interstage(<no>, <sec>)	& Calls the interstage <no>, starting in its second <sec> (usually 0) \\
+        \hline
+        P\_interstage\_active(<no>) & Returns 1 if interstage <no> is active, otherwise 0 \\
+        \hline
+
+    \end{tabular}
+
+ \end{table}
+
+ \newpage
+ \section{Model Developed According to SATSC Strategy}
+
+ The Vehicle Actuated Programming (VAP) signal control has been 
+ applied to design the signal plan at this four-legged 
+ intersection. After setting up the necessary elements in the 
+ PTV Vissim interface, including lanes and connectors, vehicle 
+ volumes, traffic light configuration, and links, the block 
+ diagram logic was then implemented using the VisVAP tool. 
+ This intersection consists of four signal groups. Three of 
+ these signal groups operate as fixed signal groups, meaning 
+ their timing remains constant regardless of traffic conditions. 
+ These are:
+
+SG1 - Right turn movement from the main lane
+
+SG2 - Through movement of the main lane
+
+SG3 - Art Gallery approach
+
+SG4 - DoR approach
+
+The fourth signal group, SG4, is assigned to the DoR approach 
+and operates as a vehicle-actuated signal group. A detector is 
+placed on this approach to sense the presence of incoming 
+vehicles. When a vehicle is detected, it triggers the actuation 
+of SG4, allowing the signal to respond dynamically to real-time 
+traffic demand on that leg of the intersection. 
+
+This is the core application of VAP in this model, where the signal controller 
+activates the DoR approach phase only when a vehicle is 
+detected, thereby optimizing signal efficiency. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/Mblock.png}
+    \caption{Block Diagram}
+\end{figure}
+
+The block diagram defining this control logic has been saved as a *.vap 
+file, while the signal phases and interstage definitions have 
+been exported as a *.pua file. Alongside the simulation model, 
+analytical calculations have also been performed to validate the 
+signal design at this intersection.
+
+\pagebreak
+The logic files (*.pua and *.vap) are then imported to the 
+Vissim model in the signal control menu. The signal controller 
+window in Vissim is as shown in Figure \ref{fig:sigwin}
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/Msignal.jpg}
+    \caption{Signal controller Window}
+    \label{fig:sigwin}
+\end{figure}
+
+The inductive loop detector, with dimensions of \textbf{1.8 $\times$ 5 m,} has been positioned at an optimal 
+distance of approximately d = 2 m from the stop line on the 
+DoR approach, determined through distance-ahead calculations. 
+The proposed vehicle speed on the DoR approach is set at \textbf{S = 40 km/h}, 
+and the unit extension duration is set as \textbf{U = 3 seconds}, 
+which is greater than the passage time \textbf{P = 0.57 seconds }from the 
+detector to the stop line, in accordance with standard 
+recommendations. The cycle duration C at the Babar Mahal 
+Intersection varies dynamically depending on the traffic demand 
+on the DoR approach. When no vehicles are present on the DoR 
+approach, only the three fixed signal groups (SG1, SG2, and SG3) 
+are activated, and the minimum cycle is set to Cmin = 64seconds. 
+The time that would have been allocated to the DoR approach is 
+directly transferred to the main road fixed phases, maximizing 
+their operational efficiency.
+
+When vehicles are detected on the DoR approach, the full signal 
+cycle is activated, engaging all four signal groups, including 
+the actuated SG4, with the cycle duration Cmax = 72 seconds, 
+accommodating traffic demand from all approaches of the 
+intersection. The signal plans of the SATSC strategy are shown 
+in Figure \ref{fig:sigplan}
+\begin{figure}[ht]
+    \centering
+    \includegraphics{src/images/figures/Msatsc.png}
+    \caption{Signal plans for SATSC}
+    \label{fig:sigplan}
+\end{figure}
+
+\newpage
+ \section{Logic Design Controls}
+The VAP control logic for the Babar Mahal Intersection was 
+implemented in VisVAP as a flowchart governing four signal 
+groups, where SG1, SG2, and SG3 operate as fixed signal groups, 
+and SG4 operates as a vehicle-actuated group on the DoR 
+approach.
+
+Initialization: The program starts by evaluating Init = 0. 
+When true, TimerMain is started, and the flag is set to Init:= 1, 
+ensuring initialization occurs only once.
+
+Stage 1 to Stage 2: When Stage\_active(1) AND TimerMain $\ge$ 15, 
+the controller triggers Interstage(1,2) and resets TimerMain 
+to zero, transitioning from the main lane through movement to 
+the right turn phase.
+
+Stage 2 to Stage 3: When Stage\_active(2) AND 
+TimerMain $\ge$ (15 + Interstage\_length(1,2)), the controller 
+triggers Interstage(2,3), transitioning to the Art Gallery 
+approach phase.
+
+Stage 3 to Stage 4 (Actuated): When Detection(1) AND 
+TimerMain $\ge$ Interstage\_length(2,3) AND Stage\_active(3), 
+indicating vehicle presence on the DoR approach, Interstage(3,4) 
+is triggered, activating SG4. TimerSub starts, and TimerMain 
+stops.
+
+Stage 4 to Stage 1: When TimerSub $\ge$ Interstage\_length(3,4) AND 
+Stage\_active(4), the controller triggers Interstage(4,1), 
+returning to Stage 1, restarting TimerMain and stopping 
+TimerSub.
+
+\textbf{No Detection case:} When Stage\_active(3) AND TimerMain $\ge$ Interstage\_length(2,3) 
+with no vehicle detected, Stage 4 is bypassed, and Interstage(3,1) 
+is triggered directly, maintaining the minimum cycle of Cmin = 64 
+seconds with only the three fixed signal groups active.

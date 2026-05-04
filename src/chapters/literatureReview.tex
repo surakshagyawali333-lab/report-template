@@ -1,2 +1,198 @@
 \chapter{LITERATURE REVIEW}
+Intersections are key junctions in the road networks where 
+multiple roads meet or cross. Their design and traffic control 
+methods play a vital role in ensuring smooth traffic flow, safety, 
+and overall efficiency. Traffic management at intersections has 
+been a complex issue in transportation systems for a long time. 
+Several real-time signal control strategies have been implemented, 
+but have not been able to effectively solve this problem completely 
+(Tomar et al., 2022).
 
+Broadly, intersections are categorized into signalized and 
+unsignalized types based on the control mechanism used to manage 
+traffic movement.
+
+\section{Signalized Intersection}
+A signalized intersection uses traffic signals to control the 
+movement of vehicles and pedestrians. These signals show green, 
+yellow, and red lights to indicate when to proceed, slow down, or 
+stop. The signals operate on a timed cycle, assigning specific 
+green light durations to different directions to maintain smooth 
+and orderly traffic flow. (Duraku \& Boshnjaku, 2024). Traffic 
+signals help organize the flow of vehicles and people at intersections, 
+making sure everyone gets their turn to move safely. By giving clear 
+directions on when to stop and go, they help prevent traffic jams 
+and reduce the chances of accidents. This makes the roads safer 
+and more efficient for both drivers and pedestrians. “The traffic 
+signal timing plan is the key that assigns the required time based 
+on the travel demand at the intersection and keeps the cycle length 
+to a minimum green time”. The signal controller works as the time 
+setting device for the specific intersection (Fwha,2008). Traffic 
+flow movements are controlled by traffic signals without any 
+conflict points in the signalized intersections. The movements 
+are indicated by green, yellow, and red signals for the vehicle 
+and pedestrian. The road users in the traffic include passenger 
+cars, heavy goods vehicles, large goods vehicles, cycles, pedestrians, 
+public transportation, and motorbikes (Eom \& Kim, 2020). Traffic s
+ignals are electrically operated control devices to avoid conflicts 
+between vehicles and pedestrians (Ryder Richardson et al., 2005). The 
+three main concepts that describe the traffic signal are the cycle, 
+cycle length, and phase. The cycle is the complete sequence of all 
+the phases. Cycle length is the duration of one complete cycle. 
+The phase is the time interval during which a specific group of 
+vehicle traffic movements is permitted or restricted at the signalized 
+intersection. The signal control cycle has different phases, with 
+each phase representing a combination of permitted movements for 
+multiple lanes receiving the right of way simultaneously (HCM, 2000). 
+The basic control is applied through FTSC, and ATSC strategies include 
+the control of FATSC (Full Actuated Traffic Signal Control), SATSC 
+(Semi Actuated Traffic Signal Control), and Adaptive Traffic Signal 
+Control (ADTSC). These signal systems adjust according to traffic needs 
+using data from detectors (Duraku \& Boshnjaku, 2024)
+
+\section{Pretimed signal control}
+
+Pretimed control, also known as fixed time signal control, is a 
+signal control system in which the cycle length, phase plan, and 
+phase times are preset to repeat continuously. In this system, a 
+preset time is given to each movement every cycle, regardless of 
+changes in traffic conditions. Pretimed signal control operates on 
+a fixed schedule, where each movement (e.g., vehicular or pedestrian 
+phases) is allocated a predetermined amount of time within a 
+signal cycle regardless of real-time traffic demand. (FHA,2007). 
+Based on historic data at the intersection, the signal timing values 
+were calculated, and these values are programmed into the pre-timed 
+controllers. The pre-timed signal control has many advantages. 
+For example, since both the start and end of green are predictable, 
+it can be used for efficient coordination with adjacent pre-timed 
+signals. Also, as this system does not require detectors, its 
+operations are immune to problems that arise due to the failure 
+of detectors. But on the other hand, fixed signal time control 
+becomes inefficient at isolated intersections where traffic 
+arrivals are very low. Pre-timed control is ideally suited to 
+closely spaced intersections, mostly found in downtown areas. 
+Also, this system is a great option for those intersections where 
+a maximum of three phases is required (Urbanik et al., 2015). In 
+the absence of traffic fluctuations in traffic demands, optimum 
+fixed timed management (OFTM) is widely used in isolated intersection 
+approaches to manage traffic flow. Fluctuations in traffic demand 
+decrease the efficiency of OFTM, which causes longer queue lengths, 
+delay, fuel consumption, and exhaust emissions (Grether et al.). 
+Changing the timing of traffic signals is a cheap and simple way 
+to improve traffic flow and reduce congestion. (FHA, 2007). But 
+traditional fixed-time traffic signals operate on preset schedules 
+and often fail to respond effectively to changing traffic volumes, 
+especially during peak hours (Costa et al.,2018).
+
+\section{Actuated signal control}
+
+Whenever there are short-term or long-term fluctuations in traffic 
+demand at some intersection approaches, the effectiveness and 
+efficiency of the Optimum Fixed Time Management (OFTM) system 
+might decrease or can be adversely affected (Grether et al., 2011). 
+Traffic management systems based on any created algorithm are 
+referred to as vehicle-actuated signal management systems. A 
+vehicle-actuated management system determines the green and red 
+signal timings according to the current dynamics of vehicle arrivals 
+and queuing information obtained by detectors placed on the lanes 
+in the intersection approaches. (Akcelik, 1994). One of the applications 
+of Intelligent Transportation Systems (ITS) is vehicle-actuated (traffic- actuated) 
+management systems. The effectiveness of these systems depends 
+heavily on the control logic. The selection of the most appropriate 
+control parameters for the designed control logic determines the 
+effectiveness and functions of the actuated systems. (Cakici et al., 2021). 
+Vehicle-actuated controllers are also a type of adaptive system, but 
+the term “adaptive” usually refers to an area traffic control 
+system (ATSC) where signal timings at various junctions are 
+changed together based on that real time traffic conditions. 
+(Ravikumar, 2012). An ATCS is a complex system that involves 
+extensive surveillance, such as pavement loop detectors, and 
+infrastructure to connect with central and local controllers. 
+However, these systems are highly efficient, as they include 
+algorithms that adjust a signal’s split, offset, phase length, 
+and phase sequences to control and minimize delays, ultimately 
+reducing the number of stops (Stevanovic, 2010). The analysis 
+results show that the developed vehicle-actuated management system 
+can effectively adapt to fluctuations in traffic demand at signalized 
+intersection approaches.
+
+The system significantly reduces average vehicle delays, fuel 
+consumption, and exhaust emissions. Implementation of a vehicle-actuated 
+management system can greatly improve the performance of an intersection 
+in the presence of fluctuating or varying traffic demand. 
+(Cakici et al., 2021). The actuated signal controller has detectors 
+on all the approach lanes. When a detector detects the vehicle, 
+the information is transferred to the controller, and the controller 
+will give the service needed for the road users. The current signal 
+tage will reach its minimum green time if they do not have more 
+vehicles, and then it will change to the next stage to give the 
+right of way to the vehicles. Detectors are placed on the lanes 
+to communicate with the controller, and they should be properly 
+numbered. The detector numbering depends on the phase numbering 
+or the type of signal controller used. Fully actuated signal systems 
+adjust the traffic lights based on real-time data collected from 
+all lanes at an intersection, making these systems the most flexible. 
+Semi-actuated systems only collect data from some lanes, so they 
+only gather partial demand information and make decisions based 
+on that data. Fully actuated control works best at isolated intersections 
+where there are fluctuations in traffic demand throughout the day. 
+(Urbanik et al., 2015). The maximum green time should be set for 
+the actuated signals to determine the green signal splits for the 
+intersection. If the maximum green time is set too high, then the 
+high-demand lanes would start to affect the operations on the other 
+approach lanes. The minimum green time is the amount of green time 
+required for the vehicle to clear the signalized intersections; it 
+should be enough for the vehicle to pass the intersection, otherwise 
+it will affect the efficiency of the intersection (Sinowatcher, n.d.).
+
+In a semi-actuated control system, the design logic control dynamically 
+adjusts signal timings by determining the green light duration for 
+the secondary road based on the arriving traffic flow. When the detector 
+detects no vehicles or the absence of traffic, the control logic eliminates 
+the green interval and moves to the next phase, which greatly reduces 
+cycle time and delay. This dynamic adjustment of the switching signal operates 
+instantly using an 'if-then' conditional logic to optimize traffic signal 
+performance (Duraku \& Boshnjaku, 2024). Vehicle-actuated signal systems were 
+developed to improve upon fixed-time systems by detecting vehicles approaching 
+an intersection and adjusting green time accordingly.
+
+Although more efficient than fixed-time systems, vehicle-actuated 
+signals are still limited in their ability to coordinate across 
+multiple intersections (Brown \& Patel, 2019).
+
+The cost for both the initial set-up and the maintenance is the 
+major disadvantage of fully actuated control. The high cost is 
+due to the amount of detection required. Also, there are chances 
+for a higher percentage of vehicles to stop since the green time 
+is not held for upstream traffic. Another disadvantage is that, 
+if the traffic patterns are regular, the extra benefit obtained 
+from the addition of local actuation is minimal or can be zero 
+(Fhwa, 2008). Using a fuzzy logic-based vehicle actuated management 
+system reduced delays by 10% (Trabia et al). The green time extension 
+investigation for vehicle-actuated signal control (Wang et al., 2018). 
+The green and red signal timings at each cycle were determined using 
+global optimization and complementarity for vehicle-actuated management 
+systems (Ribeiro and Simoes et al). At the end of the analysis, it 
+was concluded that a fully-actuated management system could provide 
+better and more encouraging results than the fixed- time and semi-actuated 
+management systems.
+
+\section{Adaptive signal control}
+
+Adaptive Traffic Control Systems (ATCSs) change signal timings in 
+real time based on how much traffic is on the road and how the 
+system is working. These systems use smart rules to change things 
+like how long lights stay green, when they start, and the order 
+of signals to reduce delays and stops. They need a lot of monitoring, 
+often using sensors under the road, and special equipment to connect 
+with control centers(Stevanovic, 2010). Adaptive traffic control 
+systems are developed to solve the limitations of pre-timed control 
+by instantly adapting to field conditions, such as changing traffic 
+signal timings based on the traffic present and fluctuations in 
+demand or movement(Martin, 2008). Various adaptive traffic control 
+systems like SCOOT, SCATS, and OPAC optimize signal timings based 
+on real-time and predicted traffic demand to improve flow through 
+coordinated green waves. However, the installation and maintenance 
+costs of these systems are very high, and they also require complex 
+infrastructure. As a result, they are not widely implemented and 
+are built in only a few cities around the world (Tomar et al., 2022).  
