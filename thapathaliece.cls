@@ -394,8 +394,8 @@
         \ifx\cSubmittedIV\@empty\else
         \cSubmittedIV  & ~~\cSubmittedIVRoll  \\
         \fi
-        \ifx\cSubmittedIV\@empty\else
-        \cSubmittedIV  & ~~\cSubmittedVRoll  \\
+        \ifx\cSubmittedV\@empty\else
+        \cSubmittedV  & ~~\cSubmittedVRoll  \\
         \fi
         \ifx\cSubmittedVI\@empty\else
         \cSubmittedVI  & ~~\cSubmittedVIRoll  \\
