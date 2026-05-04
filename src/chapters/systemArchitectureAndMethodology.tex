@@ -1,4 +1,210 @@
 \chapter{METHODOLOGY}
+
+\section{Study Area and Description.}
+
+\section{Primary data collection. }
+The data used in this study were obtained from the District 
+Police Office, Bhadrakali, Kathmandu, which provided CCTV 
+video footage of the Babarmahal Intersection. The footage 
+covered a continuous 24-hour period over three consecutive 
+weekdays, from July 20th, 2025, to July 22nd, 2025, capturing 
+the full spectrum of daily traffic conditions, including 
+morning peak, off-peak, evening peak, and nighttime hours.
+
+The use of CCTV-based video data ensured non-intrusive and 
+accurate traffic observation without disrupting the natural 
+flow of traffic at the intersection. The video footage was 
+subsequently processed to extract classified traffic volume 
+counts, turning movement counts, and other relevant traffic 
+parameters required for the development and calibration of
+the microsimulation model in PTV VISSIM, as described in the 
+subsequent sections. 
+
+The geometric data, including lane widths and GPS coordinates for 
+each lane, were obtained through \textbf{field measurement and a GPS survey} 
+conducted on June 5th, 2025. Signal timing parameters, 
+including cycle length, phase sequences, and green times, 
+were recorded from the existing traffic signal controller at 
+the site.All collected data were subsequently used to 
+develop and calibrate the microsimulation model in 
+\textbf{PTV VISSIM}, as described in the subsequent sections.
+
+The video footage was processed and analyzed to determine 
+the peak and off-peak traffic conditions at the intersection. 
+Traffic volume observation extracted from the footage 
+revealed that \textbf{the maximum traffic flow was observed between 9:30 AM and 10:30 AM}, 
+which was therefore selected as the \textbf{peak hour} for this study. 
+Similarly, the period between \textbf{1:00 PM and 2:00 PM} was 
+identified as representing comparatively lower traffic demand and 
+was selected as the \textbf{off-peak hour}. Classified 
+traffic volume counts and turning movement counts were 
+extracted from the CCTV footage for both these one-hour 
+periods and used as input data for the microsimulation model 
+in PTV VISSIM.For the purpose of traffic volume count, 
+vehicles were classified into eight categories, namely Heavy 
+Truck, Mini Truck, Big Bus, Micro Bus, Utility Van, Pickup, 
+Safa Tempo, and Bike, in accordance with the vehicle 
+classification system adopted by the \textbf{Department of Roads, 
+Nepal Road Standard 2070}.
+
+
+
+
+\section{Existing Conditions analysis using the HCM manual.}
+
+The performance of the Babarmahal Intersection under the 
+existing fixed-time signal control was analytically assessed 
+following the signalized intersection analysis procedure 
+outlined in the Highway Capacity Manual (HCM). This manual 
+method was applied to the peak-hour traffic data collected 
+on the first day of the survey (9:30–10:30 AM) to determine 
+approach-level and intersection-wide values of control delay 
+and Level of Service (LOS). The HCM analysis serves as an 
+independent analytical baseline for Scenario 1, allowing a 
+validation comparison with the microsimulation results 
+obtained from PTV VISSIM.
+
+The existing signal operates on a cycle length of 157 
+seconds, comprising four phases. The green time allocations 
+for each phase are summarized in Table \ref{tab:ftsplan}
+
+\begin{table}[h!]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \caption{Existing Fixed-Time Signal Phase Plan — Babarmahal Intersection}
+    \begin{tabular}{|l|p{8cm}|l|}
+        \hline
+        \textbf{Phase} & \textbf{Movement Description} & \textbf{Green Time (s)} \\
+        \hline
+        Phase A & Right turns: Baneshwor $\rightarrow$ DOR and  Maitighar $\rightarrow$ Art Gallery & 25   \\
+        \hline
+        Phase B & Through movement: Maitighar $\leftrightarrow$ Baneshwor (main corridor) & 80 \\
+
+        \hline
+        Phase C & Art Gallery approach movements & 25  \\
+
+        \hline
+        Phase D & DOR approach movements & 27  \\
+
+        \hline
+        
+    \end{tabular}
+    \label{tab:ftsplan}
+ \end{table}
+
+
+    \subsection{Step 1: Peak Hour Factor (PHF)}
+    The Peak Hour Factor (PHF) quantifies how uniformly 
+    traffic is distributed within the peak hour. It is 
+    defined as the ratio of the total hourly volume to 
+    four times the peak 15-minute volume, and is given by:
+
+    \begin{equation*}
+        \text{PHF} = \frac{V_{hour}}{4 \times V_{15,peak}}  
+    \end{equation*}
+    where:
+
+    \begin{itemize}
+        \item $V_{hour}$ = the total PCU count during the peak hour
+        \item $V_{15,peak}$ = the highest 15-minute PCU count within that hour
+    \end{itemize}
+    . PHF values closer to 1.0 indicate a more uniform distribution of traffic, 
+    while lower values indicate a sharply peaked flow pattern.
+
+    For the Maitighar approach, the 15-minute PCU totals across 
+    all turning movements (towards Baneshwor service lane, 
+    Baneshwor main lane, DOR, and Art Gallery) were summed 
+    for each interval as follows: 9:30–9:45 = 403.00; 9:45–10:00 = 386.25; 
+    10:00–10:15 = 451.50; and 10:15–10:30 = 491.00. The total 
+    hourly volume is 1731.75 PCU/hr, with the peak 15-minute 
+    interval occurring at 10:15–10:30. Substituting into the 
+    formula:
+    \begin{align*}
+        PHF &= 1731.75 / (4 \times 491.00) \\
+        &= 1731.75 / 1964.00 \\
+        &= 0.882
+    \end{align*}
+
+    The PHF values for all four approaches were similarly computed and are 
+    presented in Table 
+
+    \begin{table} [h!]
+        \centering
+        \begin{tabular}{|p{2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.7cm}|p{1.2cm}|p{1.2cm}|}
+        \hline
+        \textbf{Approach}  & \textbf{9:30- 9:45} & \textbf{9:45- 10:00} & \textbf{10:00- 10:15} & \textbf{10:15- 10:30} & \textbf{Total\ (PCU/hr)} & \textbf{Peak}\ \boldmath{$V_{15}$} & \textbf{PHF} \\
+        \hline
+        Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
+        \hline
+        Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
+        \hline
+        Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
+        \hline
+        DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
+        \hline
+        \end{tabular}
+    \end{table}
+
+
+    \subsection{Step 2: Peak 15-Minute Flow Rate}
+
+    The hourly field volume V (PCU/hr) is converted to a peak 15-minute 
+    equivalent flow rate v using the PHF. This conversion accounts 
+    for the fact that traffic demand within the peak hour 
+    is not uniform, and the highest intensity period 
+    governs capacity and delay. The flow rate is given by:
+
+    \begin{equation*}
+        v = V / PHF
+    \end{equation*}
+For the Maitighar approach:
+    \begin{align*}
+        v &= 1731.75 / 0.882\\
+         &= 1963.44 PCU/hr
+    \end{align*}
+
+    Dividing by a PHF less than 1.0 yields a flow rate 
+    higher than the raw hourly count, representing the 
+    worst-case demand intensity that the intersection must 
+    accommodate. The flow rates, along with the corresponding 
+    signal phase and green time, for all approaches are 
+    presented in Table X+2.
+
+   \begin{table} [h!]
+        \centering
+        \begin{tabular}{|p{2cm}|p{1.6cm}|p{1.2cm}|p{1.6cm}|p{1.2cm}|p{1.3cm}|p{1.2cm}|p{1cm}|}
+        \hline
+        Approach &	V\ (PCU/hr)	& PHF &v\ (PCU/hr) &Phase & Green (s) & Cycle (s) & g/C \\
+        \hline
+        Maitighar &403.00 &386.25 &451.50 &491.00 &1731.75 &491.00 &0.882 \\
+        \hline
+        Baneshwor & 621.50 &533.75	&490.25	&538.75	&2184.25 &621.50 &0.879 \\
+        \hline
+        Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
+        \hline
+        DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
+        \hline
+        \end{tabular}
+    \end{table}
+
+
+    \subsection{Step 3: Saturation Flow Rate}
+
+    \subsection{Heavy Vehicle Factor (f\_HV)}
+
+    \subsection{Step 4: Capacity and Degree of Saturation}
+
+    \subsection{Step 5: Control Delay}
+
+    \subsection{Uniform Delay ($d_1$)}
+
+    \subsection{Incremental Delay ($d_2$)}
+    
+    \subsection{Initial Queue Delay ($d_3$)}
+
+    \subsection{Total Control Delay — Maitighar Approach}
+
+
 \section{Network Coding}
 Here we draw links, connectors and intersection geometry based on field data.  
 Link represents a single or multiple road ways and connectors are used for joining the two links. 
@@ -82,216 +288,6 @@ Acceptance Criteria:
     \item $GEH$ > 10.0 → Poor fit  (recalibrate)
 \end{itemize}
     
-
-\section{Study Area and Description.}
-
-\section{Primary data collection. }
-The data used in this study were obtained from the District 
-Police Office, Bhadrakali, Kathmandu, which provided CCTV 
-video footage of the Babarmahal Intersection. The footage 
-covered a continuous 24-hour period over three consecutive 
-weekdays, from July 20th, 2025, to July 22nd, 2025, capturing 
-the full spectrum of daily traffic conditions, including 
-morning peak, off-peak, evening peak, and nighttime hours.
-
-The use of CCTV-based video data ensured non-intrusive and 
-accurate traffic observation without disrupting the natural 
-flow of traffic at the intersection. The video footage was 
-subsequently processed to extract classified traffic volume 
-counts, turning movement counts, and other relevant traffic 
-parameters required for the development and calibration of
-the microsimulation model in PTV VISSIM, as described in the 
-subsequent sections. 
-
-The geometric data, including lane widths and GPS coordinates for 
-each lane, were obtained through \textbf{field measurement and a GPS survey} 
-conducted on June 5th, 2025. Signal timing parameters, 
-including cycle length, phase sequences, and green times, 
-were recorded from the existing traffic signal controller at 
-the site.All collected data were subsequently used to 
-develop and calibrate the microsimulation model in 
-\textbf{PTV VISSIM}, as described in the subsequent sections.
-
-The video footage was processed and analyzed to determine 
-the peak and off-peak traffic conditions at the intersection. 
-Traffic volume observation extracted from the footage 
-revealed that \textbf{the maximum traffic flow was observed between 9:30 AM and 10:30 AM}, 
-which was therefore selected as the \textbf{peak hour} for this study. 
-Similarly, the period between \textbf{1:00 PM and 2:00 PM} was 
-identified as representing comparatively lower traffic demand and 
-was selected as the \textbf{off-peak hour}. Classified 
-traffic volume counts and turning movement counts were 
-extracted from the CCTV footage for both these one-hour 
-periods and used as input data for the microsimulation model 
-in PTV VISSIM.For the purpose of traffic volume count, 
-vehicles were classified into eight categories, namely Heavy 
-Truck, Mini Truck, Big Bus, Micro Bus, Utility Van, Pickup, 
-Safa Tempo, and Bike, in accordance with the vehicle 
-classification system adopted by the \textbf{Department of Roads, 
-Nepal Road Standard 2070}.
-
-
-
-
-\section{Existing Conditions analysis using the HCM manual.}
-
-The performance of the Babarmahal Intersection under the 
-existing fixed-time signal control was analytically assessed 
-following the signalized intersection analysis procedure 
-outlined in the Highway Capacity Manual (HCM). This manual 
-method was applied to the peak-hour traffic data collected 
-on the first day of the survey (9:30–10:30 AM) to determine 
-approach-level and intersection-wide values of control delay 
-and Level of Service (LOS). The HCM analysis serves as an 
-independent analytical baseline for Scenario 1, allowing a 
-validation comparison with the microsimulation results 
-obtained from PTV VISSIM.
-
-The existing signal operates on a cycle length of 157 
-seconds, comprising four phases. The green time allocations 
-for each phase are summarized in Table \ref{tab:ftsplan}
-
-\begin{table}[h!]
-    \centering
-    \caption{Existing Fixed-Time Signal Phase Plan — Babarmahal Intersection}
-    \begin{tabular}{|l|l|l|}
-        \hline
-        \textbf{Phase} & \textbf{Movement Description} & \textbf{Green Time (s)} \\
-        \hline
-        Phase A & Right turns: \\ & Baneshwor $\rightarrow$ DOR and \\ & Maitighar $\rightarrow$ Art Gallery & 25   \\
-        \hline
-        Phase B & Through movement: \\ & Maitighar $\leftrightarrow$ Baneshwor (main corridor) & 80 \\
-
-        \hline
-        Phase C & Art Gallery approach movements & 25  \\
-
-        \hline
-        Phase D & DOR approach movements & 27  \\
-
-        \hline
-        
-    \end{tabular}
-    \label{tab:ftsplan}
- \end{table}
-
-
-
-
-    \subsection{Step 1: Peak Hour Factor (PHF)}
-    The Peak Hour Factor (PHF) quantifies how uniformly 
-    traffic is distributed within the peak hour. It is 
-    defined as the ratio of the total hourly volume to 
-    four times the peak 15-minute volume, and is given by:
-
-    \begin{equation*}
-        PHF = V_{hour} / (4 \times V_{15,peak})
-    \end{equation*}
-    where:
-
-    \begin{itemize}
-        \item $V_{hour}$ = the total PCU count during the peak hour
-        \item $V_{15,peak}$ = the highest 15-minute PCU count within that hour
-    \end{itemize}
-    . PHF values closer to 1.0 indicate a more uniform distribution of traffic, 
-    while lower values indicate a sharply peaked flow pattern.
-
-    For the Maitighar approach, the 15-minute PCU totals across 
-    all turning movements (towards Baneshwor service lane, 
-    Baneshwor main lane, DOR, and Art Gallery) were summed 
-    for each interval as follows: 9:30–9:45 = 403.00; 9:45–10:00 = 386.25; 
-    10:00–10:15 = 451.50; and 10:15–10:30 = 491.00. The total 
-    hourly volume is 1731.75 PCU/hr, with the peak 15-minute 
-    interval occurring at 10:15–10:30. Substituting into the 
-    formula:
-    \begin{align*}
-        PHF &= 1731.75 / (4 \times 491.00) \\
-        &= 1731.75 / 1964.00 \\
-        &= 0.882
-    \end{align*}
-
-    The PHF values for all four approaches were similarly computed and are 
-    presented in Table 
-
-    % \begin{table} [h!]
-        
-    %     \centering
-    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
-    %     \hline
-    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
-    %     \hline
-    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
-    %     \hline
-    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
-    %     \hline
-    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
-    %     \hline
-    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
-    %     \hline
-    %     \end{tabular}
-    % \end{table}
-
-
-    \subsection{Step 2: Peak 15-Minute Flow Rate}
-
-    The hourly field volume V (PCU/hr) is converted to a peak 15-minute 
-    equivalent flow rate v using the PHF. This conversion accounts 
-    for the fact that traffic demand within the peak hour 
-    is not uniform, and the highest intensity period 
-    governs capacity and delay. The flow rate is given by:
-
-    \begin{equation*}
-        v = V / PHF
-    \end{equation*}
-For the Maitighar approach:
-    \begin{align*}
-        v &= 1731.75 / 0.882\\
-         &= 1963.44 PCU/hr
-    \end{align*}
-
-    Dividing by a PHF less than 1.0 yields a flow rate 
-    higher than the raw hourly count, representing the 
-    worst-case demand intensity that the intersection must 
-    accommodate. The flow rates, along with the corresponding 
-    signal phase and green time, for all approaches are 
-    presented in Table X+2.
-
-    % \begin{table} [h!]
-        
-    %     \centering
-    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
-    %     \hline
-    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
-    %     \hline
-    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
-    %     \hline
-    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
-    %     \hline
-    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
-    %     \hline
-    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
-    %     \hline
-    %     \end{tabular}
-    % \end{table}
-
-
-    \subsection{Step 3: Saturation Flow Rate}
-
-    \subsection{Heavy Vehicle Factor (f\_HV)}
-
-    \subsection{Step 4: Capacity and Degree of Saturation}
-
-    \subsection{Step 5: Control Delay}
-
-    \subsection{Uniform Delay ($d_1$)}
-
-    \subsection{Incremental Delay ($d_2$)}
-    
-    \subsection{Initial Queue Delay ($d_3$)}
-
-    \subsection{Total Control Delay — Maitighar Approach}
-
-
-
 
 
 
