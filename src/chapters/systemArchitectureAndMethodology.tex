@@ -83,6 +83,236 @@ Acceptance Criteria:
 \end{itemize}
     
 
+\section{Study Area and Description.}
+
+\section{Primary data collection. }
+The data used in this study were obtained from the District 
+Police Office, Bhadrakali, Kathmandu, which provided CCTV 
+video footage of the Babarmahal Intersection. The footage 
+covered a continuous 24-hour period over three consecutive 
+weekdays, from July 20th, 2025, to July 22nd, 2025, capturing 
+the full spectrum of daily traffic conditions, including 
+morning peak, off-peak, evening peak, and nighttime hours.
+
+The use of CCTV-based video data ensured non-intrusive and 
+accurate traffic observation without disrupting the natural 
+flow of traffic at the intersection. The video footage was 
+subsequently processed to extract classified traffic volume 
+counts, turning movement counts, and other relevant traffic 
+parameters required for the development and calibration of
+the microsimulation model in PTV VISSIM, as described in the 
+subsequent sections. 
+
+The geometric data, including lane widths and GPS coordinates for 
+each lane, were obtained through \textbf{field measurement and a GPS survey} 
+conducted on June 5th, 2025. Signal timing parameters, 
+including cycle length, phase sequences, and green times, 
+were recorded from the existing traffic signal controller at 
+the site.All collected data were subsequently used to 
+develop and calibrate the microsimulation model in 
+\textbf{PTV VISSIM}, as described in the subsequent sections.
+
+The video footage was processed and analyzed to determine 
+the peak and off-peak traffic conditions at the intersection. 
+Traffic volume observation extracted from the footage 
+revealed that \textbf{the maximum traffic flow was observed between 9:30 AM and 10:30 AM}, 
+which was therefore selected as the \textbf{peak hour} for this study. 
+Similarly, the period between \textbf{1:00 PM and 2:00 PM} was 
+identified as representing comparatively lower traffic demand and 
+was selected as the \textbf{off-peak hour}. Classified 
+traffic volume counts and turning movement counts were 
+extracted from the CCTV footage for both these one-hour 
+periods and used as input data for the microsimulation model 
+in PTV VISSIM.For the purpose of traffic volume count, 
+vehicles were classified into eight categories, namely Heavy 
+Truck, Mini Truck, Big Bus, Micro Bus, Utility Van, Pickup, 
+Safa Tempo, and Bike, in accordance with the vehicle 
+classification system adopted by the \textbf{Department of Roads, 
+Nepal Road Standard 2070}.
+
+
+
+
+\section{Existing Conditions analysis using the HCM manual.}
+
+The performance of the Babarmahal Intersection under the 
+existing fixed-time signal control was analytically assessed 
+following the signalized intersection analysis procedure 
+outlined in the Highway Capacity Manual (HCM). This manual 
+method was applied to the peak-hour traffic data collected 
+on the first day of the survey (9:30–10:30 AM) to determine 
+approach-level and intersection-wide values of control delay 
+and Level of Service (LOS). The HCM analysis serves as an 
+independent analytical baseline for Scenario 1, allowing a 
+validation comparison with the microsimulation results 
+obtained from PTV VISSIM.
+
+The existing signal operates on a cycle length of 157 
+seconds, comprising four phases. The green time allocations 
+for each phase are summarized in Table \ref{tab:ftsplan}
+
+\begin{table}[h!]
+    \centering
+    \caption{Existing Fixed-Time Signal Phase Plan — Babarmahal Intersection}
+    \begin{tabular}{|l|l|l|}
+        \hline
+        \textbf{Phase} & \textbf{Movement Description} & \textbf{Green Time (s)} \\
+        \hline
+        Phase A & Right turns: \\ & Baneshwor $\rightarrow$ DOR and \\ & Maitighar $\rightarrow$ Art Gallery & 25   \\
+        \hline
+        Phase B & Through movement: \\ & Maitighar $\leftrightarrow$ Baneshwor (main corridor) & 80 \\
+
+        \hline
+        Phase C & Art Gallery approach movements & 25  \\
+
+        \hline
+        Phase D & DOR approach movements & 27  \\
+
+        \hline
+        
+    \end{tabular}
+    \label{tab:ftsplan}
+ \end{table}
+
+
+
+
+    \subsection{Step 1: Peak Hour Factor (PHF)}
+    The Peak Hour Factor (PHF) quantifies how uniformly 
+    traffic is distributed within the peak hour. It is 
+    defined as the ratio of the total hourly volume to 
+    four times the peak 15-minute volume, and is given by:
+
+    \begin{equation*}
+        PHF = V_{hour} / (4 \times V_{15,peak})
+    \end{equation*}
+    where:
+
+    \begin{itemize}
+        \item $V_{hour}$ = the total PCU count during the peak hour
+        \item $V_{15,peak}$ = the highest 15-minute PCU count within that hour
+    \end{itemize}
+    . PHF values closer to 1.0 indicate a more uniform distribution of traffic, 
+    while lower values indicate a sharply peaked flow pattern.
+
+    For the Maitighar approach, the 15-minute PCU totals across 
+    all turning movements (towards Baneshwor service lane, 
+    Baneshwor main lane, DOR, and Art Gallery) were summed 
+    for each interval as follows: 9:30–9:45 = 403.00; 9:45–10:00 = 386.25; 
+    10:00–10:15 = 451.50; and 10:15–10:30 = 491.00. The total 
+    hourly volume is 1731.75 PCU/hr, with the peak 15-minute 
+    interval occurring at 10:15–10:30. Substituting into the 
+    formula:
+    \begin{align*}
+        PHF &= 1731.75 / (4 \times 491.00) \\
+        &= 1731.75 / 1964.00 \\
+        &= 0.882
+    \end{align*}
+
+    The PHF values for all four approaches were similarly computed and are 
+    presented in Table 
+
+    % \begin{table} [h!]
+        
+    %     \centering
+    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    %     \hline
+    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
+    %     \hline
+    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
+    %     \hline
+    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
+    %     \hline
+    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
+    %     \hline
+    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
+    %     \hline
+    %     \end{tabular}
+    % \end{table}
+
+
+    \subsection{Step 2: Peak 15-Minute Flow Rate}
+
+    The hourly field volume V (PCU/hr) is converted to a peak 15-minute 
+    equivalent flow rate v using the PHF. This conversion accounts 
+    for the fact that traffic demand within the peak hour 
+    is not uniform, and the highest intensity period 
+    governs capacity and delay. The flow rate is given by:
+
+    \begin{equation*}
+        v = V / PHF
+    \end{equation*}
+For the Maitighar approach:
+    \begin{align*}
+        v &= 1731.75 / 0.882\\
+         &= 1963.44 PCU/hr
+    \end{align*}
+
+    Dividing by a PHF less than 1.0 yields a flow rate 
+    higher than the raw hourly count, representing the 
+    worst-case demand intensity that the intersection must 
+    accommodate. The flow rates, along with the corresponding 
+    signal phase and green time, for all approaches are 
+    presented in Table X+2.
+
+    % \begin{table} [h!]
+        
+    %     \centering
+    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    %     \hline
+    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
+    %     \hline
+    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
+    %     \hline
+    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
+    %     \hline
+    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
+    %     \hline
+    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
+    %     \hline
+    %     \end{tabular}
+    % \end{table}
+
+
+    \subsection{Step 3: Saturation Flow Rate}
+
+    \subsection{Heavy Vehicle Factor (f\_HV)}
+
+    \subsection{Step 4: Capacity and Degree of Saturation}
+
+    \subsection{Step 5: Control Delay}
+
+    \subsection{Uniform Delay ($d_1$)}
+
+    \subsection{Incremental Delay ($d_2$)}
+    
+    \subsection{Initial Queue Delay ($d_3$)}
+
+    \subsection{Total Control Delay — Maitighar Approach}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  \section{Semi Actuated Control}
  Semi-actuated control is a practical traffic management 
  strategy designed specifically for intersections where a 
@@ -187,7 +417,7 @@ Acceptance Criteria:
  using Equation \eqref{eq:gmin}:
 
 \begin{equation}
-    G_{min} = TL + [h * Integer(d / x)]
+    G_{min} = T_L + [h * \text{Integer}(d / x)]
     \label{eq:gmin}
 \end{equation}
  
@@ -245,7 +475,7 @@ enough for the approaching vehicle to reach the stop line.
  The effective green time ($g_i$) for each phase is distributed 
  proportionally based on traffic demand using Equation \eqref{eq:gcal}:
  \begin{equation}
-    g_i = (C_i - L) \times (VC_i / VC) 
+    g_i = (C_i - L) \times \frac{V_{C_i}}{V_C}
     \label{eq:gcal}
  \end{equation}
  Where:
@@ -253,7 +483,7 @@ enough for the approaching vehicle to reach the stop line.
     \item $g_i$ = Effective green time for phase i (s)
     \item $C_i$ = Cycle length (s)
     \item L = Total lost time in the cycle (s)
-    \item $VC_i$ = Traffic volume in the critical lane for phase i (pcu/h)
+    \item $V_{C_i}$ = Traffic volume in the critical lane for phase i (pcu/h)
     \item VC = Sum of volumes in all critical lanes (pcu/h)
  \end{itemize}
 
@@ -311,7 +541,7 @@ enough for the approaching vehicle to reach the stop line.
  field observations and HCM guidelines:
  \begin{itemize}
     \item Total Cycle Length (C) = 169 seconds
-    \item Start-up Time Loss (TL) = 2.0 seconds 
+    \item Start-up Time Loss ($T_L$) = 2.0 seconds 
     \item Saturation Headway (h) = 2.0 seconds/vehicle
     \item Distance from Detector to Stop Line (d) = 2.0 meters
     \item Vehicle Spacing (x) = 6 to 7 meters
@@ -324,8 +554,8 @@ enough for the approaching vehicle to reach the stop line.
 Using Equation \eqref{eq:gmin}
 
 \begin{align*}
-G_{min} &= TL + [h \times Integer(d / x)] \\
-G_{min} &= 2.0 + [2.0 \times Integer(2.0 / 6.5)] \\
+G_{min} &= T_L + [h \times \text{Integer}(d / x)] \\
+G_{min} &= 2.0 + [2.0 \times \text{Integer}(2.0 / 6.5)] \\
 G_{min} &= 2.0 + [2.0 \times 0] \\
 G_{min} &= 2.0  \text{seconds  (minimum)}
 \end{align*}
@@ -335,8 +565,9 @@ However, based on FHWA recommendations for off-peak operations,
 the applied minimum green time is:
 
 \begin{center}
-    $G_{min}$= 4 sec
+    $G_{min}$= 4 seconds
 \end{center}
+
 \textbf{Passage Time (P) and Unit Extension (U) Calculation}
 
 Using Equation \eqref{eq:pcal}:
@@ -344,7 +575,7 @@ Using Equation \eqref{eq:pcal}:
 \begin{align*}
 P &= d / (1.47 \times S) \\
 P &= 2.0 / (1.47 \times 10) = 2.0 / 14.7 \\
-P &= 0.136 \text{seconds}
+P &= 0.136 \text{ seconds}
 \end{align*}
 
 
@@ -361,7 +592,7 @@ P &= 0.136 \text{seconds}
     \centering
     \begin{tabular}{|l|l|l|l|}
         \hline
-        \textbf{Phase} & \textbf{Volume in 15 mins} & \textbf{Factor} & \textbf{$VC_i$ (pcu/h)} \\
+        \textbf{Phase} & \textbf{Volume in 15 mins} & \textbf{Factor} & \textbf{$V_{C_i}$ (pcu/h)} \\
         \hline
         Phase 1 & 24.5& 4 & 98 \\
         \hline
@@ -381,30 +612,31 @@ P &= 0.136 \text{seconds}
  
  Total Critical Movement (VC):
 \begin{align*}
-VC &= 98 + 1003 + 184 + 26.72 \\
-&= 1311.72 pcu/h 
+V_C &= 98 + 1003 + 184 + 26.72 \\
+&= 1311.72 \text{ pcu/h}
 \end{align*}
 
 
 
 Using Equation \eqref{eq:gcal}, the effective green time for Phase 4  is calculated:
 \begin{align*}
-    g_i &= (C_i - L) \times (VC_i / VC) \\
+    g_i &= (C_i - L) \times (V_{C_i} / V_C) \\
     g_i &= (169 - 4) \times (26.72 / 1311.72) \\
     g_i &= 165 \times 0.02037 \\
-    g_i &= 3.36 seconds 
+    g_i &= 3.36 \text{ seconds}
 \end{align*}
 
 
 
  \textbf{Cycle-by-Cycle Adjustment}
+
  According to  principles for enhancing controller flexibility to 
  accommodate larger demands and enable cycle-by-cycle adjustments, 
  the calculated green time is multiplied by an adjustment factor of 1.5:
 
- \begin{center}
-   $g_i$ (adjusted) = 1.5 $\times$ 3.36 = 5.04 seconds
- \end{center}
+ \begin{align*}
+   g_i(\text{adjusted}) &= 1.5 \times 3.36 = 5.04 \text{seconds} \\
+ \end{align*}
 
 
 Hence, we adopted 5sec Maximum Green Time for minor roads.
