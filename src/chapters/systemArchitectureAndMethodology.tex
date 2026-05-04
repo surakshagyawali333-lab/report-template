@@ -389,7 +389,165 @@ For the Maitighar approach:
     capacity, causing progressive queue accumulation across 
     cycles. The complete delay results for all approaches are 
     given in Table X+5.
-    
+
+    \subsection{Step 6: Intersection-Wide Delay and Level of Service}
+
+    \subsection{Key Observations}
+
+    \subsection{Comparison of HCM and VISSIM Results for Existing Scenario}
+
+    \subsection{Aggregation of VISSIM Movement-Level Results}
+
+    PTV VISSIM reports queue delay for each individual 
+    turning movement within the intersection. To derive 
+    approach-level LOS values comparable to those from HCM, 
+    the movement delays were averaged for each approach and 
+    the resulting value was classified against HCM LOS 
+    thresholds. The procedure is illustrated using the 
+    Maitighar approach as a sample calculation.
+
+    \begin{table}[h!]
+        \centering
+        \caption{VISSIM Movement-Level Queue Delays — Maitighar Approach (Scenario 1)}
+        \begin{tabular}{|l|l|}
+            \hline
+            Movement & Queue Delay (sec/veh)\\
+            \hline
+            Maitighar Service $\rightarrow$ Anamnagar & 28.43 \\
+            \hline
+            Maitighar Service $\rightarrow$ Babarmahal Service	& 45.05 \\
+            \hline
+            Maitighar Main $\rightarrow$ Art Gallery	& 139.64 \\
+            \hline
+            Maitighar Main $\rightarrow$ Babarmahal Main	& 51.40 \\
+            \hline
+
+            
+        \end{tabular}
+        \label{tab:vissimmov}
+
+    \end{table}
+    The approach-level average queue delay is computed as:
+    \begin{align*}
+        Average Delay &= (28.43 + 45.05 + 139.64 + 51.40) / 4 \\
+        &= 264.52 / 4 \\
+        &= 66.13 \ sec/veh
+    \end{align*}
+Based on \cref{tab:vissimmov} HCM LOS thresholds, a delay of 66.13 sec/veh 
+falls within the range of 55–80 sec/veh, corresponding to 
+Level of Service E. The same procedure was applied to the 
+remaining three approaches. The aggregated approach-level 
+VISSIM results are presented in \cref{tab:aggvissim}
+
+
+ \begin{table}[h!]
+        \centering
+        \caption{Aggregated VISSIM Approach-Level Queue Delay and LOS — Scenario 1}
+        \begin{tabular}{|l|l|p{3cm}|l|}
+            \hline
+            Approach &	Movements Averaged	& Avg.\ Queue\ Delay (sec/veh)	&LOS \\
+            \hline
+            Maitighar &	4 movements	& 66.13 &	E \\
+            \hline
+            Babarmahal	& 4 movements &	66.28 &	E \\
+            \hline
+            Art Gallery	& 5 movements & 45.71 & D \\
+            \hline
+            Anamnagar &	3 movements	& 57.93 & E \\
+            \hline
+            \textbf{Overall Intersection} &	\textbf{(VISSIM node result)} &  \textbf{59.60}	& \textbf{E} \\
+            \hline
+            
+        \end{tabular}
+        \label{tab:aggvissim}
+
+    \end{table}
+
+    \subsection{HCM vs VISSIM — Comparison of Level of Service}
+
+\cref{tab:hcmvissim} presents a side-by-side comparison of the Level of Service assigned by 
+HCM and VISSIM for each approach and the overall intersection 
+under the existing signal control scenario. As discussed 
+above, LOS is used as the basis for comparison since it is 
+derived from the same HCM thresholds in both methods, making 
+it the most appropriate common metric.
+
+\begin{table}[h!]
+    \centering
+    \caption{Comparison of HCM and VISSIM Level of Service — Existing Scenario (Scenario 1)
+Approach	HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS
+}
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Approach &	HCM Control Delay (sec/veh)	&HCM LOS	&VISSIM LOS\\
+        \hline
+        Maitighar &	171.16 & F & E \\
+        \hline
+        Babarmahal & 301.91	& F &E \\
+        \hline
+        Art Gallery	 &248.14 &	F & D \\
+        \hline
+        Anamnagar & 58.89 & E &	E\\
+        \hline
+        \textbf{Overall Intersection} &\textbf{	241.39}	& \textbf{F} & \textbf{E} \\
+        \hline
+    \end{tabular}
+    \label{tab:hcmvissim}
+\end{table}
+
+    \subsection{Discussion}
+
+    The LOS-based comparison presented in Table X+2 reveals 
+    both areas of agreement and divergence between the HCM 
+    and VISSIM methods. The following observations are drawn 
+    from the comparison:
+
+    \textbf{Methodological Differences in Delay Parameters:} As 
+    noted earlier, HCM control delay and VISSIM queue delay 
+    are related but not equivalent parameters. HCM derives 
+    control delay analytically using deterministic formulas 
+    that assume idealized lane discipline, uniform vehicle 
+    behavior, and standardized saturation flow adjustment 
+    factors. VISSIM, on the other hand, measures queue delay 
+    empirically from simulated vehicle trajectories, 
+    incorporating field-calibrated driver behavior parameters 
+    that more realistically reflect the mixed traffic 
+    conditions and poor lane discipline characteristic of 
+    Kathmandu urban intersections. These methodological 
+    differences are the primary reason for the LOS divergence 
+    observed across most approaches.
+
+   \textbf{ Anamnagar Approach — Agreement:} Both HCM and 
+   VISSIM assign LOS E to the Anamnagar approach, 
+   representing the strongest point of agreement between 
+   the two methods. This convergence is expected given that 
+   the Anamnagar approach operates well below capacity, 
+   where overflow queuing is minimal, and the deterministic 
+   HCM formula more closely approximates real conditions 
+   simulated by VISSIM.
+
+  \textbf{ Qualitative Agreement on Overall Congestion:} 
+  Despite the LOS differences at individual approaches, both 
+  methods consistently identify Babarmahal Intersection as 
+  operating under severely congested conditions during the 
+  morning peak hour. HCM classifies three approaches at LOS 
+  F and one at LOS E, while VISSIM classifies the overall 
+  intersection at LOS E. The directional agreement — that 
+  the intersection is significantly over-stressed under the 
+  existing fixed-time signal plan — validates the general 
+  conclusion drawn from both methods and reinforces the need 
+  for signal timing optimization.
+
+  \textbf{Basis for Methodology Decision:} Given the 
+  fundamental differences between HCM control delay and 
+  VISSIM queue delay, and the inherent limitations of 
+  applying HCM's idealized assumptions to the complex mixed 
+  traffic environment of Kathmandu, VISSIM node results are 
+  adopted as the primary and consistent source of performance 
+  data across all three scenarios in this study. The HCM 
+  analysis serves as a supplementary analytical reference 
+  that corroborates the qualitative finding of poor 
+  intersection performance under the existing signal control.
 
 
 
