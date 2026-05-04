@@ -48,8 +48,6 @@ classification system adopted by the \textbf{Department of Roads,
 Nepal Road Standard 2070}.
 
 
-
-
 \section{Existing Conditions analysis using the HCM manual.}
 
 The performance of the Babarmahal Intersection under the 
@@ -66,143 +64,147 @@ obtained from PTV VISSIM.
 
 The existing signal operates on a cycle length of 157 
 seconds, comprising four phases. The green time allocations 
-for each phase are summarized in Table \ref{tab:ftsplan}
+for each phase are summarized in \cref{tab:ftsplan}
 
 \begin{table}[h!]
+\centering
+\renewcommand{\arraystretch}{1.5}
+\caption{Existing Fixed-Time Signal Phase Plan — Babarmahal Intersection}
+\begin{tabular}{|l|p{8cm}|l|}
+    \hline
+    \textbf{Phase} & \textbf{Movement Description} & \textbf{Green Time (s)} \\
+    \hline
+    A & Right turns: Baneshwor $\rightarrow$ DOR and  Maitighar $\rightarrow$ Art Gallery & 25   \\
+    \hline
+    B & Through movement: Maitighar $\leftrightarrow$ Baneshwor (main corridor) & 80 \\
+
+    \hline
+    C & Art Gallery approach movements & 25  \\
+
+    \hline
+    D & DOR approach movements & 27  \\
+    \hline
+    \multicolumn{2}{|c|}{Cycle Length} & 169 s \\
+    \hline
+    
+\end{tabular}
+\label{tab:ftsplan}
+\end{table}
+
+
+\subsection{Step 1: Peak Hour Factor (PHF)}
+The Peak Hour Factor (PHF) quantifies how uniformly 
+traffic is distributed within the peak hour. It is 
+defined as the ratio of the total hourly volume to 
+four times the peak 15-minute volume, and is given by:
+
+\begin{equation*}
+    \text{PHF} = \frac{V_{hour}}{4 \times V_{15,peak}}  
+\end{equation*}
+where:
+
+\begin{itemize}
+    \item $V_{hour}$ = the total PCU count during the peak hour
+    \item $V_{15,peak}$ = the highest 15-minute PCU count within that hour
+\end{itemize}
+. PHF values closer to 1.0 indicate a more uniform distribution of traffic, 
+while lower values indicate a sharply peaked flow pattern.
+
+For the Maitighar approach, the 15-minute PCU totals across 
+all turning movements (towards Baneshwor service lane, 
+Baneshwor main lane, DOR, and Art Gallery) were summed 
+for each interval as follows: 9:30–9:45 = 403.00; 9:45–10:00 = 386.25; 
+10:00–10:15 = 451.50; and 10:15–10:30 = 491.00. The total 
+hourly volume is 1731.75 PCU/hr, with the peak 15-minute 
+interval occurring at 10:15–10:30. Substituting into the 
+formula:
+\begin{align*}
+    PHF &= 1731.75 / (4 \times 491.00) \\
+    &= 1731.75 / 1964.00 \\
+    &= 0.882
+\end{align*}
+
+The PHF values for all four approaches were similarly computed and are 
+presented in \cref{tab:phf}
+
+\begin{table} [h!]
     \centering
-    \renewcommand{\arraystretch}{1.5}
-    \caption{Existing Fixed-Time Signal Phase Plan — Babarmahal Intersection}
-    \begin{tabular}{|l|p{8cm}|l|}
-        \hline
-        \textbf{Phase} & \textbf{Movement Description} & \textbf{Green Time (s)} \\
-        \hline
-        Phase A & Right turns: Baneshwor $\rightarrow$ DOR and  Maitighar $\rightarrow$ Art Gallery & 25   \\
-        \hline
-        Phase B & Through movement: Maitighar $\leftrightarrow$ Baneshwor (main corridor) & 80 \\
-
-        \hline
-        Phase C & Art Gallery approach movements & 25  \\
-
-        \hline
-        Phase D & DOR approach movements & 27  \\
-
-        \hline
-        
+    \caption{Peak Hour Factor (PHF) by Approach}
+    \begin{tabular}{|p{2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.7cm}|p{1.2cm}|p{1.2cm}|}
+    \hline
+    \textbf{Approach}  & \textbf{9:30- 9:45} & \textbf{9:45- 10:00} & \textbf{10:00- 10:15} & \textbf{10:15- 10:30} & \textbf{Total\ (PCU/hr)} & \textbf{Peak}\ \boldmath{$V_{15}$} & \textbf{PHF} \\
+    \hline
+    Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
+    \hline
+    Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
+    \hline
+    Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
+    \hline
+    DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
+    \hline
     \end{tabular}
-    \label{tab:ftsplan}
- \end{table}
+    \label{tab:phf}
+\end{table}
 
 
-    \subsection{Step 1: Peak Hour Factor (PHF)}
-    The Peak Hour Factor (PHF) quantifies how uniformly 
-    traffic is distributed within the peak hour. It is 
-    defined as the ratio of the total hourly volume to 
-    four times the peak 15-minute volume, and is given by:
+\subsection{Step 2: Peak 15-Minute Flow Rate}
 
-    \begin{equation*}
-        \text{PHF} = \frac{V_{hour}}{4 \times V_{15,peak}}  
-    \end{equation*}
-    where:
+The hourly field volume V (PCU/hr) is converted to a peak 15-minute 
+equivalent flow rate v using the PHF. This conversion accounts 
+for the fact that traffic demand within the peak hour 
+is not uniform, and the highest intensity period 
+governs capacity and delay. The flow rate is given by:
 
-    \begin{itemize}
-        \item $V_{hour}$ = the total PCU count during the peak hour
-        \item $V_{15,peak}$ = the highest 15-minute PCU count within that hour
-    \end{itemize}
-    . PHF values closer to 1.0 indicate a more uniform distribution of traffic, 
-    while lower values indicate a sharply peaked flow pattern.
-
-    For the Maitighar approach, the 15-minute PCU totals across 
-    all turning movements (towards Baneshwor service lane, 
-    Baneshwor main lane, DOR, and Art Gallery) were summed 
-    for each interval as follows: 9:30–9:45 = 403.00; 9:45–10:00 = 386.25; 
-    10:00–10:15 = 451.50; and 10:15–10:30 = 491.00. The total 
-    hourly volume is 1731.75 PCU/hr, with the peak 15-minute 
-    interval occurring at 10:15–10:30. Substituting into the 
-    formula:
-    \begin{align*}
-        PHF &= 1731.75 / (4 \times 491.00) \\
-        &= 1731.75 / 1964.00 \\
-        &= 0.882
-    \end{align*}
-
-    The PHF values for all four approaches were similarly computed and are 
-    presented in Table 
-
-    \begin{table} [h!]
-        \centering
-        \begin{tabular}{|p{2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.7cm}|p{1.2cm}|p{1.2cm}|}
-        \hline
-        \textbf{Approach}  & \textbf{9:30- 9:45} & \textbf{9:45- 10:00} & \textbf{10:00- 10:15} & \textbf{10:15- 10:30} & \textbf{Total\ (PCU/hr)} & \textbf{Peak}\ \boldmath{$V_{15}$} & \textbf{PHF} \\
-        \hline
-        Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
-        \hline
-        Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
-        \hline
-        Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
-        \hline
-        DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
-        \hline
-        \end{tabular}
-    \end{table}
-
-
-    \subsection{Step 2: Peak 15-Minute Flow Rate}
-
-    The hourly field volume V (PCU/hr) is converted to a peak 15-minute 
-    equivalent flow rate v using the PHF. This conversion accounts 
-    for the fact that traffic demand within the peak hour 
-    is not uniform, and the highest intensity period 
-    governs capacity and delay. The flow rate is given by:
-
-    \begin{equation*}
-        v = V / PHF
-    \end{equation*}
+\begin{equation*}
+    v = V / PHF
+\end{equation*}
 For the Maitighar approach:
-    \begin{align*}
-        v &= 1731.75 / 0.882\\
-         &= 1963.44 PCU/hr
-    \end{align*}
+\begin{align*}
+    v &= 1731.75 / 0.882\\
+        &= 1963.44 PCU/hr
+\end{align*}
 
-    Dividing by a PHF less than 1.0 yields a flow rate 
-    higher than the raw hourly count, representing the 
-    worst-case demand intensity that the intersection must 
-    accommodate. The flow rates, along with the corresponding 
-    signal phase and green time, for all approaches are 
-    presented in Table X+2.
+Dividing by a PHF less than 1.0 yields a flow rate 
+higher than the raw hourly count, representing the 
+worst-case demand intensity that the intersection must 
+accommodate. The flow rates, along with the corresponding 
+signal phase and green time, for all approaches are 
+presented in \cref{tab:pfr}.
 
-   \begin{table} [h!]
-        \centering
-        \begin{tabular}{|p{2cm}|p{1.6cm}|p{1.2cm}|p{1.6cm}|p{1.2cm}|p{1.3cm}|p{1.2cm}|p{1cm}|}
-        \hline
-        Approach &	V\ (PCU/hr)	& PHF &v\ (PCU/hr) &Phase & Green (s) & Cycle (s) & g/C \\
-        \hline
-        Maitighar &403.00 &386.25 &451.50 &491.00 &1731.75 &491.00 &0.882 \\
-        \hline
-        Baneshwor & 621.50 &533.75	&490.25	&538.75	&2184.25 &621.50 &0.879 \\
-        \hline
-        Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
-        \hline
-        DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
-        \hline
-        \end{tabular}
-    \end{table}
+\begin{table} [h!]
+    \centering
+    \caption{Peak Flow Rates by Approach}
+    \begin{tabular}{|p{2cm}|p{1.7cm}|p{1cm}|p{1.7cm}|p{1.1cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|}
+    \hline
+    \textbf{Approach} &	\textbf{V\ (PCU/hr)}	& \textbf{PHF} &\textbf{v\ (PCU/hr)} & \textbf{Phase} & \textbf{Green\ (s)} & \textbf{Cycle\ (s)} & \textbf{g/C} \\
+    \hline
+    Maitighar	&1731.75	&0.882	&1963.44	&B	&80	&157	&0.5096 \\
+    \hline
+    Baneshwor	&2184.25	&0.879	&2484.93	&B	&80	&157	&0.5096 \\
+    \hline
+    Art Gallery	&352.50	    &0.955	&369.11	    &C	&25	&157	&0.1592 \\
+    \hline
+    DOR	        &53.25	    &0.649	&82.05	    &D	&27	&157	&0.1720 \\
+    \hline
+    \end{tabular}
+    \label{tab:pfr}
+\end{table}
 
 
+\subsection{Step 3: Saturation Flow Rate}
 
-    \subsection{Step 3: Saturation Flow Rate}
+The saturation flow rate (s) represents the maximum 
+number of PCUs that can be discharged from an approach 
+per hour, assuming a continuous green signal. Under 
+ideal conditions, a single lane has a base saturation 
+flow rate ($s_o$) of 1900 PCU/hr/ln. This base value is 
+adjusted for prevailing field conditions using the 
+following expression:
 
-    The saturation flow rate (s) represents the maximum 
-    number of PCUs that can be discharged from an approach 
-    per hour, assuming a continuous green signal. Under 
-    ideal conditions, a single lane has a base saturation 
-    flow rate ($s_o$) of 1900 PCU/hr/ln. This base value is 
-    adjusted for prevailing field conditions using the 
-    following expression:
+\begin{equation*}
+    s = s_o \times f_w \times f_{HV} \times f_g \times f_a \times f_{LU} \times N
+\end{equation*}
 
-    \begin{equation*}
-        s = s_o \times f_w \times f_{HV} \times f_g \times f_a \times f_{LU} \times N
-    \end{equation*}
-\pagebreak
 where:
 \begin{itemize}
     \item $s_o$ = base saturation flow rate
@@ -234,31 +236,26 @@ For the Maitighar service lane, 131 out of 689 counted
 vehicles were big buses ($P_{HV}$ = 0.19), yielding a weighted 
 average $f_{HV}$ = 0.9241 across both lanes combined. The 
 adjustment factor values applied to each approach are 
-summarised in Table X+3.
+summarised in \cref{tab:sfr}.
+
+\begin{table} [h!]
+    \centering
+    \caption{Saturation Flow Rate Adjustment Factors and Results}
+.   \begin{tabular}{|p{1.9cm}|p{0.3cm}|p{1cm}|p{1cm}|p{1.3cm}|p{1cm}|p{1cm}|p{1cm}|p{1.7cm}|}
+    \hline
+    \textbf{Approach} & \textbf{N}  & \boldmath{$S_o$} & \boldmath{$f_w$}  & \boldmath{$f_{HV}$}  & \boldmath{$f_g$} & \boldmath{$f_a$}  & \boldmath{$f_{LU}$} & \textbf{s\ (PCU/hr)}\\
+    \hline
+    Maitighar	    &2	&1900	&1.00	&0.9241	&1.00	&0.90	&0.95	&3002.31 \\
+    Baneshwor	    &2	&1900	&1.00	&0.9509	&1.00	&0.90	&0.95	&3089.44 \\
+    Art Gallery	    &1	&1900	&1.00	&1.0000	&1.00	&0.90	&1.00	&1710.00 \\
+    DOR	            &1	&1900	&1.00	&1.0000	&1.00	&0.90	&1.00	&1710.00 \\
+    \hline
+    \end{tabular}
+        \label{tab:sfr}
+\end{table}
 
 
-    % \begin{table} [h!]
-        
-    %     \centering
-    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
-    %     \hline
-    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
-    %     \hline
-    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
-    %     \hline
-    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
-    %     \hline
-    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
-    %     \hline
-    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
-    %     \hline
-    %     \end{tabular}
-    % \end{table}
-
-
-
-
-    \subsection{Step 4: Capacity and Degree of Saturation}
+\subsection{Step 4: Capacity and Degree of Saturation}
 
 The effective capacity (c) of each approach lane group is 
 the product of the saturation flow rate and the green ratio 
@@ -282,78 +279,76 @@ operating within capacity. An X value exceeding 1.0
 signals oversaturation, meaning vehicles cannot all be 
 discharged within a single cycle, and residual queues 
 accumulate progressively. For the Maitighar approach:
-
 \begin{align*}
     c &= 3002.31 \times (80 / 157) \\
-      &= 1529.84 \   \text{PCU/hr}
-\end{align*}
-\begin{align*}
+      &= 1529.84 \   \text{PCU/hr} \\
     X &= 1963.44 / 1529.84 \\
       &= 1.2834
 \end{align*}
+
 The capacity and degree of saturation for all 
-approaches are presented in Table X+4.
+approaches are presented in \cref{tab:cads}.
 
+\begin{table}[h!]
+    \centering
+    \caption{Capacity and Degree of Saturation by Approach}
+    \begin{tabular}{|l|l|l|l|l|}
+    \hline
+    \textbf{Approach}	& \textbf{s\ (PCU/hr)}	&\textbf{c\ (PCU/hr)}	&\textbf{v\ (PCU/hr)}	&\textbf{v/c\ Ratio (X)} \\
+    \hline
+    Maitighar	& 3002.31	    &1529.84	&1963.44	&1.2834 \\
+    \hline
+    Baneshwor	& 3089.44	    &1574.24	&2484.93	&1.5785 \\
+    \hline
+    Art Gallery	& 1710.00	    &272.29	    &369.11	    &1.3556 \\
+    \hline
+    DOR	        & 1710.00	    &294.08	    &82.05	    &0.2790 \\
+    \hline
+    \end{tabular}
+    \label{tab:cads}
+\end{table}
 
-    % \begin{table} [h!]
-        
-    %     \centering
-    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
-    %     \hline
-    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
-    %     \hline
-    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
-    %     \hline
-    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
-    %     \hline
-    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
-    %     \hline
-    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
-    %     \hline
-    %     \end{tabular}
-    % \end{table}
+\subsection{Step 5: Control Delay}
 
-    \subsection{Step 5: Control Delay}
+Control delay per vehicle is the primary performance 
+measure for signalized intersections under the HCM 
+methodology. It comprises three components:
+\begin{equation*}
+    d = d_1 + d_2 + d_3
+\end{equation*}
 
-    Control delay per vehicle is the primary performance 
-    measure for signalized intersections under the HCM 
-    methodology. It comprises three components:
-    \begin{equation*}
-        d = d_1 + d_2 + d_3
-    \end{equation*}
+\subsection{Uniform Delay ($d_1$)}
 
-    \subsection{Uniform Delay ($d_1$)}
+Uniform delay assumes vehicles arrive at a perfectly 
+steady rate throughout the cycle. It is given by:
+\begin{equation*}
+    d_1 = [0.5 \times C \times (1 - g/C)^2]  /  [1 - \text{min}(1, X) \times (g/C)]
+\end{equation*}
 
-    Uniform delay assumes vehicles arrive at a perfectly 
-    steady rate throughout the cycle. It is given by:
-    \begin{equation*}
-        d_1 = [0.5 \times C \times (1 - g/C)^2]  /  [1 - \text{min}(1, X) \times (g/C)]
-    \end{equation*}
+The term min(1, X) prevents the denominator from 
+becoming negative or zero under oversaturated 
+conditions. For the Maitighar approach:
+\begin{align*}
+    d_1 &= [0.5 \times 157 \times (1 - 0.5096)^2] / [1 - \text{min}(1, 1.2834) \times 0.5096]\\
+            &= 18.88 / 0.4904 \\
+            &= 38.50 \   \text{sec/veh}
+\end{align*}
 
-    The term min(1, X) prevents the denominator from 
-    becoming negative or zero under oversaturated 
-    conditions. For the Maitighar approach:
-    \begin{align*}
-        d_1 &= [0.5 \times 157 \times (1 - 0.5096)^2] / [1 - \text{min}(1, 1.2834) \times 0.5096]\\
-              &= 18.88 / 0.4904 \\
-              &= 38.50 \   \text{sec/veh}
-    \end{align*}
+\subsection{Incremental Delay ($d_2$)}
 
-    \subsection{Incremental Delay ($d_2$)}
-
-    Incremental delay accounts for the additional waiting 
-    caused by random vehicle arrivals and, more critically, 
-    by residual overflow queues when demand exceeds capacity. 
-    It is expressed as:
-    \begin{equation*}
-        d_2 = 900T \times [(X - 1) + \sqrt{((X - 1)^2 + (8 \times kIX / cT))}]
-    \end{equation*}
-    where:
-    \begin{itemize}
-        \item T = analysis period duration (0.25 hr for a 15-minute period)
-        \item k = incremental delay factor (0.5 for fixed-time signals)
-        \item I = upstream filtering factor (1.0 for isolated intersections)
-    \end{itemize}
+Incremental delay accounts for the additional waiting 
+caused by random vehicle arrivals and, more critically, 
+by residual overflow queues when demand exceeds capacity. 
+It is expressed as:
+\begin{equation*}
+    d_2 = 900T \times [(X - 1) + \sqrt{((X - 1)^2 + (8 \times kIX / cT))}]
+\end{equation*}
+where:
+\begin{itemize}
+    \item T = analysis period duration (0.25 hr for a 15-minute period)
+    \item k = incremental delay factor (0.5 for fixed-time signals)
+    \item I = upstream filtering factor (1.0 for isolated intersections)
+\end{itemize}
 For the Maitighar approach:
 \begin{align*}
     d_2 &= 900 \times 0.25 \times [(1.2834 - 1) + \sqrt{((1.2834 - 1)^2 + \frac{(8 \times 0.5 \times 1.0 \times 1.2834)}{(1529.84 \times 0.25))}}]\\
@@ -364,85 +359,84 @@ For the Maitighar approach:
 \end{align*}
 
 
-    \subsection{Initial Queue Delay ($d_3$)}
+\subsection{Initial Queue Delay ($d_3$)}
 
-    The initial queue delay $d_3$ accounts for any pre-existing 
-    residual queue at the start of the analysis period. 
-    Since the analysis begins at the start of the peak hour 
-    with no assumed carry-over queue from a prior period, 
-    $d_3$= 0 for all approaches.
+The initial queue delay $d_3$ accounts for any pre-existing 
+residual queue at the start of the analysis period. 
+Since the analysis begins at the start of the peak hour 
+with no assumed carry-over queue from a prior period, 
+$d_3$= 0 for all approaches.
 
-    \subsection{Total Control Delay — Maitighar Approach}
+\subsection{Total Control Delay — Maitighar Approach}
 
-    \begin{align*}
-        d &= d_1 + d_2 + d_3 \\
-          &= 38.50 + 132.66 + 0 \\
-          &= 171.16 \ sec/veh
-    \end{align*}
+\begin{align*}
+    d &= d_1 + d_2 + d_3 \\
+        &= 38.50 + 132.66 + 0 \\
+        &= 171.16 \ sec/veh
+\end{align*}
 
-    At 171.16 sec/veh, the Maitighar approach operates at 
-    Level of Service F, indicating a breakdown condition 
-    where demand substantially exceeds the signal's serving 
-    capacity, causing progressive queue accumulation across 
-    cycles. The complete delay results for all approaches are 
-    given in Table X+5.
+At 171.16 sec/veh, the Maitighar approach operates at 
+Level of Service F, indicating a breakdown condition 
+where demand substantially exceeds the signal's serving 
+capacity, causing progressive queue accumulation across 
+cycles. The complete delay results for all approaches are 
+given in Table X+5.
 
-    \subsection{Step 6: Intersection-Wide Delay and Level of Service}
+\subsection{Step 6: Intersection-Wide Delay and Level of Service}
 
-    \subsection{Key Observations}
+\subsection{Key Observations}
 
-    \subsection{Comparison of HCM and VISSIM Results for Existing Scenario}
+\subsection{Comparison of HCM and VISSIM Results for Existing Scenario}
 
-    \subsection{Aggregation of VISSIM Movement-Level Results}
+\subsection{Aggregation of VISSIM Movement-Level Results}
 
-    PTV VISSIM reports queue delay for each individual 
-    turning movement within the intersection. To derive 
-    approach-level LOS values comparable to those from HCM, 
-    the movement delays were averaged for each approach and 
-    the resulting value was classified against HCM LOS 
-    thresholds. The procedure is illustrated using the 
-    Maitighar approach as a sample calculation.
+PTV VISSIM reports queue delay for each individual 
+turning movement within the intersection. To derive 
+approach-level LOS values comparable to those from HCM, 
+the movement delays were averaged for each approach and 
+the resulting value was classified against HCM LOS 
+thresholds. The procedure is illustrated using the 
+Maitighar approach as a sample calculation.
 
-    \begin{table}[h!]
-        \centering
-        \caption{VISSIM Movement-Level Queue Delays — Maitighar Approach (Scenario 1)}
-        \begin{tabular}{|l|l|}
-            \hline
-            Movement & Queue Delay (sec/veh)\\
-            \hline
-            Maitighar Service $\rightarrow$ Anamnagar & 28.43 \\
-            \hline
-            Maitighar Service $\rightarrow$ Babarmahal Service	& 45.05 \\
-            \hline
-            Maitighar Main $\rightarrow$ Art Gallery	& 139.64 \\
-            \hline
-            Maitighar Main $\rightarrow$ Babarmahal Main	& 51.40 \\
-            \hline
+\begin{table}[h!]
+    \centering
+    \caption{VISSIM Movement-Level Queue Delays — Maitighar Approach (Scenario 1)}
+    \begin{tabular}{|l|l|}
+        \hline
+        \textbf{Movement} & \textbf{Queue\ Delay\ (sec/veh)}\\
+        \hline
+        Maitighar Service $\rightarrow$ Anamnagar & 28.43 \\
+        \hline
+        Maitighar Service $\rightarrow$ Babarmahal Service	& 45.05 \\
+        \hline
+        Maitighar Main $\rightarrow$ Art Gallery	& 139.64 \\
+        \hline
+        Maitighar Main $\rightarrow$ Babarmahal Main	& 51.40 \\
+        \hline
+    \end{tabular}
+    \label{tab:vissimmov}
 
-            
-        \end{tabular}
-        \label{tab:vissimmov}
+\end{table}
+The approach-level average queue delay is computed as:
+\begin{align*}
+    Average Delay &= (28.43 + 45.05 + 139.64 + 51.40) / 4 \\
+    &= 264.52 / 4 \\
+    &= 66.13 \ sec/veh
+\end{align*}
 
-    \end{table}
-    The approach-level average queue delay is computed as:
-    \begin{align*}
-        Average Delay &= (28.43 + 45.05 + 139.64 + 51.40) / 4 \\
-        &= 264.52 / 4 \\
-        &= 66.13 \ sec/veh
-    \end{align*}
 Based on \cref{tab:vissimmov} HCM LOS thresholds, a delay of 66.13 sec/veh 
 falls within the range of 55–80 sec/veh, corresponding to 
 Level of Service E. The same procedure was applied to the 
 remaining three approaches. The aggregated approach-level 
-VISSIM results are presented in \cref{tab:aggvissim}
+VISSIM results are presented in \cref{tab:aggvissim}.
 
 
- \begin{table}[h!]
+\begin{table}[h!]
         \centering
         \caption{Aggregated VISSIM Approach-Level Queue Delay and LOS — Scenario 1}
-        \begin{tabular}{|l|l|p{3cm}|l|}
+        \begin{tabular}{|l|l|p{3.2cm}|l|}
             \hline
-            Approach &	Movements Averaged	& Avg.\ Queue\ Delay (sec/veh)	&LOS \\
+            \textbf{Approach} &	\textbf{Movements\ Averaged} & \textbf{Avg. Queue Delay (sec/veh)}	& \textbf{LOS} \\
             \hline
             Maitighar &	4 movements	& 66.13 &	E \\
             \hline
@@ -458,9 +452,9 @@ VISSIM results are presented in \cref{tab:aggvissim}
         \end{tabular}
         \label{tab:aggvissim}
 
-    \end{table}
+\end{table}
 
-    \subsection{HCM vs VISSIM — Comparison of Level of Service}
+\subsection{HCM vs VISSIM — Comparison of Level of Service}
 
 \cref{tab:hcmvissim} presents a side-by-side comparison of the Level of Service assigned by 
 HCM and VISSIM for each approach and the overall intersection 
@@ -472,11 +466,10 @@ it the most appropriate common metric.
 \begin{table}[h!]
     \centering
     \caption{Comparison of HCM and VISSIM Level of Service — Existing Scenario (Scenario 1)
-Approach	HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS
-}
-    \begin{tabular}{|l|l|l|l|}
+Approach HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS}
+    \begin{tabular}{|l|p{3.8cm}|l|l|}
         \hline
-        Approach &	HCM Control Delay (sec/veh)	&HCM LOS	&VISSIM LOS\\
+        \textbf{Approach} &	\textbf{HCM Control Delay (sec/veh)} & \textbf{HCM LOS} & \textbf{VISSIM LOS}\\
         \hline
         Maitighar &	171.16 & F & E \\
         \hline
@@ -494,7 +487,7 @@ Approach	HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS
 
     \subsection{Discussion}
 
-    The LOS-based comparison presented in Table X+2 reveals 
+    The LOS-based comparison presented in \cref{tab:hcmvissim} reveals 
     both areas of agreement and divergence between the HCM 
     and VISSIM methods. The following observations are drawn 
     from the comparison:
