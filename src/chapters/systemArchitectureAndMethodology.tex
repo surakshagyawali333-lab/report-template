@@ -188,22 +188,205 @@ For the Maitighar approach:
     \end{table}
 
 
+
     \subsection{Step 3: Saturation Flow Rate}
 
-    \subsection{Heavy Vehicle Factor (f\_HV)}
+    The saturation flow rate (s) represents the maximum 
+    number of PCUs that can be discharged from an approach 
+    per hour, assuming a continuous green signal. Under 
+    ideal conditions, a single lane has a base saturation 
+    flow rate ($s_o$) of 1900 PCU/hr/ln. This base value is 
+    adjusted for prevailing field conditions using the 
+    following expression:
+
+    \begin{equation*}
+        s = s_o \times f_w \times f_{HV} \times f_g \times f_a \times f_{LU} \times N
+    \end{equation*}
+\pagebreak
+where:
+\begin{itemize}
+    \item $s_o$ = base saturation flow rate
+    \item $f_w$ = lane width adjustment factor
+    \item $f_{HV}$ = heavy vehicle adjustment factor
+    \item $f_g$ = grade adjustment factor
+    \item $f_a$ = area type adjustment factor 
+    \item $f_{LU}$ = lane utilisation factor
+    \item  N = number of lanes
+\end{itemize}
+
+    \subsection{Heavy Vehicle Factor ($f_{HV}$)}
+
+    Among the adjustment factors, the heavy vehicle factor 
+    is the most significant for the Maitighar and Baneshwor 
+    approaches due to the considerable number of large buses 
+    observed, particularly in the service lanes. The factor 
+    is computed as:
+
+    \begin{equation*}
+        f_{HV} = 1 / [1 + P_{HV} \times (E_T - 1)]
+    \end{equation*}
+    where:
+\begin{itemize}
+    \item $P_{HV}$ = is the proportion of heavy vehicles in the traffic stream 
+    \item $E_T$ = passenger car equivalent for heavy vehicles, taken as 2.0
+\end{itemize}
+For the Maitighar service lane, 131 out of 689 counted 
+vehicles were big buses ($P_{HV}$ = 0.19), yielding a weighted 
+average $f_{HV}$ = 0.9241 across both lanes combined. The 
+adjustment factor values applied to each approach are 
+summarised in Table X+3.
+
+
+    % \begin{table} [h!]
+        
+    %     \centering
+    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    %     \hline
+    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
+    %     \hline
+    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
+    %     \hline
+    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
+    %     \hline
+    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
+    %     \hline
+    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
+    %     \hline
+    %     \end{tabular}
+    % \end{table}
+
+
+
 
     \subsection{Step 4: Capacity and Degree of Saturation}
 
+The effective capacity (c) of each approach lane group is 
+the product of the saturation flow rate and the green ratio 
+(g/C), representing the number of PCUs that can be served 
+per hour given the available green time:
+
+\begin{equation*}
+    c = s \times (g / C)
+\end{equation*}
+
+The degree of saturation, or volume-to-capacity ratio (X), 
+is then computed as the ratio of the peak flow rate to the 
+capacity:
+
+\begin{equation*}
+    X = v / c
+\end{equation*}
+
+An X value below 1.0 indicates that the approach is 
+operating within capacity. An X value exceeding 1.0 
+signals oversaturation, meaning vehicles cannot all be 
+discharged within a single cycle, and residual queues 
+accumulate progressively. For the Maitighar approach:
+
+\begin{align*}
+    c &= 3002.31 \times (80 / 157) \\
+      &= 1529.84 \   \text{PCU/hr}
+\end{align*}
+\begin{align*}
+    X &= 1963.44 / 1529.84 \\
+      &= 1.2834
+\end{align*}
+The capacity and degree of saturation for all 
+approaches are presented in Table X+4.
+
+
+    % \begin{table} [h!]
+        
+    %     \centering
+    %     \begin{tabular}{|l|l|l|l|l|l|l|l|}
+    %     \hline
+    %     Approach & 9:30 - \\ & 9:45 & 9:45– \\ & 10:00 &	10:00– \\ & 10:15	& 10:15– \\ & 10:30 &	Total \\ & (PCU/hr)	& Peak $V_{15}$ & PHF \\
+    %     \hline
+    %     Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
+    %     \hline
+    %     Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
+    %     \hline
+    %     Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
+    %     \hline
+    %     DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
+    %     \hline
+    %     \end{tabular}
+    % \end{table}
+
     \subsection{Step 5: Control Delay}
+
+    Control delay per vehicle is the primary performance 
+    measure for signalized intersections under the HCM 
+    methodology. It comprises three components:
+    \begin{equation*}
+        d = d_1 + d_2 + d_3
+    \end{equation*}
 
     \subsection{Uniform Delay ($d_1$)}
 
+    Uniform delay assumes vehicles arrive at a perfectly 
+    steady rate throughout the cycle. It is given by:
+    \begin{equation*}
+        d_1 = [0.5 \times C \times (1 - g/C)^2]  /  [1 - \text{min}(1, X) \times (g/C)]
+    \end{equation*}
+
+    The term min(1, X) prevents the denominator from 
+    becoming negative or zero under oversaturated 
+    conditions. For the Maitighar approach:
+    \begin{align*}
+        d_1 &= [0.5 \times 157 \times (1 - 0.5096)^2] / [1 - \text{min}(1, 1.2834) \times 0.5096]\\
+              &= 18.88 / 0.4904 \\
+              &= 38.50 \   \text{sec/veh}
+    \end{align*}
+
     \subsection{Incremental Delay ($d_2$)}
-    
+
+    Incremental delay accounts for the additional waiting 
+    caused by random vehicle arrivals and, more critically, 
+    by residual overflow queues when demand exceeds capacity. 
+    It is expressed as:
+    \begin{equation*}
+        d_2 = 900T \times [(X - 1) + \sqrt{((X - 1)^2 + (8 \times kIX / cT))}]
+    \end{equation*}
+    where:
+    \begin{itemize}
+        \item T = analysis period duration (0.25 hr for a 15-minute period)
+        \item k = incremental delay factor (0.5 for fixed-time signals)
+        \item I = upstream filtering factor (1.0 for isolated intersections)
+    \end{itemize}
+For the Maitighar approach:
+\begin{align*}
+    d_2 &= 900 \times 0.25 \times [(1.2834 - 1) + \sqrt{((1.2834 - 1)^2 + \frac{(8 \times 0.5 \times 1.0 \times 1.2834)}{(1529.84 \times 0.25))}}]\\
+        &= 225 \times [0.2834 + \sqrt{(0.0803 + 0.01342)]}\\
+        &=225 \times [0.2834 + 0.3062] \\
+        &= 225 \times 0.5896 \\
+        &= 132.66 \ sec/veh
+\end{align*}
+
+
     \subsection{Initial Queue Delay ($d_3$)}
+
+    The initial queue delay $d_3$ accounts for any pre-existing 
+    residual queue at the start of the analysis period. 
+    Since the analysis begins at the start of the peak hour 
+    with no assumed carry-over queue from a prior period, 
+    $d_3$= 0 for all approaches.
 
     \subsection{Total Control Delay — Maitighar Approach}
 
+    \begin{align*}
+        d &= d_1 + d_2 + d_3 \\
+          &= 38.50 + 132.66 + 0 \\
+          &= 171.16 \ sec/veh
+    \end{align*}
+
+    At 171.16 sec/veh, the Maitighar approach operates at 
+    Level of Service F, indicating a breakdown condition 
+    where demand substantially exceeds the signal's serving 
+    capacity, causing progressive queue accumulation across 
+    cycles. The complete delay results for all approaches are 
+    given in Table X+5.
+    
 
 \section{Network Coding}
 Here we draw links, connectors and intersection geometry based on field data.  
