@@ -382,11 +382,125 @@ capacity, causing progressive queue accumulation across
 cycles. The complete delay results for all approaches are 
 given in Table X+5.
 
+\begin{table} [h!]
+    \centering
+    \caption{Control Delay and Level of Service by Approach}
+    \begin{tabular}{|l|p{2cm}|p{1.5cm}|p{1.5cm}|p{3cm}|l|}
+        \hline
+        Approach & $d_1$ sec/veh & $d_2$ sec/veh & $d_3$ sec/veh & Total Delay (sec/veh) & LOS \\
+        \hline
+        Maitighar	&38.50	& 132.66	& 0	& 171.16 & F \\
+        \hline
+        Baneshwor	& 38.50 &	263.41	& 0	& 301.91 & F \\
+        \hline
+        Art Gallery	& 66.00	& 182.14	& 0	& 248.14 & F \\
+        \hline
+        DOR	& 56.53	& 2.35	& 0	& 58.89	& E \\
+        \hline
+        Intersection Overall & (weighted average) & & & 241.39 & F \\
+        \hline
+    \end{tabular}
+    \label{tab:4.6}
+
+\end{table}
+
 \subsection{Step 6: Intersection-Wide Delay and Level of Service}
+The overall intersection delay is computed as the 
+flow-weighted average of all approach delays, giving 
+proportionally greater weight to approaches carrying higher 
+traffic volumes:
+
+\begin{equation*}
+    d_{intersection} = \frac{\sum(v_i\times d_i) }{\sum v_i}
+\end{equation*}
+Substituting the values from \cref{tab:4.6}
+\begin{equation*}
+    d_{intersection} =\frac{1963.44 \times 171.16+2484.93 \times 301.91+369.11 \times 248.14+82.05 \times 58.89}{[1963.44 + 2484.93 + 369.11 + 82.05]}
+\end{equation*}
+
+\begin{align*}
+    d_{intersection} &= \frac{335,876 + 750,218 + 91,606 + 4,832} {4,899.53 }\\
+    &= 1,182,532 / 4,899.53 \\
+    &= 241.39 \ sec/veh 
+\end{align*}
+
+
 
 \subsection{Key Observations}
 
+The HCM analysis of the existing fixed-time signal control 
+at Babarmahal Intersection reveals a severely deficient 
+operating condition during the morning peak hour. Three 
+out of four approaches — Maitighar (X = 1.2834), Baneshwor 
+(X = 1.5785), and Art Gallery (X = 1.3556) — operate at 
+degrees of saturation well above 1.0, confirming heavily 
+oversaturated conditions where vehicular demand cannot be 
+cleared within a single signal cycle. This results in 
+progressive queue accumulation and excessively high 
+incremental delays, particularly at the Baneshwor approach 
+($d_2$ = 263.41 sec/veh) which carries the highest traffic 
+demand.
+
+The Art Gallery approach, despite carrying a relatively 
+modest volume, records a disproportionately high delay of 
+248.14 sec/veh primarily due to its short allocated green 
+time of 25 seconds — corresponding to a green ratio of only 
+0.1592. This highlights a significant mismatch between the 
+existing green time distribution and the actual traffic 
+demand across phases.
+
+The DOR approach is the only one operating below capacity 
+(X = 0.279), reflecting its comparatively low traffic 
+demand. Its delay of 58.89 sec/veh at LOS E is attributable 
+primarily to the long red time it experiences within the 
+157-second cycle rather than to demand-induced overflow.
+
+The intersection-wide control delay of 241.39 sec/veh at 
+LOS F represents a critical breakdown condition, providing 
+a strong quantitative justification for the signal timing 
+optimisation explored in Scenarios 2 and 3 of this study. 
+These HCM-derived values serve as the analytical baseline 
+against which the VISSIM simulation outputs for Scenario 1 
+are validated.
+
+
 \subsection{Comparison of HCM and VISSIM Results for Existing Scenario}
+
+The performance of Babarmahal Intersection under the existing 
+fixed-time signal control (Scenario 1) was evaluated using 
+two independent methods: the Highway Capacity Manual (HCM) 
+analytical procedure and PTV VISSIM microsimulation. While 
+both methods assessed the same intersection under identical 
+traffic demand and signal timing conditions, they differ 
+fundamentally in their underlying approach — HCM employs 
+deterministic analytical formulas, whereas VISSIM models 
+individual vehicle behaviour stochastically through 
+microsimulation.
+
+It is also important to note that the two methods report 
+delay using different parameters. HCM reports control delay, 
+which is an analytically computed measure encompassing all 
+signal-induced delay components, including deceleration, 
+stopped time, acceleration, and overflow delay. VISSIM 
+reports queue delay extracted from node results, which 
+captures queuing-related delay from simulated vehicle 
+trajectories. Although both measures serve as indicators 
+of signal performance and are conceptually related, they 
+are not strictly equivalent parameters and therefore cannot 
+be directly compared numerically. Accordingly, this 
+comparison is limited to the Level of Service (LOS) grades 
+derived from each method, as both HCM and VISSIM assign LOS 
+based on the same HCM delay thresholds, making LOS the most 
+appropriate basis for cross-method comparison.
+
+It is further noted that VISSIM reports performance at the 
+individual turning movement level, whereas HCM yields results 
+at the approach level. To facilitate comparison, the 
+movement-level VISSIM delay values were aggregated by 
+approach through a simple arithmetic average to derive an 
+approach-level LOS, as described below.
+
+
 
 \subsection{Aggregation of VISSIM Movement-Level Results}
 
@@ -484,7 +598,7 @@ Approach HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS}
     \end{tabular}
     \label{tab:hcmvissim}
 \end{table}
-
+\pagebreak
     \subsection{Discussion}
 
     The LOS-based comparison presented in \cref{tab:hcmvissim} reveals 
@@ -539,11 +653,19 @@ Approach HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS}
   that corroborates the qualitative finding of poor 
   intersection performance under the existing signal control.
 
-\section{Network Coding}
+
+\section{Model Development using VISSIM}
+
+\subsection{Network Coding}
+
 Here we draw links, connectors and intersection geometry based on field data.  
 Link represents a single or multiple road ways and connectors are used for joining the two links. 
 
-%insert figure here
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/vissimfig.png}
+    \caption{Study Area in VISSIM}
+\end{figure}
 
 \subsection{Vehicle Input and Composition}
 
@@ -552,33 +674,78 @@ By taking speed data of various classes of vehicles, we have done the speed dist
 The speed data was extracted from the CCTV footage by dividing the certain distance with time required for that vehicle class to travel that distance.
  Multiple observations were made and the manual speed data was taken and compared with the one taken from CCTV footage. 
 
-Firstly, traffic volume count was entered for various approaches. 
-It was further divided into 4-time intervals with 15 minutes intervals each, 
-but while entering in VISSIM we multiply it by 4 since it asks us for Number of vehicles per hour and not per time interval.  
+\textbf{Firstly}, traffic volume count was entered for various approaches. 
+It was further divided into \textbf{4-time} intervals with \textbf{15 minutes intervals }each, 
+but while entering in VISSIM we multiply it by 4 since it asks us for \textbf{Number of vehicles per hour and not per time interval.}  
 
-%insert figure here
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/vehicleinput.png}
+    \caption{Vehicle Inputs/Vehicle volume by time interval}
+\end{figure}
 
 2D/3D models of various vehicle classes was taken from Sketch-UP and entered into the VISSIM with standard dimensions of the
 vehicle as Nepal Road Standard(2070).
 
-%insert figure here
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/2d3d.png}
+    \caption{2D/3D Model Distributions/Elements}
+\end{figure}
 
-Then we perform the vehicle composition where we divide the traffic input into different vehicle classes.
+Then we perform the vehicle composition, where we divide the traffic input into different vehicle classes.
 
 $$
 Vehicle\ Composition (Bike) = \frac{Traffic\ count\ of\ Bike}{Total\ traffic\ count} (\text{for specific purpose})
 $$
+Similarly, the vehicle composition was done for each vehicle present in that approach.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/vcrf.png}
+    \caption{Vehicle Composition/ Relative Flow}
+\end{figure}
 
 \subsection{Routing Decisions (Turning Movements)}
 For each vehicle classes it was defined the proportion of vehicles turning left, going through, and turning right at each 
 leg from Static Vehicle Routing Decision/ Static Vehicle Routes. 
 %insert figure
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/svrd.png}
+    \caption{Static Vehicles Routing Decisions/ Static vehicles Routes}
+\end{figure}
 
 \subsection{Driving Behavior Parameters }
-Setting Wiedemann car-following model parameters and lane change behavior suited to mixed traffic conditions. 
 
+Setting Wiedemann car-following model parameters and lane change 
+behavior suited to mixed traffic conditions. 
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{src/images/figures/db1.png}
+        \caption{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{src/images/figures/db2.png}
+        \caption{}
+    \end{subfigure}
+    \caption{Driving Behavior}
+
+\end{figure}
+
+\pagebreak
 \subsection{Signal Controller Setup}
+
 Defining fixed-time signal phases, cycle length, green/amber/red times, and phase sequences.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/vissig.png}
+    \caption{Vissig - Signal Controller 5 }
+\end{figure}
 
 \subsection{Conflict Areas and Priority Rules}
  Defining vehicle interaction zones within the intersection. The conflict areas were modelled using passive priority 
@@ -586,22 +753,62 @@ Defining fixed-time signal phases, cycle length, green/amber/red times, and phas
  intersection operates under signal control, explicit priority assignment was not needed. The setting of passive 
  conflict zones allowed smoother vehicle interactions and improved simulation stability that closely resembled the 
  real driver behavior in congested urban intersections.
+ \begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/conflict.png}
+    \caption{Conflict Area}
+\end{figure}
 
 \subsection{Pedestrian Input}
 Adding pedestrian crossings and volume if considered in the study.
 
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/pedinput.png}
+    \caption{Pedestrian Inputs}
+\end{figure}
 
 
 \section{Calibration and Validation}
 The developed VISSIM model was calibrated and validated using the traffic data extracted from the CCTV footage 
 obtained from the District Police Office, Bhadrakali. For the purpose of calibration, traffic volume data collected 
-during two consecutive days (July 20th and July 21st) were utilized. The model parameters, including Wiedemann 
+during \textbf{two consecutive days (July 20th and July 21st)} were utilized. The model parameters, including Wiedemann 
 car-following model coefficients and desired speed distributions, were iteratively adjusted until the simulated traffic 
 volumes and queue lengths sufficiently replicated the observed field conditions. 
 
-The calibrated model was subsequently validated using the traffic data from the third day (July 22nd), which was kept 
+The calibrated model was subsequently validated using the traffic data from the \textbf{third day (July 22nd)}, which was kept 
 independent of the calibration process to ensure an unbiased assessment of model performance.  
 
+
+\begin{table}[h!]
+    \centering
+    \caption{Table 3 Calibrated}
+\begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{S.N} & \textbf{Parameters} & \textbf{Calibrated Values} \\
+    \hline
+    1 &	Look ahead distance-min &	35 m \\
+    \hline
+    2 &	Look-back distance-min	& 5.0 m \\
+    \hline
+    3 &	Average standstill distance	& 0.3 m \\
+    \hline
+    4 &	Additive part of safety distance	& 0.19 \\
+    \hline
+    5 &	Multiplicative part of safety distance	& 0.70 \\
+    \hline
+    6 &	Min. headway (front/rear)	& 0.50 m \\
+    \hline
+    7 &	General Behavior	& Free lane selection \\
+    \hline
+    8 &	Desired Position at Free Flow &	Any \\
+    \hline
+
+    
+\end{tabular}
+\end{table}
+
+\pagebreak
 Calculation of GEH value:
 The GEH statistic is calculated using the formula:
 
@@ -622,9 +829,142 @@ Acceptance Criteria:
     \item $GEH$ > 10.0 → Poor fit  (recalibrate)
 \end{itemize}
     
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/peakday2.png}
+    \caption{Calculation of GEH values for different vehicle classes}
+\end{figure}
+
+\textbf{REGRESSION ANALYSIS:}
+R-squared value after calibration was found to be 0.953183, which indicated that 95.31% of the variance of the field data is explained by the variance of the VISSIM output. 
+The regression equation for this calibration:
+
+Expected Traffic Volume(VISSIM)= 0.95383* Actual VISSIM Volume
+
+The obtained expected traffic volume was then compared with the traffic volume obtained after a simulation was performed on VISSIM.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/actual1.png}
+    \caption{Actual VISSIM Volume Line Fit Plot}
+\end{figure}
+
+The value of $R^2$ being close to 1 indicates that 2 days data validates the 3rd-day data. Hence, the calibration and validation were successfully performed.
+
+\section{Performance Comparison and Scenario Development.}
+
+This section presents a comparative evaluation of the three fixed-time signal control scenarios developed and simulated in PTV VISSIM for the Babarmahal Intersection. The three scenarios are:
+\begin{itemize}
+    \item Scenario 1 — Existing Fixed-Time Signal Control (baseline)
+    \item Scenario 2 — VISSIM Built-in Optimized Fixed-Time Control
+    \item Scenario 3 — Manually Optimized Fixed-Time Control
+\end{itemize}
+
+Performance is evaluated across four measures: queue delay 
+(sec/veh), Level of Service (LOS), queue length (m), and 
+vehicle travel time (sec). All results were extracted from 
+VISSIM node evaluation outputs following a simulation 
+duration of 3600 seconds.
+
+Since VISSIM reports results at the individual turning movement 
+level, movement-level values were aggregated by approach 
+through a simple arithmetic average to enable consistent 
+approach-level comparison across all scenarios. The signal 
+timing parameters applied in each scenario are summarised 
+in Table X. Of the three scenarios, Scenario 3 — Manually 
+Optimized Fixed-Time Control — required the most involved 
+development process. Using the VISSIM built-in optimized 
+timing of Scenario 2 (A = 48 s, B = 51 s, C = 51 s, D = 7 s) 
+as the starting reference, green time was iteratively 
+adjusted in increments of 2 to 5 seconds by redistributing 
+time from over-served phases to under-served ones while 
+keeping the total cycle length constant. After each adjustment, 
+the simulation was re-run, and the resulting queue delay, 
+queue length, and vehicle travel time were evaluated to 
+determine whether the change yielded an improvement. This 
+hit-and-trial process was repeated across multiple 
+iterations until no further reduction in overall 
+intersection queue delay could be achieved without 
+worsening another approach, arriving at the final timing 
+plan of A = 28 s, B = 62 s, C = 33 s, and D = 10 s on a 
+133-second cycle.
 
 
+\subsection{Queue Delay}
 
+\subsection{ Level of Service (LOS)}
+
+\subsection{ Queue Length}
+
+\subsection{Vehicle Travel Time}
+
+\subsection{Overall Performance Summary}
+
+\section{Comparison and Recommendations.}
+
+\subsection{Consolidated Performance Comparison}
+
+\subsection{Comparison}
+
+Across all four performance measures at the overall intersection 
+level, Scenario 3 consistently records the best values — 
+the lowest queue delay (43.73 sec/veh), the highest LOS 
+grade (D), the shortest queue length (24.95 m), and the 
+lowest vehicle travel time (65.10 sec). Scenarios 1 and 2 
+both operate at LOS E overall, with Scenario 2 performing 
+worse than the existing Scenario 1 in terms of queue delay 
+and queue length despite incorporating automated signal 
+optimization. This outcome underscores that the VISSIM built-in 
+optimization, while useful as a reference, does not 
+inherently guarantee an improvement over existing conditions 
+when applied to the complex mixed-traffic environment of the 
+Babarmahal Intersection.
+
+The only notable exception across all approach-level results is the 
+Art Gallery approach, where Scenario 3 records a higher 
+queue length and travel time compared to Scenarios 1 and 2. 
+This is a deliberate trade-off resulting from the real location of 
+green time towards the higher-demand Maitighar and Babarmahal 
+approaches in the manual optimization, and does not diminish 
+the overall superiority of Scenario 3 at the intersection 
+level.
+
+
+\subsection{Recommendations}
+
+Based on the comparative analysis, the following recommendations are made for signal timing at the Babarmahal Intersection:
+\begin{enumerate}
+    \item \textbf{Adoption of Manually Optimized Fixed-Time Signal Timing (Scenario 3):} Scenario 3 is recommended as the 
+    most effective fixed-time signal timing strategy for the 
+    Babarmahal Intersection during peak hours. With a phase 
+    plan of A = 28 s, B = 62 s, C = 33 s, and D = 10 s on a 
+    133-second cycle, it achieves the best overall 
+    intersection performance across all four evaluation 
+    parameters and represents a practical, implementable 
+    improvement over the existing signal plan.
+    \item \textbf{Caution Against Direct Adoption of Automated Optimization Outputs:} 
+    Scenario 2 demonstrates that the outputs of automated 
+    signal optimization tools should not be adopted directly 
+    without engineering review. In this case, the VISSIM 
+    built-in optimization produced a timing plan that 
+    increased overall queue delay and queue length relative 
+    to the existing condition. The manual optimization in 
+    Scenario 3, which used Scenario 2 as a starting 
+    reference and refined it through iterative adjustment, 
+    yielded substantially better results. It is therefore 
+    recommended that automated optimization outputs always 
+    be treated as a reference rather than a final solution.
+    \item \textbf{Further Investigation Using Semi-Actuated Control:}
+    While Scenario 3 offers a meaningful improvement over 
+    existing fixed-time control, fixed-time signal plans are 
+    inherently limited in their ability to respond to 
+    real-time fluctuations in traffic demand. The application 
+    of the VISVAP-programmed semi-actuated signal control, 
+    which is evaluated separately for off-peak conditions in 
+    this study, warrants further investigation as a strategy 
+    for improving intersection performance across varying 
+    demand periods.
+\end{enumerate}
 
 
 
