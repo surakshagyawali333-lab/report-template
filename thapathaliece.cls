@@ -103,7 +103,7 @@
 \RequirePackage{rotating}       % For rotating tables, figures
 \RequirePackage{lipsum}         % Dummy text generation
 \RequirePackage{csvsimple}
-\RequirePackage{datetime2}      % For date management
+\RequirePackage[en-US]{datetime2}   % For date management
 \RequirePackage{textcase}       % For managing text-cases
 \RequirePackage{multicol}       % For multi-column use
 
