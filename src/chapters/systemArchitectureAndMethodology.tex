@@ -1,6 +1,5 @@
 \chapter{METHODOLOGY}
 
-\section{Study Area and Description.}
 
 \section{Primary data collection. }
 The data used in this study were obtained from the District 
@@ -809,6 +808,7 @@ independent of the calibration process to ensure an unbiased assessment of model
 \end{table}
 
 \pagebreak
+\subsection{Volume}
 Calculation of GEH value:
 The GEH statistic is calculated using the formula:
 
@@ -971,16 +971,16 @@ Acceptance Criteria:
 
 
 \textbf{REGRESSION ANALYSIS:}
-R-squared value after calibration was found to be 0.953183, which indicated that 95.31% of the variance of the field data is explained by the variance of the VISSIM output. 
+R-squared value after calibration was found to be 0.954902, which indicated that 95.49\% of the variance of the field data is explained by the variance of the VISSIM output. 
 The regression equation for this calibration:
 
-Expected Traffic Volume(VISSIM)= 0.95383* Actual VISSIM Volume
+Expected Traffic Volume(VISSIM)= 0.954902* Actual VISSIM Volume
 
 The obtained expected traffic volume was then compared with the traffic volume obtained after a simulation was performed on VISSIM.
 
 \begin{figure}[ht]
     \centering
-    \includegraphics[width=\textwidth]{src/images/figures/actual1.png}
+    \includegraphics[width=\textwidth]{src/images/figures/Pictureactual.png}
     \caption{Actual VISSIM Volume Line Fit Plot}
 \end{figure}
 
@@ -1142,6 +1142,85 @@ S.N. & Movement (From to To) & Heavy Truck & Mini Truck & Bus & Micro-Bus & Car 
 \end{landscape}
 
 
+\textbf{REGRESSION ANALYSIS:}
+R-squared value after calibration was found to be 0.953183, which indicated that 95.31\% of the variance of the field data is explained by the variance of the VISSIM output. 
+The regression equation for this calibration:
+
+Expected Traffic Volume(VISSIM)= 0.95383* Actual VISSIM Volume
+
+The obtained expected traffic volume was then compared with the traffic volume obtained after a simulation was performed on VISSIM.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/Pictureactual2.png}
+    \caption{Actual VISSIM Volume Line Fit Plot}
+\end{figure}
+
+The value of $R^2$ being close to 1 indicates that 2 days data validates the 3rd-day data. Hence, the calibration and validation were successfully performed.
+
+
+
+\subsection{Queue Length}
+
+Queue length validation was performed by comparing the 
+simulated queue lengths extracted from the calibrated VISSIM 
+model against the observed queue lengths measured from the 
+field. Observed queue lengths were obtained by manually 
+tracking the maximum queue formed on each approach during 
+successive signal cycles throughout the peak hour period of 
+9:30 AM to 10:30 AM. The corresponding simulated queue 
+lengths were extracted from the VISSIM queue counter 
+evaluation outputs placed on each approach link. The 
+percentage difference between the observed and simulated 
+values was computed for each approach, and the model was 
+considered validated where the difference remained within 
+the acceptable threshold of $plusminus$20\%, consistent with 
+standard microsimulation practice. The results confirmed 
+that the calibrated model adequately reproduced field queue 
+conditions, establishing its suitability for scenario-based 
+analysis.
+
+
+\textbf{Peak Hour}
+
+\begin{table}[h!]
+\centering
+\caption{Peak Hour}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+\textbf{Link} & \textbf{Queue Observed (m)} & \textbf{Queue From VISSIM (m)} & \textbf{Error (\%)} \\
+\hline
+Art Gallery to Intersection & 32 & 38.42 & 20.0625 \\ \hline
+Babarmahal Service to Intersection & 23 & 19.88 & -13.56522 \\ \hline
+Anamnagar to Intersection & 4.5 & 5.4 & 20 \\ \hline
+Maitighar Service to Intersection & 22 & 18.74 & -14.81818 \\ \hline
+Maitighar Main to Intersection & 25 & 27.19 & 8.76 \\ \hline
+Babarmahal Main to Anamnagar & 186 & 155.46 & -16.41935 \\ \hline
+Babarmahal Main to Maitighar Main & 38 & 42.28 & 11.263158 \\ \hline
+\hline
+\end{tabular}
+\end{table}
+
+\textbf{Off Peak Hour}
+
+\begin{table}[h!]
+\centering
+\caption{Off-Peak Hour}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+\textbf{Link} & \textbf{Queue Observed (m)} & \textbf{Queue From VISSIM (m)} & \textbf{Error (\%)} \\
+\hline
+Art Gallery to Intersection & 43 & 52.82 & 22.8372093 \\ \hline
+Babarmahal Service to Intersection & 16.8 & 19.56 & 16.42857143 \\ \hline
+Anamnagar to Intersection & 5 & 4.44 & -11.2 \\ \hline
+Maitighar Service to Intersection & 14.8 & 17.11 & 15.60810811 \\ \hline
+Maitighar Main to Intersection & 25 & 24.66 & -1.36 \\ \hline
+Babarmahal Main to Anamnagar & 25 & 24.66 & -1.36 \\ \hline
+Babarmahal Main to Maitighar Main & 3 & 3.63 & 21 \\ \hline
+\hline
+\end{tabular}
+\end{table}
+
 \section{Performance Comparison and Scenario Development.}
 
 This section presents a comparative evaluation of the three fixed-time signal control scenarios developed and simulated in PTV VISSIM for the Babarmahal Intersection. The three scenarios are:
@@ -1182,12 +1261,150 @@ plan of A = 28 s, B = 62 s, C = 33 s, and D = 10 s on a
 
 
 \subsection{Queue Delay}
+Queue delay represents the average additional time a vehicle 
+spends waiting due to signal control, including deceleration, 
+stopped time, and acceleration phases. Table X+1 presents 
+the approach-level average queue delay for all three 
+scenarios.
+
+%table
+\begin{table}[h!]
+\centering
+\caption{Approach-Level Average Queue Delay by Scenario (sec/veh)}
+\begin{tabular}{|l|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
+\hline
+\textbf{Approach} & \textbf{Scenario 1 (sec/veh)} & \textbf{Scenario 2 (sec/veh)} & \textbf{Scenario 3 (sec/veh)} \\
+\hline
+Art Gallery & 45.71 & 50.82 & 54.28 \\
+Maitighar & 66.13 & 65.86 & 47.71 \\
+Anamnagar & 57.93 & 58.59 & 46.11 \\
+Babarmahal & 66.28 & 73.28 & 46.00 \\
+\hline
+\textbf{Overall Intersection} & \textbf{59.60} & \textbf{64.16} & \textbf{43.73} \\
+\hline
+\end{tabular}
+\end{table}
+
+The results indicate that Scenario 3 yields the lowest 
+queue delay across all approaches and at the overall 
+intersection level, with an intersection-wide average of 
+43.73 sec/veh compared to 59.60 sec/veh for Scenario 1 and 
+64.16 sec/veh for Scenario 2. Notably, Scenario 2 (VISSIM 
+built-in optimized) produces a higher overall delay than the 
+existing Scenario 1, suggesting that the automated 
+optimization may have redistributed green time in a manner 
+that benefits certain movements at the expense of others. 
+Scenario 3, through manual refinement of the VISSIM-optimized 
+timing, achieves a more balanced distribution of green time, 
+resulting in reduced delays across all four approaches.
+
 
 \subsection{ Level of Service (LOS)}
 
+Level of Service (LOS) is a qualitative measure of 
+intersection performance derived from queue delay values 
+using HCM thresholds. Table X+2 presents the approach-level 
+LOS for all three scenarios based on the aggregated queue 
+delay values.
+
+%table
+\begin{table}[h!]
+\centering
+\caption{Approach-Level Level of Service by Scenario}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Approach} & \textbf{Scenario 1 LOS} & \textbf{Scenario 2 LOS} & \textbf{Scenario 3 LOS} \\
+\hline
+Art Gallery & D & D & D \\
+Maitighar & E & E & D \\
+Anamnagar & E & E & D \\
+Babarmahal & E & E & D \\
+\hline
+\textbf{Overall Intersection} & \textbf{E} & \textbf{E} & \textbf{D} \\
+\hline
+\end{tabular}
+\end{table}
+
+Scenario 3 records the shortest queue lengths at the 
+Maitighar (20.08 m), Anamnagar (5.15 m), and Babarmahal 
+(34.36 m) approaches, as well as the lowest overall average 
+queue length of 24.95 m. This represents a reduction of 
+approximately 28\% compared to Scenario 1 (34.87 m) and 35\% 
+compared to Scenario 2 (38.38 m) at the intersection level. 
+The exception is the Art Gallery approach, where Scenario 3 
+records a marginally higher queue length (26.24 m) compared 
+to Scenario 1 (20.63 m), which may be attributed to the 
+slightly increased green time allocated to competing phases 
+under the manual optimization. Scenario 2 consistently 
+produces longer queues than Scenario 1 across three out of 
+four approaches, further reinforcing that the VISSIM 
+built-in optimization does not yield an overall improvement 
+over existing conditions for this intersection.
+
+
+
 \subsection{ Queue Length}
 
+Queue length reflects the spatial extent of vehicle queuing 
+at each approach during the simulation period. Average queue 
+lengths by approach for all three scenarios are presented in \cref{tab:queuelength}
+
+\begin{table}[h!]
+\centering
+\caption{Approach-Level Average Queue Length by Scenario (m)}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Approach} & \textbf{Scenario 1 (m)} & \textbf{Scenario 2 (m)} & \textbf{Scenario 3 (m)} \\
+\hline
+Art Gallery & 20.63 & 23.56 & 26.24 \\
+Maitighar & 29.42 & 29.71 & 20.08 \\
+Anamnagar & 7.22 & 7.50 & 5.15 \\
+Babarmahal & 52.47 & 59.39 & 34.36 \\
+\hline
+\textbf{Overall Intersection} & \textbf{34.87} & \textbf{38.38} & \textbf{24.95} \\
+\hline
+\end{tabular}
+\label{tab:queuelength}
+\end{table}
+
 \subsection{Vehicle Travel Time}
+Vehicle travel time represents the average time taken by 
+vehicles to traverse the intersection from entry to exit, 
+encompassing both waiting time and travel through the 
+signal-controlled area. Approach-level average travel times 
+are presented in Table X+4.
+
+\begin{table}[h!]
+\centering
+\caption{Approach-Level Average Vehicle Travel Time by Scenario (sec)}
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Approach} & \textbf{Scenario 1 (sec)} & \textbf{Scenario 2 (sec)} & \textbf{Scenario 3 (sec)} \\
+\hline
+Art Gallery & 58.89 & 44.23 & 66.86 \\
+Maitighar & 85.05 & 83.24 & 66.72 \\
+Anamnagar & 77.33 & 70.19 & 67.92 \\
+Babarmahal & 73.47 & 81.23 & 59.26 \\
+\hline
+\textbf{Overall Intersection} & \textbf{72.15} & \textbf{67.56} & \textbf{65.10} \\
+\hline
+\end{tabular}
+\end{table}
+
+Scenario 3 achieves the lowest overall intersection travel 
+time of 65.10 seconds, compared to 72.15 seconds for Scenario 
+1 and 67.56 seconds for Scenario 2. At the approach level, 
+Scenario 3 records the shortest travel times for the 
+Maitighar (66.72 sec), Anamnagar (67.92 sec), and Babarmahal 
+(59.26 sec) approaches. The Art Gallery approach is an 
+exception, where Scenario 2 yields the lowest travel time 
+(44.23 sec) and Scenario 3 the highest (66.86 sec). This is 
+consistent with the queue length observation for Art 
+Gallery, suggesting that the manual optimization reallocated 
+green time away from this approach in favour of the 
+higher-volume Maitighar and Babarmahal approaches, 
+resulting in a trade-off at Art Gallery.
+
 
 \subsection{Overall Performance Summary}
 Table X+5 presents a consolidated summary of all four performance 
