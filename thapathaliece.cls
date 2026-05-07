@@ -413,5 +413,4 @@
     \ifx\cSubmittedVI\@empty\else, \cSubmittedVI\fi%
 }
 
-
 \endinput

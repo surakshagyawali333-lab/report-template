@@ -1,4 +1,4 @@
-\chapter{Introduction}
+\chapter{INTODUCTION}
 
 \section{Background}
 
@@ -49,7 +49,7 @@ can be determined by the users. Thus, changes in intersection performance
 resulting from short- or long-term fluctuations caused by concerts, sports
 events, traffic accidents, or adverse weather can be analyzed using VISSIM \cite{cakici2021} .
 
-\section{Research Gaps and Problem Statement}
+\section{Problem Statement}
 Traffic congestion at major intersections throughout the Kathmandu Valley 
 has reached critical levels, significantly degrading urban mobility, the
 economy, and public well-being. The current situation at the Babarmahal 
@@ -79,123 +79,4 @@ This study aims to:
     \item Optimize signal timings via actuated control in VISVAP, focusing on parameters like detector placement and green time allocation.
     \item Compare the results with fixed-time control to quantify improvements in delay and queue length.
 
-
 \end{enumerate}
-
-\subsection{Study Area}
-The study focuses on the critical Babarmahal Road intersection (27.692506N,85.323863E) 
-located in the administrative and cultural heart of Kathmandu, Nepal. It is a
-four-legged signalized intersection. The intersection features four distinct
-legs:
-
-\begin{enumerate}[label=\alph*.]
-    \item Major East leg: Carry a high-Volume Traffic along the Baneshwor-Babarmahal axis.
-    \item Major West leg: Carry a high-volume traffic along the Maitighar- Babarmahal axis.
-    \item Minor North leg: Leading directly towards the Department of Road (DOR). 
-    \item Minor south leg: leading towards the Arts Gallery.
-\end{enumerate}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics{src/images/figures/aerial.png}
-    \caption{Aerial view of Intersection from Google Earth Pro}
-\end{figure}
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/visit.jpg}
-    \caption{Intersection during visit}
-    
-\end{figure}
-
-The traffic volume along the Maitighar (central) approach and the 
-Baneshwor approach is significantly higher, classifying them as 
-major roads within the intersection. In contrast, the Arts Gallery
-approach and the Department of Roads approach experience relatively 
-lower and more fluctuating traffic volumes throughout the day, making 
-them minor roads. Given this variation in traffic demand, implementing 
-a semi-actuated traffic signal control system at this intersection is 
-expected to be beneficial. Such a system can help reduce queue lengths, 
-minimize vehicle delays, improve the Level of Service (LOS), and 
-offer other operational advantages.
-
-\textbf{Geometric Specifications of Babarmahal Intersection}
-
-\begin{table}[h!]
-    \centering
-    \caption{Geometrical Parameters}
-    \renewcommand{\arraystretch}{1.5}
-    \begin{tabular}{|l|V{8cm}|}
-        \hline
-        \textbf{Parameters} & \textbf{Specifications} \\
-        \hline
-        Number of Legs & 4(Four-legged intersection)\\
-        \hline
-        Approaches & Maitighar, Baneshwor, Arts Gallery, Department of Road (DOR)\\
-        \hline
-        Number of lanes Per Approach & Maitighar Approach: 8 lanes \\ 
-        & Baneshwor Approach: 8 lanes \\ 
-        & ArtsGallery Approach: 2 lanes \\ 
-        & DOR  Approach: 2 lanes \\
-        \hline
-        Lane Width & \textbf{Maitighar Approach:} \\ 
-        & Service Lane: 3.5m(Total 4 lanes) \\ 
-        & Main Lane: 3m(Total 4 lanes) \\
-        & \textbf{Baneshowr Approach:} \\
-        & Service Lane: 3.5m(Total 4 lanes) \\ 
-        & Main Lane: 3m(Total 4 lanes) \\
-        & \textbf{ArtsGallery Approach:} \\
-        & Main Lane: about 2.5m(Total 2 lanes) \\
-        & \textbf{DOR Approach:} \\
-        & Main Lane: 2.5m(Total 2 lanes) \\
-        \hline
-        Pedestrian Crosswalks & Present on two legs (Maitighar approach and Arts Gallery approach) \\
-        \hline
-        Crosswalk Length & About 3.1m \\
-        \hline
-        Existing Signal Poles & Present at all four corners (Fixed-Time Signal Control) \\
-        \hline
-    \end{tabular}
-    
-\end{table}
-
-NOTE: The above measurements are preliminary estimates obtained using Google Earth Pro 
-and will be verified through field surveys.
-
-\begin{table}[h!]
-\centering
-\caption{Geometric and type of lane}
-\begin{tabular}{|p{3cm}|p{1.5cm}|l|p{1.8cm}|p{1.5cm}|}
-\hline
-\textbf{Orientations} & \textbf{No. of Lane} & \textbf{Movement} & \textbf{Wide of Lane} & \textbf{Lane Type} \\ \hline
-
-\multirow{2}{*}{DOR}
- & Lane 1 & through/left/right & 3.0 m &  \\ \cline{2-5}
- & Lane 2 & through/left/right & 3.0 m &  \\ \hline
-
-\multirow{2}{*}{Art-Gallery}
- & Lane 3 & through/left/right & 2.5 m &  \\ \cline{2-5}
- & Lane 4 & through/left/right & 4.0 m &  \\ \hline
-
-\multirow{6}{*}{Babar Mahal}
- & Lane 5 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 6 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 7 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 8 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 9 & through & 3.5 m & Main \\ \cline{2-5}
- & Lane 10 & through & 3.5 m & Main \\ \hline
-
-\multirow{10}{*}{Maitighar}
- & Lane 11 & right & 3.5 m & Main \\ \cline{2-5}
- & Lane 12 & through & 3.5 m & Main \\ \cline{2-5}
- & Lane 13 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 14 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 15 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 16 & through/left & 3.5 m & Service \\ \cline{2-5}
- & Lane 17 & through & 3.5 m & Main \\ \cline{2-5}
- & Lane 18 & through/right & 3.5 m & Main \\ \cline{2-5}
- & Lane 19 & through/left/right & 3.5 m & Main \\ \cline{2-5}
- & Lane 20 & through/left/right & 3.5 m & Main \\ \hline
-
-\end{tabular}
-\end{table}

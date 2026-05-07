@@ -6,57 +6,57 @@ The following terms are used throughout this chapter
 and are defined here for clarity.
 
 \begin{itemize}
-    \item \textbf{Intersection: }An intersection refers to the area 
+    \item Intersection: An intersection refers to the area 
     where two or more roads meet or cross. It serves as a 
     space through which vehicles navigate to change direction 
     and reach their intended destinations. Its primary role 
     is to direct traffic appropriately across different routes.
 
-    \item \textbf{Approach: }An approach consists of a group of lanes 
+    \item Approach: An approach consists of a group of lanes 
     at an intersection that accommodates all turning and 
     through movements originating from a single direction — 
     including left turns, right turns, and straight-through 
     traffic.
 
-    \item \textbf{Passenger Car Unit (PCU): }PCU is a standardized measure 
+    \item Passenger Car Unit (PCU): PCU is a standardized measure 
     applied in traffic modeling to allow different types of 
     vehicles within a traffic stream to be evaluated on a 
     common basis. It converts diverse vehicle types into 
     equivalent passenger car units for consistent analysis.
 
-    \item \textbf{Highway Capacity Manual (HCM): }The HCM is a reference 
+    \item Highway Capacity Manual (HCM): The HCM is a reference 
     publication issued by the Transportation Research Board 
     of the National Academies of Science in the United States. 
     It offers concepts, guidelines, and step-by-step procedures 
     for determining the capacity and quality of service of various 
     road facilities.
 
-    \item \textbf{Cycle: }A cycle refers to one full sequence of signal 
+    \item Cycle: A cycle refers to one full sequence of signal 
     indications at a traffic signal.
 
-    \item \textbf{Cycle Length (C): }The total time taken for a 
+    \item Cycle Length (C): The total time taken for a 
     traffic signal to complete a full cycle, typically measured 
     in seconds.
 
-    \item \textbf{Phase:} A phase is a defined portion of a cycle that 
+    \item Phase: A phase is a defined portion of a cycle that 
     is allocated to one or more combinations of traffic movements, 
     all of which receive the right-of-way simultaneously during 
     one or more signal intervals.
 
-    \item \textbf{ Interval:} An interval is a segment of time during which 
+    \item  Interval: An interval is a segment of time during which 
     all signal indications at an intersection remain unchanged.
 
-    \item \textbf{Change Interval (Y):} This refers to the yellow and/or 
+    \item Change Interval (Y): This refers to the yellow and/or 
     all-red signal intervals that appear at the end of a phase. 
     Their purpose is to allow the intersection to clear before 
     conflicting movements are released. This interval is also 
     referred to as the "Amber Period."
 
-    \item \textbf{Green Time (G):} Green time indicates the duration — 
+    \item Green Time (G): Green time indicates the duration — 
     measured in seconds — during which the green signal is displayed f
     or a particular phase, allowing designated movements to proceed.
 
-    \item \textbf{Lost Time: }Lost time refers to periods when the 
+    \item Lost Time: Lost time refers to periods when the 
     intersection is not being productively used by any 
     traffic movement. This includes the change and clearance 
     intervals when the intersection is being cleared, as 
@@ -64,7 +64,7 @@ and are defined here for clarity.
     when vehicles at the front of a queue take time to begin 
     moving.
 
-    \item \textbf{Effective Green Time (g):} Effective green time is the 
+    \item Effective Green Time (g): Effective green time is the 
     jusable duration during which organized groups of vehicles 
     can move through the intersection without interruption. 
     It is typically calculated by adding the green time and 
@@ -72,11 +72,11 @@ and are defined here for clarity.
     time for that movement. This value is expressed in 
     seconds.
 
-    \item \textbf{Green Ratio (g/C):} The green ratio is the 
+    \item Green Ratio (g/C): The green ratio is the 
     proportion of effective green time relative to the total 
     cycle length.
 
-    \item \textbf{Effective Red (r):} Effective red is the time period, 
+    \item Effective Red (r): Effective red is the time period, 
     in seconds, during which a particular movement or group 
     of movements is prohibited from proceeding. It is derived 
     by subtracting the effective green time from the total 
@@ -134,7 +134,7 @@ fully actuated operation, distinguished by the extent to
 which detection is applied across intersection approaches.
 
 
-\subsection{1.2.3	Semi-Actuated Signal Control}
+\subsection{Semi-Actuated Signal Control}
 
 Semi-actuated signal control applies vehicle detection 
 exclusively on minor or secondary approaches, while the 
@@ -159,22 +159,23 @@ compared to fixed-time operation.
 Key operational parameters of semi-actuated control include:
 
 \begin{itemize}
-    \item \textbf{Minimum Green: }Ensures adequate departure time for 
+    \item Minimum Green: Ensures adequate departure time for 
     queued vehicles at the start of each phase.
 
-    \item \textbf{Maximum Green:} Prevents excessive detention of 
+    \item Maximum Green: Prevents excessive detention of 
     cross-street traffic by limiting the green duration on 
     the major approach.
 
-    \item \textbf{Passage Time (Extension):} Extends the active phase 
+    \item Passage Time (Extension): Extends the active phase 
     upon each vehicle actuation, allowing the signal to hold 
     green as long as demand continues up to the maximum green 
     limit.
 
-    \item \textbf{Yellow Change and All-Red Clearance Intervals:} 
+    \item Yellow Change and All-Red Clearance Intervals: 
     Provide intersection clearance between conflicting phases.
 
 \end{itemize}
+
 
 \subsection{Fully Actuated Signal Control}
 
@@ -207,7 +208,7 @@ progression along a corridor.
     \caption{Comparison of Semi-Actuated and Fully Actuated Signal Control}
     \begin{tabular}{|l|l|p{3cm}|}
         \hline
-        \textbf{Feature}	& \textbf{Semi-Actuated Control}	& \textbf{Fully Actuated Control} \\
+        Feature	& Semi-Actuated Control	& Fully Actuated Control \\
         \hline
         Detection Coverage	& Minor approaches only &	All approaches \\
         \hline
@@ -269,33 +270,32 @@ rules for each phase and detector configuration at an
 intersection. The software allows the user to specify:
 
 \begin{itemize}
-    \item \textbf{Detector Type and Location: }Including stop-bar 
+    \item Detector Type and Location: Including stop-bar 
     detectors and advanced detectors, with configurable 
     sensitivity and detection zone lengths appropriate to 
     the intersection geometry.
 
-    \item \textbf{Phase Sequence and Ring-Barrier Structure:} 
-    Following the standard NEMA (National Electrical 
+    \item Phase Sequence and Ring-Barrier Structure:Following the standard NEMA (National Electrical 
     Manufacturers Association) dual-ring controller 
     structure used in most modern actuated signal controllers.
 
-    \item \textbf{Minimum Green Settings: }Ensuring adequate 
+    \item Minimum Green Settings:Ensuring adequate 
     initial service for each phase before any termination 
     can occur.
 
-    \item \textbf{Maximum Green Settings: }Capping the green duration 
+    \item Maximum Green Settings: Capping the green duration 
     to prevent excessive delay to conflicting movements.
 
-    \item \textbf{Passage Time (Vehicle Extension):} Defining the 
+    \item Passage Time (Vehicle Extension): Defining the 
     interval by which the green phase is extended upon each 
     vehicle actuation at the detector.
 
-    \item \textbf{Gap and Time-Before-Reduce Settings: }Parameters 
+    \item Gap and Time-Before-Reduce Settings: Parameters 
     governing when the controller begins reducing passage 
     time after a period of no actuation, and the rate of 
     reduction toward the minimum gap threshold.
 
-    \item \textbf{Yellow and All-Red Intervals:} Configurable 
+    \item Yellow and All-Red Intervals: Configurable 
     clearance intervals between phases to ensure safe 
     intersection clearance.
 
@@ -364,28 +364,28 @@ Compared to conventional fixed-time signal control, VISVAP-programmed
 semi-actuated operation offers several operational advantages:
 
 \begin{itemize}
-    \item \textbf{Demand Responsiveness:} The signal serves minor-street 
+    \item Demand Responsiveness: The signal serves minor-street 
     demand only when vehicles are present, eliminating 
     unnecessary interruptions to major-street flow during 
     low side-street demand periods.
 
-    \item \textbf{Reduced Average Delay: }By avoiding unnecessary 
+    \item Reduced Average Delay: By avoiding unnecessary 
     phase changes and adapting green duration to real-time 
     demand, average vehicle delay across all approaches is 
     typically reduced relative to fixed-time plans.
 
-    \item \textbf{Improved Level of Service: }Reduced delay 
+    \item Improved Level of Service: Reduced delay 
     translates to improved LOS grades, particularly for 
     major-street through movements.
 
-    \item \textbf{Flexibility in Parameter Optimization: }VISVAP 
+    \item Flexibility in Parameter Optimization: VISVAP 
     facilitates systematic optimization of timing parameters 
     through simulation-based testing, enabling the 
     identification of the most efficient control settings 
     for specific traffic conditions.
 
-    \item \textbf{Lower Infrastructure Requirement than Fully 
-    Actuated:} Detection is required only on minor approaches, 
+    \item Lower Infrastructure Requirement than Fully 
+    Actuated: Detection is required only on minor approaches, 
     making semi-actuated control a cost-effective 
     intermediate option between fixed-time and fully actuated 
     systems.
@@ -421,12 +421,12 @@ Traffic flow can be classified into several distinct types
 based on how vehicles move and interact on the road:
 
 \begin{itemize}
-    \item \textbf{Free Flow :}In this state, vehicles travel at their preferred speeds with minimal disruption, keeping safe distances between one another. Traffic density is low, resulting in smooth and uninterrupted travel.
-    \item \textbf{Synchronized Flow :}Vehicles move at roughly similar speeds but with reduced spacing between them, often as a result of traffic signal influence or road conditions. Lane changes are less frequent, and overall movement is more orderly.
-    \item \textbf{Congested Flow :} Elevated vehicle density causes a reduction in speed, frequent stops, and longer travel times. This condition is most common during peak commuting hours, in the aftermath of accidents, or when road sections are partially blocked.
-    \item \textbf{Unstable Flow :} Traffic in this state alternates between free-flow and congested conditions, with rapid speed fluctuations and frequent braking. This often results in a stop-and-go pattern of movement.
-    \item \textbf{Stop-and-Go Flow :} Vehicles repeatedly accelerate and decelerate due to congestion, bottlenecks, or lane merges. This type of flow is inefficient and results in higher fuel consumption.
-    \item \textbf{Forced Flow :} Under extremely congested conditions, road closures, or accidents, vehicles are compelled to slow down significantly or stop entirely, often resulting in widespread delays and gridlock.
+    \item Free Flow :In this state, vehicles travel at their preferred speeds with minimal disruption, keeping safe distances between one another. Traffic density is low, resulting in smooth and uninterrupted travel.
+    \item Synchronized Flow :Vehicles move at roughly similar speeds but with reduced spacing between them, often as a result of traffic signal influence or road conditions. Lane changes are less frequent, and overall movement is more orderly.
+    \item Congested Flow : Elevated vehicle density causes a reduction in speed, frequent stops, and longer travel times. This condition is most common during peak commuting hours, in the aftermath of accidents, or when road sections are partially blocked.
+    \item Unstable Flow : Traffic in this state alternates between free-flow and congested conditions, with rapid speed fluctuations and frequent braking. This often results in a stop-and-go pattern of movement.
+    \item Stop-and-Go Flow : Vehicles repeatedly accelerate and decelerate due to congestion, bottlenecks, or lane merges. This type of flow is inefficient and results in higher fuel consumption.
+    \item Forced Flow : Under extremely congested conditions, road closures, or accidents, vehicles are compelled to slow down significantly or stop entirely, often resulting in widespread delays and gridlock.
 \end{itemize}
 
 \subsection{Traffic Conflicts}
@@ -463,7 +463,7 @@ from A to F to define LOS, where A indicates the best
 possible driving conditions, and F represents severe and 
 unmanageable congestion.
 
-\textbf{LOS-A:} Describes free-flowing traffic conditions in 
+LOS-A: Describes free-flowing traffic conditions in 
 which vehicles travel at or above posted speed limits with 
 very little interference. Drivers enjoy a high degree of 
 comfort and freedom of movement, with an average vehicle 
@@ -473,7 +473,7 @@ easily resolved. These conditions are typically found in
 urban areas during late-night hours or consistently in rural 
 environments.
 
-\textbf{LOS-B:} Traffic still flows freely, though the 
+LOS-B: Traffic still flows freely, though the 
 ability to maneuver within lanes is somewhat reduced 
 compared to LOS A. Vehicles maintain speeds consistent with 
 LOS A conditions, with an average spacing of around 100 
@@ -481,7 +481,7 @@ meters (330 feet) or approximately 16 car lengths. Drivers
 generally experience a comfortable and manageable driving 
 environment.
 
-\textbf{LOS-C:}Traffic remains stable and close to free-flow 
+LOS-C:Traffic remains stable and close to free-flow 
 conditions, but lane changes demand greater attentiveness 
 from drivers. Vehicles are spaced approximately 67 meters 
 (220 feet) or 11 car lengths apart. The majority of drivers 
@@ -492,7 +492,7 @@ although localized delays can occur. LOS C is often
 considered a target condition for urban highways and most 
 rural roads.
 
-\textbf{LOS-D:} Traffic flow begins to show signs of 
+LOS-D: Traffic flow begins to show signs of 
 instability, with modest reductions in speed as vehicle 
 volume increases. Maneuverability is more constrained, 
 leading to decreased driver comfort. Average vehicle spacing 
@@ -504,7 +504,7 @@ streets, LOS D during rush hours is considered an acceptable
 target, as upgrading to LOS C would often require expensive 
 infrastructure improvements.
 
-\textbf{LOS-E: }Represents traffic operating at or near full 
+LOS-E: Represents traffic operating at or near full 
 roadway capacity with unstable flow. Speeds become 
 inconsistent, fluctuating frequently due to the limited 
 availability of gaps for maneuvering. Even though vehicles 
@@ -515,7 +515,7 @@ can produce a shockwave effect that propagates upstream and
 causes significant delays. Driver comfort is noticeably 
 diminished at this level.
 
-\textbf{LOS-F:}Indicates a complete breakdown of traffic flow, 
+LOS-F: Indicates a complete breakdown of traffic flow, 
 characterized by vehicles moving in dense clusters with 
 minimal gaps and frequent complete stops. Travel times 
 become highly unpredictable as demand surpasses the roadway's 
@@ -575,15 +575,22 @@ lane group may be stated as shown in above equation.
 
 \section{Vehicle to Capacity Ratio}
 
-
+The Vehicle-to-Capacity ratio (V/C ratio) is a measure used to 
+evaluate the operational condition of a roadway or 
+intersection by comparing the traffic demand volume with the 
+maximum traffic carrying capacity of the facility. It 
+indicates the degree of saturation and congestion within the 
+traffic stream. A higher V/C ratio signifies increased traffic 
+congestion, longer delays, and reduced operational efficiency. 
+In traffic engineering, the V/C ratio is widely used as a key performance indicator for assessing Level of Service (LOS) and intersection performance.
 
 \section{Headway}
 
 In traffic engineering, headway refers to the time gap or spatial distance between two consecutive vehicles traveling in the same lane and direction. It is a fundamental parameter for maintaining smooth traffic flow and ensuring road safety.
 There are two main categories of headway:
 \begin{itemize}
-    \item \textbf{Time Headway :} The time elapsed between two successive vehicles as they pass a fixed reference point, typically measured in seconds.
-    \item \textbf{Distance Headway :} The physical gap between two consecutive vehicles, generally expressed in meters or feet.
+    \item Time Headway : The time elapsed between two successive vehicles as they pass a fixed reference point, typically measured in seconds.
+    \item Distance Headway : The physical gap between two consecutive vehicles, generally expressed in meters or feet.
 \end{itemize}
 
 Shorter headways tend to contribute to congestion and 
@@ -717,10 +724,10 @@ precedence.
 
 A typical priority order is as follows:
 \begin{itemize}
-    \item \textbf{Highest priority:} Through traffic on the major street.
-    \item \textbf{Second priority:} Right-turning vehicles from the major street.
-    \item \textbf{ Lower priority:}Left-turning vehicles from the major street, or through traffic on the minor street.
-    \item \textbf{Lowest priority:} Right or left turns from the minor street.
+    \item  Through traffic on the major street.
+    \item Second priority: Right-turning vehicles from the major street.
+    \item  Lower priority:Left-turning vehicles from the major street, or through traffic on the minor street.
+    \item Lowest priority: Right or left turns from the minor street.
 \end{itemize}
 
 When movements conflict, for example, a right-turning vehicle 
@@ -874,12 +881,12 @@ where:
 
 Several key factors govern how traffic signals are timed at intersections. According to the FHWA Traffic Signal Timing Manual, these factors include:
 
-\textbf{Location:} Traffic characteristics such as speed, 
+Location: Traffic characteristics such as speed, 
 composition, and volume differ significantly from one 
 location to another, making the specific location a critical 
 input in signal timing decisions.
 
-\textbf{Transportation Network Characteristics:} While a 
+Transportation Network Characteristics: While a 
 standalone intersection can be timed in isolation, 
 signalized intersections located within a road network must 
 be coordinated with one another to maintain consistent 
@@ -887,14 +894,14 @@ traffic progression and minimize cumulative delays. The
 spacing between adjacent signals is a particularly important 
 variable in this coordination.
 
-\textbf{Intersection Geometry:} Physical characteristics 
+Intersection Geometry: Physical characteristics 
 such as the number of lanes, lane widths, and the overall 
 shape of the intersection directly affect its capacity. 
 Signal timing must reflect these geometric features to 
 ensure safe and conflict-free movement for both vehicles and 
 pedestrians while keeping delays to a minimum.
 
-\textbf{User Characteristics:} Intersections serve a diverse 
+User Characteristics: Intersections serve a diverse 
 range of road users, including pedestrians, cyclists, and 
 motor vehicles, each moving at different speeds and 
 requiring different clearance times. Signal timing must 
@@ -973,9 +980,9 @@ governed by priority rules and gap acceptance behavior. At
 these locations, vehicles on minor roads must wait for 
 adequate gaps in the major-road traffic stream before they 
 can proceed, a process that can lead to delays and the 
-formation of queues. The HCM uses probabilistic models — 
+formation of queues. The HCM uses probabilistic models
 including the Poisson distribution for modeling vehicle 
-arrivals and M/M/1 or M/G/1 queuing models — to estimate 
+arrivals and M/M/1 or M/G/1 queuing models to estimate 
 queue lengths, delays, and intersection capacity. The key 
 variables affecting queue behavior include the volume of 
 major-road traffic, the critical gap that minor-road drivers 
@@ -987,7 +994,7 @@ and safety without necessarily installing traffic signals.
 
 \section{Nepal Urban Road Standard (NURS,2076)}
 
-The \textbf{Nepal Urban Road Standard (NURS) 2076} provides 
+The Nepal Urban Road Standard (NURS) 2076 provides 
 guidelines for the planning, design, construction, and 
 maintenance of urban roads in Nepal. It categorizes roads 
 based on function, capacity, and right-of-way, ensuring 
@@ -1001,7 +1008,7 @@ accessibility considerations to enhance urban livability.
 
 \section{Traffic Simulation}
 
-Traffic simulation — also referred to as the simulation of transportation systems — involves the construction of mathematical models representing various transportation infrastructure elements, such as freeway interchanges, arterial roads, roundabouts, and urban road networks. These models are developed using specialized computer software to assist in the planning, design, and operational optimization of transportation systems.
+Traffic simulation also referred to as the simulation of transportation systems — involves the construction of mathematical models representing various transportation infrastructure elements, such as freeway interchanges, arterial roads, roundabouts, and urban road networks. These models are developed using specialized computer software to assist in the planning, design, and operational optimization of transportation systems.
 
 Simulation is an indispensable tool in transportation analysis because it enables the study of highly complex systems that would be too intricate to evaluate using conventional analytical or numerical methods. It also supports experimental investigations, allows for the exploration of cause-and-effect relationships that traditional methods might miss, and produces visually intuitive representations of both existing and projected traffic scenarios. These visualizations help engineers and planners anticipate potential problems and develop well-informed solutions before physical implementation.
 
@@ -1010,12 +1017,12 @@ To evaluate and compare different traffic management approaches, a variety of ne
 Several well-established simulation tools and software applications are used in the field to analyze and improve traffic conditions:
 
 \begin{enumerate}
-    \item \textbf{PTV VISSIM :} A widely used microscopic traffic simulation platform capable of detailed modeling of mixed traffic streams, signal control systems, and multimodal transport networks.
-    \item \textbf{AnyLogic :} A versatile simulation tool that supports multimodal transportation analysis with flexible modeling capabilities.
-    \item \textbf{SYNCHRO : }Specializes in traffic signal optimization and capacity analysis for urban intersections.
-    \item \textbf{SIDRA :} Used to evaluate the operational performance of intersections, roundabouts, and signalized corridors.
-    \item \textbf{HCM-Arterials :} A methodology-based tool grounded in the Highway Capacity Manual for analyzing the performance of arterial roadways.6.	SIGNAL 97 - Designed specifically for traffic signal analysis, optimization, and timing adjustments.
-    \item \textbf{SimTraffic :} A simulation program that models and visualizes vehicle movements and interactions across road networks.
+    \item PTV VISSIM : A widely used microscopic traffic simulation platform capable of detailed modeling of mixed traffic streams, signal control systems, and multimodal transport networks.
+    \item AnyLogic : A versatile simulation tool that supports multimodal transportation analysis with flexible modeling capabilities.
+    \item SYNCHRO : Specializes in traffic signal optimization and capacity analysis for urban intersections.
+    \item SIDRA : Used to evaluate the operational performance of intersections, roundabouts, and signalized corridors.
+    \item HCM-Arterials : A methodology-based tool grounded in the Highway Capacity Manual for analyzing the performance of arterial roadways.6.	SIGNAL 97 - Designed specifically for traffic signal analysis, optimization, and timing adjustments.
+    \item SimTraffic : A simulation program that models and visualizes vehicle movements and interactions across road networks.
 \end{enumerate}
 
 Through the use of these simulation tools, transportation 

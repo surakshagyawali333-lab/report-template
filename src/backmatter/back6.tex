@@ -1,0 +1,958 @@
+\chapter{ANNEX VI}
+
+\section{Interstage File and Flowchart}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/annex3/flow1.jpg}
+    \caption{Flowchart}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/annex3/flow2.jpg}
+    \caption{Flowchart}
+\end{figure}
+
+\clearpage
+\$SIGNAL\_GROUPS
+\$
+A	1
+B	2
+C 	3
+D	4
+
+\$STAGES
+\$
+stage\_1 A \\
+red	B C D \\
+stage\_2 B \\
+red	A C D \\
+stage\_3 C \\
+red	A B D \\
+stage\_4 D \\
+red	A B C
+ 
+\$STARTING\_STAGE \\
+\$ \\ 
+stage\_1 \\
+
+\$INTERSTAGE \\
+INTERSTAGE\_number :		1 \\
+length [s]	  :		18 \\
+from stage	  :		1 \\
+to stage	  :		2 \\
+\$ \\ 
+A	-127	0 \\
+B	3	127 \\
+
+
+\$INTERSTAGE \\
+INTERSTAGE\_number :		2 \\
+length [s]        :		13 \\ 
+from stage  	  :		2 \\
+to stage 	  :		3 \\
+\$ \\ 
+B	-127	0 \\
+C	3	127 \\
+
+ 
+\$INTERSTAGE \\
+INTERSTAGE\_number :		3 \\
+length [s]	  :		18 \\
+from stage	  :		4 \\
+to stage	  :		1 \\
+\$ \\
+D	- 127	0 \\ 
+A	3	127 \\
+
+ 
+\$INTERSTAGE \\
+INTERSTAGE\_number :		4 \\
+length [s]	  :		18 \\
+from stage	  :		3 \\
+to stage	  :		1 \\ 
+\$ \\
+C	- 127	0 \\
+A	3	127 \\
+
+
+
+
+\$INTERSTAGE \\
+INTERSTAGE\_number :		5 \\
+length [s]	  :		8 \\
+from stage	  :		3 \\
+to stage	  :		4 \\
+\$ \\
+C	- 127	0 \\    
+D	3	127 \\
+
+
+
+\$END \\
+
+
+
+
+
+
+
+
+\begin{landscape}
+\chapter{ANNEX VII (GEH CALCULATION)}
+\section{Day 1: Peak Hour}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\
+1	&Art Gallery to Anamnagar	            &0	&0	&0	&0	&25	&152    &0	    &6	&0	&184 \\ \hline
+2	&Art Gallery to Maitighar Service	    &0	&0	&0	&0	&14	&200    &0	    &0	&0	&214 \\ \hline
+3	&Art Gallery to Babarmahal Service	    &0	&0	&0	&0	&36	&231    &2	    &10&	0&	278 \\ \hline
+4	&Art Gallery to Babarmahal Main	        &0	&0	&0	&0	&25	&103    &0	    &0	&0	&130 \\ \hline
+5	&Art Gallery to Maitighar Main	        &0	&0	&0	&0	&9	&49	    &0	    &0	&0	&57 \\ \hline
+6	&Maitighar Service to Anamnagar	        &0	&0	&0	&0	&8	&19	    &1	    &0	&0	&29 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&0	&0	&116	&40	&109    &321	&52 &0	&47	&683 \\ \hline
+8	&Anamnagar to Art Gallery	            &0	&0	&0	&0	&21	&49	    &0	    &0	&0	&70 \\ \hline
+9	&Anamnagar to Babarmahal Service	        &0	&0	&0	&0	&17	&39	    &0	    &0	&0	&56 \\ \hline
+10	&Anamnagar to Maitighar Main	            &0	&0	&0	&0	&0	&7	    &0	    &0	&0	&7 \\ \hline
+11	&Babarmahal Service to Art Gallery	    &0	&0	&0	&0	&78	&239    &0	    &5	&2	&324 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&0	&0	&120	&46	&193    &874	&5	&1	&42	&1283 \\ \hline
+13	&Maitighar Main to Art Gallery	        &0	&0	&0	&0	&13	&138    &8	    &0	&0	&144 \\ \hline
+14	&Maitighar Main to Babarmahal Main	    &0	&5	&6	&21	&304	&1484   &68 &18	&4	&1901 \\ \hline
+15	&Babarmahal Main to Anamnagar	        &0	&0	&4	&0	&221	&448    &0	    &1	&0	&672 \\ \hline
+16	&Babarmahal Main to Maitighar Main	    &0	&0	&0	&0	&240	&1604   &2	    &16    &0&	1860 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\
+1	&Art Gallery to Anamnagar	            &0	&0	&0	&0	&30	    &183	&0	&1	&0	&214 \\ \hline
+2	&Art Gallery to Maitighar Service	    &0	&0	&0	&0	&25	    &226	&0	&0	&0	&251 \\ \hline
+3	&Art Gallery to Babarmahal Service	    &0	&0	&0	&0	&47	    &249	&4	&4	&1	&305 \\ \hline
+4	&Art Gallery to Babarmahal Main	        &0	&0	&0	&0	&27	    &114	&1	&1	&0	&143 \\ \hline
+5	&Art Gallery to Maitighar Main	        &0	&0	&0	&0	&9	    &38	&0 &0	&0	&47 \\ \hline
+6	&Maitighar Service to Anamnagar	         &0	&0	&0	&0	&10	    &18	&1 &0	&0	&29 \\ \hline
+7	&Maitighar Service to Babarmahal Service &0	&0	&131	&50	    &96	&330	&41	&0	&41	&689 \\ \hline
+8	&Anamnagar to Art Gallery	            &0	&0	&0	&0	&16	    &50	    &0&	0	&0	&66 \\ \hline
+9	&Anamnagar to Babarmahal Service	     &0	&0	&0	&0	&12	    &43	&0 &	0	&0	&55 \\ \hline
+10	&Anamnagar to Maitighar Main	         &0	&0	&0	&0	&0	    &8	&0	&0	&0	&8 \\ \hline
+11	&Babarmahal Service to Art Gallery	    &0	&0	&0	&0	&89	    &254	&0	&2	&3	&348 \\ \hline
+12	&Babarmahal Service to Maitighar Service &0	&2	&122	&45	    &208	&912	&6	&3	&43	&1341 \\ \hline
+13	&Maitighar Main to Art Gallery	        &0	&0	&0	&0	&16	    &141	&4	&0	&0	&161 \\ \hline
+14	&Maitighar Main to Babarmahal Main	    &1	&5	&4	&15	&342	&1558	&69	&15	&7	&2016 \\ \hline
+15	&Babarmahal Main to Anamnagar	        &0	&0	&5	&1	&231	&466	&0	&1	&0	&704 \\ \hline
+16	&Babarmahal Main to Maitighar Main	    &0	&0	&2	&5	&237	&1675	&6	&11	&0	&1936 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\
+1	&Art Gallery to Anamnagar&	-&	-&	-&	-&	0.953&	2.395&	-&	2.673&	-&	2.127 \\ \hline
+2	&Art Gallery to Maitighar Service	&-	&-	&-	&-	&2.491	&1.781	&-	&-	&-	&2.427 \\ \hline
+3	&Art Gallery to Babarmahal Service	&-	&-	&-	&-	&1.708	&1.162	&1.155	&2.268	&1.414	&1.581 \\ \hline
+4	&Art Gallery to Babarmahal Main	&–	&–	&–	&–	&0.392	&1.056	&1.414	&1.414	&–	&1.113 \\ \hline
+5	&Art Gallery to Maitighar Main	&–	&–	&–	&–	&0.000	&1.668	&–	&–	&–	&1.387 \\ \hline
+6	&Maitighar Service to Anamnagar	&–	&–	&–	&–	&0.667	&0.232	&0.000	&–	&–	&0.000 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&–	&–	&1.350	&1.491	&1.284	&0.499	&1.613	&–	&0.905	&0.229 \\ \hline
+8	&Anamnagar to Art Gallery	&–	&–	&–	&–	&1.162	&0.142	&–	&–	&–	&0.485 \\ \hline
+9	&Anamnagar to Babarmahal Service	&–	&–	&–	&–	&1.313	&0.625	&–	&–	&–	&0.134 \\ \hline
+10	&Anamnagar to Maitighar Main	&–	&–	&–	&–	&–	&0.365	&–	&–	&–	&0.365 \\ \hline
+11	&Babarmahal Service to Art Gallery	&–	&–	&–	&–	&1.204	&0.955	&–	&1.604	&0.632	&1.309 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&–	&2.000	&0.182	&0.148	&1.059	&1.272	&0.426	&1.414	&0.153	&1.601 \\ \hline
+13	&Maitighar Main to Art Gallery	&–	&–	&–	&–	&0.788	&0.254	&1.633	&–	&–	&1.377 \\ \hline
+14	&Maitighar Main to Babarmahal Main	&1.414	&0.000	&0.894	&1.414	&2.114	&1.897	&0.121	&0.739	&1.279	&2.599 \\ \hline
+15	&Babarmahal Main to Anamnagar	&–	&–	&0.471	&1.414	&0.665	&0.842	&–	&0.000	&–	&1.220 \\ \hline
+16	&Babarmahal Main to Maitighar Main	&–	&–	&2.000	&3.162	&0.194	&1.753	&2.000	&1.361	&–	&1.744 \\ \hline
+
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\section{Day 1: Off Peak Hour}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\
+1	&Art Gallery to Anamnagar	&0	&0	&0	&0	&48	&79	&0	&0	&0	&127 \\ \hline
+2	&Art Gallery to Maitighar Service	&0	&0	&0	&0	&21	&99	&0	&1	&0	&121 \\ \hline
+3	&Art Gallery to Babarmahal Service	&0	&2	&0	&0	&54	&230	&1	&2	&0	&289 \\ \hline
+4	&Art Gallery to Babarmahal Main	&0	&0	&0	&0	&48	&96	&2	&0	&0	&146 \\ \hline
+5	&Art Gallery to Maitighar Main	&0	&0	&0	&0	&28	&47	&4	&0	&0	&79 \\ \hline
+6	&Maitighar Service to Anamnagar	&0	&0	&0	&0	&5	&21	&4	&0	&0	&30 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&0	&0	&86	&48	&81	&217	&24	&41	&42	&539 \\ \hline
+8	&Anamnagar to Art Gallery	&0	&0	&0	&0	&24	&31	&0	&1	&0	&56 \\ \hline
+9	&Anamnagar to Babarmahal Service	&0	&0	&0	&0	&17	&34	&0	&0	&0	&51 \\ \hline
+10	&Anamnagar to Maitighar Main	&0	&0	&0	&0	&11	&17	&0	&2	&0	&30 \\ \hline
+11	&Babarmahal Service to Art Gallery	&0	&0	&0	&0	&41	&167	&2	&0	&0	&210 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&0	&2	&131	&30	&117	&678	&27	&26	&30	&1041 \\ \hline
+13	&Maitighar Main to Art Gallery	&0	&0	&0	&0	&13	&75	&12	&14	&0	&114 \\ \hline
+14	&Maitighar Main to Babarmahal Main	&0	&0	&4	&9	&204 &1122 &41 &29& 4& 1413 \\ \hline
+15	&Babarmahal Main to Anamnagar& 0 &0 &5 &0 &18 &41& 0& 0 &0 &64 \\ \hline
+16	&Babarmahal Main to Maitighar Main& 0& 5& 0& 0& 228 &1182&10&11&0&1436 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	                &0	&0	&0	    &0	&41	&92	&1	&0	&0	&134 \\ \hline
+2	&Art Gallery to Maitighar Service	        &0	&2	&0	    &0	&32	&102	&2	&2	&0	&140 \\ \hline
+3	&Art Gallery to Babarmahal Service	        &0	&0	&0	    &0	&63	&237	&2	&2	&0	&304 \\ \hline
+4	&Art Gallery to Babarmahal Main	            &0	&0	&0	    &0	&54	&92	&1	&1	&0	&148 \\ \hline
+5	&Art Gallery to Maitighar Main	            &0	&3	&0	    &0	&35	&56	&3	&0	&0	&97 \\ \hline
+6	&Maitighar Service to Anamnagar	            &0	&0	&0	    &0	&10	&15	&3	&0	&0	&28 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&0	&0	&103	&43	&78	&233	&31	&37	&34	&559 \\ \hline
+8	&Anamnagar to Art Gallery	                &0	&0	&0	    &0	&15	&31	&0	&2	&0	&48 \\ \hline
+9	&Anamnagar to Babarmahal Service	        &0	&0	&0	    &0	&16	&35	&0	&0	&0	&51 \\ \hline
+10	&Anamnagar to Maitighar Main	            &0	&0	&0	    &0	&10	&23	&0	&1	&0	&34 \\ \hline
+11	&Babarmahal Service to Art Gallery	        &0	&0	&0	    &0	&58	&152	&1	&1	&0	&212 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&0	&3	&122	&39	&165	&673	&22	&20	&33	&1077 \\ \hline
+13	&Maitighar Main to Art Gallery	            &0	&0	&0	    &0	&12	&91	&4	&16	&0	&123 \\ \hline
+14	&Maitighar Main to Babarmahal Main	        &0	&2	&4	    &12	&221	&1160	&29	&24	&7	&1459 \\ \hline
+15	&Babarmahal Main to Anamnagar	            &0	&0	&5	    &0	&21	&43	&0	&0	&0	&69 \\ \hline
+16	&Babarmahal Main to Maitighar Main	        &0	&6	&0	    &0	&238	&1237	&17	&14	&0	&1512 \\ \hline
+
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+    
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	            &–	&–	&–	&–	&1.049	&1.406	&1.414	&–	&–	&0.613 \\ \hline
+2	&Art Gallery to Maitighar Service	    &–	&2.000	&–	&–	&2.137	&0.299	&2.000	&0.816	&–	&1.663 \\ \hline
+3	&Art Gallery to Babarmahal Service	&–	&2.000	&–	&–	&1.177	&0.458	&0.816	&0.000	&–	&0.871 \\ \hline
+4	&Art Gallery to Babarmahal Main	&–	&–	&–	&–	&0.840	&0.413	&0.816	&1.414	&–	&0.165 \\ \hline
+5	&Art Gallery to Maitighar Main	&–	&2.449	&–	&–	&1.247	&1.254	&0.535	&–	&–	&1.919 \\ \hline
+6	&Maitighar Service to Anamnagar	&–	&–	&–	&–	&1.826	&1.414	&0.535	&–	&–	&0.371 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&–	&–	&1.749	&0.741	&0.336	&1.067	&1.335	&0.641	&1.298	&0.854 \\ \hline
+8	&Anamnagar to Art Gallery	&–	&–	&–	&–	&2.038	&0.000	&–	&0.816	&–	&1.109 \\ \hline
+9	&Anamnagar to Babarmahal Service	&–	&–	&–	&–	&0.246	&0.170	&–	&–	&–	&– \\ \hline
+10	&Anamnagar to Maitighar Main	&–	&–	&–	&–	&0.309	&1.342	&–	&0.816	&–	&0.707 \\ \hline
+11	&Babarmahal Service to Art Gallery	&–	&–	&–	&–	&2.416	&1.188	&0.816	&1.414	&–	&0.138 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&–	&0.632	&0.800	&1.532	&4.042	&0.192	&1.010	&1.251	&0.535	&1.106 \\ \hline
+13	&Maitighar Main to Art Gallery	&–	&–	&–	&–	&0.283	&1.756	&2.828	&0.516	&–	&0.827 \\ \hline
+14	&Maitighar Main to Babarmahal Main	&   &2.000	&0.000	&0.926	&1.166	&1.125	&2.028	&0.971	&1.279	&1.214 \\ \hline
+15	&Babarmahal Main to Anamnagar	&–	&–	&–	&–	&0.679	&0.309	&–	&–	&–	&0.613 \\ \hline
+16	&Babarmahal Main to Maitighar Main	&–	&0.426	&–	&–	&0.655	&1.581	&1.905	&0.849	&–	&1.980 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\section{Day 2: Peak Hour}
+\begin{table}[h!]
+\centering
+\caption{Software Simulation Data for Vehicle Classification : Peak Hour Day 1}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{S.N.} & \textbf{Movement (From To)} &\multicolumn{10}{|c|}{\textbf{Vehicle Classification -- Software Simulation Data}} \\
+\cline{3-12}
+& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
+\hline
+    1 & Art Gallery to Anamnagar & 0 & 0 & 0 & 0 & 40 & 151 & 0 & 0 & 0 & 191 \\
+    \hline
+    2 & Art Gallery to Maitighar Service & 0 & 0 & 0 & 0 & 7 & 200 & 0 & 0 & 0 & 207 \\
+    \hline
+    3 & Art Gallery to Babarmahal Service & 0 & 0 & 0 & 0 & 47 & 253 & 1 & 0 & 0 & 301 \\
+    \hline
+    4 & Art Gallery to Babarmahal Main & 0 & 0 & 0 & 0 & 25 & 118 & 2 & 0 & 0 & 145 \\
+    \hline
+    5 & Art Gallery to Maitighar Main & 0 & 0 & 0 & 0 & 8 & 46 & 0 & 0 & 0 & 54 \\
+    \hline
+    6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 9 & 18 & 5 & 0 & 0 & 32 \\
+    \hline
+    7 & Maitighar Service to Babarmahal Service & 0 & 0 & 136 & 33 & 178 & 391 & 42 & 0 & 49 & 829 \\
+    \hline
+    8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 14 & 58 & 0 & 0 & 0 & 72 \\
+    \hline
+    9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 18 & 51 & 3 & 1 & 0 & 73 \\
+    \hline
+    10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 2 & 2 & 0 & 0 & 0 & 4 \\
+    \hline
+    11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 90 & 254 & 0 & 0 & 7 & 351 \\
+    \hline
+    12 & Babarmahal Service to Maitighar Service & 0 & 11 & 138 & 37 & 186 & 830 & 7 & 2 & 28 & 1239 \\
+    \hline
+    13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 30 & 159 & 1 & 0 & 0 & 190 \\
+    \hline
+    14 & Maitighar Main to Babarmahal Main & 0 & 0 & 0 & 0 & 336 & 1585 & 28 & 0 & 6 & 1955 \\
+    \hline
+    15 & Babarmahal Main to Anamnagar & 0 & 0 & 6 & 5 & 191 & 499 & 0 & 0 & 0 & 701 \\
+    \hline
+    16 & Babarmahal Main to Maitighar Main & 0 & 0 & 0 & 9 & 221 & 1596 & 0 & 10 & 0 & 1836 \\
+    \hline   
+    \end{tabular}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\small
+\setlength{\tabcolsep}{5pt}
+\caption{Observed Field Count Data for Different Vehicle Classes and Movements: Peak Hour Day 2}
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Observed Field Count Data}} \\
+\cline{3-12}
+& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
+\hline
+1 & Art Gallery to Anamnagar & 0 & 0 & 0 & 0 & 46 & 168 & 0 & 0 & 0 & 214 \\ \hline
+2 & Art Gallery to Maitighar Service & 0 & 0 & 0 & 0 & 17 & 220 & 2 & 0 & 0 & 239 \\ \hline
+3 & Art Gallery to Babarmahal Service & 0 & 0 & 0 & 0 & 62 & 253 & 3 & 4 & 0 & 322 \\ \hline
+4 & Art Gallery to Babarmahal Main & 0 & 0 & 0 & 0 & 33 & 122 & 2 & 1 & 0 & 158 \\ \hline
+5 & Art Gallery to Maitighar Main & 0 & 0 & 0 & 0 & 12 & 47 & 0 & 0 & 0 & 59 \\ \hline
+6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 12 & 20 & 3 & 0 & 0 & 35 \\ \hline
+7 & Maitighar Service to Babarmahal Service & 0 & 0 & 138 & 45 & 168 & 403 & 34 & 0 & 50 & 838 \\ \hline
+8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 10 & 57 & 1 & 0 & 0 & 68 \\ \hline
+9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 16 & 53 & 3 & 0 & 0 & 72 \\ \hline
+10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 3 & 1 & 1 & 0 & 0 & 5 \\ \hline
+11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 96 & 272 & 0 & 2 & 5 & 375 \\ \hline
+12 & Babarmahal Service to Maitighar Service & 0 & 2 & 147 & 51 & 205 & 883 & 3 & 2 & 13 & 1306 \\ \hline
+13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 29 & 149 & 2 & 0 & 0 & 180 \\ \hline
+14 & Maitighar Main to Babarmahal Main & 0 & 1 & 4 & 9 & 401 & 1579 & 54 & 5 & 7 & 2060 \\ \hline
+15 & Babarmahal Main to Anamnagar & 1 & 0 & 7 & 3 & 197 & 559 & 0 & 3 & 0 & 770 \\ \hline
+16 & Babarmahal Main to Maitighar Main & 2 & 2 & 5 & 11 & 266 & 1604 & 10 & 8 & 0 & 1908 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h]
+\centering
+\caption{GEH Values for Vehicle Classification: Peak Hour Day 2}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\cline{3-12}
+& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
+\hline
+1 & Art Gallery to Anamnagar & -- & -- & -- & --  & 2.887 &	1.380	& -- &  -- & -- &2.143 \\
+\hline
+2 & Art Gallery to Maitighar Service & -- & -- & -- & -- & 2.887 & 1.380 & -- & -- & -- & 2.143 \\
+\hline
+3 & Art Gallery to Babarmahal Service & -- & -- & -- & -- & 2.032 & 0.000 & 1.414 & 2.828 & -- & 1.190 \\
+\hline
+4 & Art Gallery to Babarmahal Main & -- & -- & -- & -- & 1.486 & 0.365 & 0.000 & 1.414 & -- & 1.056 \\
+\hline
+5 & Art Gallery to Maitighar Main & -- & -- & -- & -- & 1.265 & 0.147 & -- & -- & -- & 0.665 \\
+\hline
+6 & Maitighar Service to Anamnagar & -- & -- & -- & -- & 0.926 & 0.459 & 1.000 & -- & -- & 0.518 \\
+\hline
+7 & Maitighar Service to Babarmahal Service & -- & -- & 0.171 & 1.921 & 0.760 & 0.602 & 1.298 & -- & 0.142 & 0.312 \\
+\hline
+8 & Anamnagar to Art Gallery & -- & -- & -- & -- & 1.155 & 0.132 & -- & -- & -- & 0.478 \\
+\hline
+9 & Anamnagar to Babarmahal Service & -- & -- & -- & -- & 0.485 & 0.277 & -- & -- & -- & 0.117 \\
+\hline
+10 & Anamnagar to Maitighar Main & -- & -- & -- & -- & 0.632 & 0.817 & -- & -- & -- & 0.471 \\
+\hline
+11 & Babarmahal Service to Art Gallery & -- & -- & -- & -- & 0.622 & 1.110 & -- & 2.000 & 0.817 & 1.260 \\
+\hline
+12 & Babarmahal Service to Maitighar Service & -- & 3.530 & 0.754 & 2.111 & 1.359 & 1.811 & 1.789 & 0.000 & 3.313 & 1.878 \\
+\hline
+13 & Maitighar Main to Art Gallery & -- & -- & -- & -- & 0.184 & 0.806 & 0.817 & -- & -- & 0.735 \\
+\hline
+14 & Maitighar Main to Babarmahal Main & -- & 1.414 & 2.828 & 4.243 & 3.386 & 0.151 & 4.061 & 3.162 & 0.392 & 2.344 \\
+\hline
+15 & Babarmahal Main to Anamnagar & -- & -- & 0.392 & 1.000 & 0.431 & 2.609 & -- & 2.450 & -- & 2.544 \\
+\hline
+16 & Babarmahal Main to Maitighar Main & -- & 2.000 & 3.162 & 0.632 & 2.884 & 0.200 & 4.472 & 0.667 & -- & 1.664 \\
+\hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\section{Day 2: Off Peak Hour}
+\centering
+\begin{table}[h]
+\centering
+\caption{Software Simulation Data for Vehicle Classification : Off Peak Hour Day 2}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\cline{3-12}
+& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
+\hline
+1 & Art Gallery to Anamnagar & 0 & 0 & 0 & 0 & 38 & 76 & 5 & 0 & 0 & 119 \\
+\hline
+2 & Art Gallery to Maitighar Service & 0 & 3 & 0 & 0 & 27 & 108 & 2 & 2 & 0 & 142 \\
+\hline
+3 & Art Gallery to Babarmahal Service & 0 & 3 & 0 & 0 & 68 & 194 & 0 & 0 & 0 & 265 \\
+\hline
+4 & Art Gallery to Babarmahal Main & 0 & 0 & 0 & 0 & 38 & 118 & 4 & 2 & 0 & 162 \\
+\hline
+5 & Art Gallery to Maitighar Main & 0 & 0 & 0 & 0 & 38 & 51 & 2 & 2 & 0 & 93 \\
+\hline
+6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 8 & 12 & 4 & 0 & 0 & 24 \\
+\hline
+7 & Maitighar Service to Babarmahal Service & 0 & 0 & 124 & 40 & 147 & 239 & 26 & 41 & 57 & 674 \\
+\hline
+8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 16 & 38 & 1 & 2 & 0 & 57 \\
+\hline
+9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 22 & 31 & 2 & 0 & 0 & 55 \\
+\hline
+10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 9 & 28 & 0 & 0 & 0 & 37 \\
+\hline
+11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 49 & 138 & 4 & 0 & 0 & 191 \\
+\hline
+12 & Babarmahal Service to Maitighar Service & 0 & 0 & 114 & 30 & 183 & 639 & 23 & 21 & 20 & 1030 \\
+\hline
+13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 33 & 135 & 9 & 7 & 0 & 184 \\
+\hline
+14 & Maitighar Main to Babarmahal Main & 0 & 1 & 0 & 6 & 198 & 1312 & 61 & 72 & 0 & 1649 \\
+\hline
+15 & Babarmahal Main to Anamnagar & 0 & 0 & 6 & 0 & 14 & 42 & 0 & 0 & 0 & 62 \\
+\hline
+16 & Babarmahal Main to Maitighar Main & 0 & 9 & 0 & 6 & 228 & 1248 & 9 & 11 & 0 & 1511 \\
+\hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[h]
+\centering
+\caption{Observed Field Count Data for Different Vehicle Classes and Movements: Off-Peak Hour Day 2}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\cline{3-12}
+& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
+\hline
+S.N. & Movement (From to To) & Heavy Truck & Mini Truck & Bus & Micro-Bus & Car & Bike & L.V & Pickup & Tempo & Vehs (ALL) \\
+\hline
+1 & Art Gallery to Anamnagar & 0 & 1 & 0 & 0 & 35 & 90 & 4 & 2 & 0 & 132 \\
+\hline
+2 & Art Gallery to Maitighar Service & 0 & 2 & 0 & 0 & 42 & 110 & 3 & 2 & 0 & 159 \\
+\hline
+3 & Art Gallery to Babarmahal Service & 0 & 3 & 0 & 0 & 77 & 196 & 2 & 2 & 0 & 280 \\
+\hline
+4 & Art Gallery to Babarmahal Main & 0 & 2 & 0 & 0 & 52 & 120 & 2 & 3 & 0 & 179 \\
+\hline
+5 & Art Gallery to Maitighar Main & 0 & 2 & 0 & 0 & 37 & 56 & 3 & 1 & 0 & 99 \\
+\hline
+6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 9 & 15 & 4 & 0 & 0 & 28 \\
+\hline
+7 & Maitighar Service to Babarmahal Service & 0 & 0 & 116 & 41 & 91 & 309 & 34 & 29 & 41 & 661 \\
+\hline
+8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 12 & 39 & 1 & 1 & 0 & 53 \\
+\hline
+9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 17 & 33 & 1 & 1 & 0 & 52 \\
+\hline
+10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 9 & 28 & 0 & 0 & 0 & 37 \\
+\hline
+11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 62 & 133 & 4 & 1 & 0 & 200 \\
+\hline
+12 & Babarmahal Service to Maitighar Service & 0 & 1 & 108 & 38 & 177 & 661 & 23 & 16 & 31 & 1055 \\
+\hline
+13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 25 & 132 & 4 & 7 & 0 & 168 \\
+\hline
+14 & Maitighar Main to Babarmahal Main & 0 & 1 & 0 & 11 & 231 & 1375 & 53 & 72 & 0 & 1743 \\
+\hline
+15 & Babarmahal Main to Anamnagar & 0 & 0 & 5 & 0 & 21 & 39 & 1 & 1 & 0 & 67 \\
+\hline
+16 & Babarmahal Main to Maitighar Main & 0 & 5 & 0 & 2 & 233 & 1318 & 19 & 11 & 0 & 1588 \\
+\hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[h]
+\centering
+\caption{Calculation of GEH values for different vehicle classes: Off-Peak Hour Day 2}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\cline{3-12}
+& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
+\hline
+1 & Art Gallery to Anamnagar & -- & -- & -- & -- & 0.497 & 1.537 & 0.471 & 2.000 & -- & 1.160 \\
+\hline
+2 & Art Gallery to Maitighar Service & -- & -- & -- & -- & 2.554 & 0.192 & -- & -- & -- & 1.386 \\
+\hline
+3 & Art Gallery to Babarmahal Service & -- & -- & -- & -- & 1.057 & 0.143 & 2.000 & 2.000 & -- & 0.909 \\
+\hline
+4 & Art Gallery to Babarmahal Main & -- & -- & -- & -- & 2.087 & 0.183 & 1.155 & 0.632 & -- & 1.302 \\
+\hline
+5 & Art Gallery to Maitighar Main & -- & -- & -- & -- & 0.163 & 0.684 & -- & -- & -- & 0.612 \\
+\hline
+6 & Maitighar Service to Anamnagar & -- & -- & -- & -- & 0.343 & 0.816 & 0.000 & -- & -- & 0.784 \\
+\hline
+7 & Maitighar Service to Babarmahal Service & -- & -- & 0.730 & 0.157 & 5.134 & 4.229 & 1.461 & -- & 2.286 & 0.503 \\
+\hline
+8 & Anamnagar to Art Gallery & -- & -- & -- & -- & 1.069 & 0.161 & -- & -- & -- & 0.539 \\
+\hline
+9 & Anamnagar to Babarmahal Service & -- & -- & -- & -- & 1.132 & 0.354 & -- & -- & -- & 0.410 \\
+\hline
+10 & Anamnagar to Maitighar Main & -- & -- & -- & -- & 0.000 & 0.000 & -- & -- & -- & 0.000 \\
+\hline
+11 & Babarmahal Service to Art Gallery & -- & -- & -- & -- & 1.745 & 0.430 & -- & 1.414 & -- & 0.644 \\
+\hline
+12 & Babarmahal Service to Maitighar Service & -- & 1.414 & 0.569 & 1.372 & 0.447 & 0.863 & 0.000 & 1.162 & 2.178 & 0.774 \\
+\hline
+13 & Maitighar Main to Art Gallery & -- & -- & -- & -- & 1.486 & 0.260 & 1.961 & -- & -- & 1.206 \\
+\hline
+14 & Maitighar Main to Babarmahal Main & -- & 1.414 & -- & 1.715 & 2.253 & 1.719 & 1.060 & 0.000 & -- & 2.283 \\
+\hline
+15 & Babarmahal Main to Anamnagar & -- & -- & 0.426 & -- & 1.673 & 0.471 & -- & 1.414 & -- & 0.623 \\
+\hline
+16 & Babarmahal Main to Maitighar Main & -- & 1.512 & -- & 2.000 & 0.329 & 1.954 & 2.673 & 0.000 & -- & 1.956 \\
+\hline
+
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+
+\begin{landscape}
+\section{Day 3: Peak Hour}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+    
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	            &0	&0	&0	&0	&29	173	&0	&0	&0	&202 \\ \hline
+2	&Art Gallery to Maitighar Service	    &0	&0	&0	&0	&10	&223	&0	&0	&0	&233 \\ \hline
+3	&Art Gallery to Babarmahal Service	    &0	&0	&0	&0	&42	&190	&3	&0	&0	&235   \\ \hline
+4	&Art Gallery to Babarmahal Main	        &0	&0	&0	&0	&26	&103	&0	&0	&0	&129 \\ \hline
+5	&Art Gallery to Maitighar Main	        &0	&0	&0	&0	&16	&53	&0	&0	&0	&69 \\ \hline
+6	&Maitighar Service to Anamnagar	        &0	&0	&0	&0	&3	&11	&0	&0	&0	&14 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&0	&0	&139	&33	&184	&399	&47	&0	&49	&851 \\ \hline
+8	&Anamnagar to Art Gallery	            &0	&0	&0	&0	&13	&49	&0	&1	&0	&63 \\ \hline
+9	&Anamnagar to Babarmahal Service	        &0	&0	&0	&0	&17	&30	&3	&0	&0	&50 \\ \hline
+10	&Anamnagar to Maitighar Main	            &0	&0	&0	&0	&0	&0	&0	&0	&0	&0 \\ \hline
+11	&Babarmahal Service to Art Gallery	    &0	&0	&0	&0	&92	&296	&2	&2	&6	&398 \\ \hline
+12	&Babarmahal Service to Maitighar Service &0 &11 &132 &37 &173 &771 &5 &0 &28 &1157 \\ \hline
+13	&Maitighar Main to Art Gallery	        &0& 0& 0&0&31&153&2&0&0&186\\ \hline
+14	&Maitighar Main to Babarmahal Main	    &0& 0& 0&0&336&1594&26&0&6&1962\\ \hline
+15	&Babarmahal Main to Anamnagar	        &0& 0&5&5&203&527&0&0&0&740 \\ \hline
+16	&Babarmahal Main to Maitighar Main	    &0& 0&1&9&222&1621&0&9&0&1862 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	&0	&0	&0	&0	&28	&197	&0	&0	&0	&225 \\ \hline
+2	&Art Gallery to Maitighar Service	&0	&0	&0	&0	&18	&241	&0	&0	&0	&259 \\ \hline
+3	&Art Gallery to Babarmahal Service	&0	&0	&0	&0	&53	&195	&2	&0	&0	&250 \\ \hline
+4	&Art Gallery to Babarmahal Main	&0	&0	&0	&0	&27	&106	&0	&0	&0	&133 \\ \hline
+5	&Art Gallery to Maitighar Main	&0	&0	&0	&0	&16	&54	&0	&0	&0	&70 \\ \hline
+6	&Maitighar Service to Anamnagar	&0	&0	&0	&0	&3	&11	&0	&0	&0	&14 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&0	&0	&157	&43	&163	&425	&34	&1	&44	&867 \\ \hline
+8	&Anamnagar to Art Gallery	&0	&0	&0	&0	&11	&49	&0	&1	&0	&61 \\ \hline
+9	&Anamnagar to Babarmahal Service	&0	&0	&0	&0	&13	&35	&1	&0	&0	&49 \\ \hline
+10	&Anamnagar to Maitighar Main	&0	&0	&0	&0	&1	&0	&0	&0	&0	&1 \\ \hline
+11	&Babarmahal Service to Art Gallery	&0	&0	&0	&0	&102	&301	&2	&3	&8	&416 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&1	&2	&139	&45	&176	&789	&3	&6	&34	&1195 \\ \hline
+13	&Maitighar Main to Art Gallery	&0	&0	&0	&0	&30	&145	&4	&0	&0	&179 \\ \hline
+14	&Maitighar Main to Babarmahal Main	&1	&1	&2	&1	&365	&1648	&38	&3	&7	&2066 \\ \hline
+15	&Babarmahal Main to Anamnagar	&0	&0	&7	&4	&229	&596	&0	&3	&0	&839 \\ \hline
+16	&Babarmahal Main to Maitighar Main	&2	&1	&4	&6	&222	&1683	&7	&10	&0	&1935 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	&–	&–	&–	–	&0.187	&1.765	&–	&–	&–	&1.574 \\ \hline
+2	&Art Gallery to Maitighar Service	&–	&–	&–	&–	&2.138	&1.182	&–	&–	&–	&1.658 \\ \hline
+3	&Art Gallery to Babarmahal Service	&–	&–	&–	&–	&1.596	&0.360	&0.632	&–	&–	&0.963 \\ \hline
+4	&Art Gallery to Babarmahal Main	&–	&–	&–	&–	&0.194	&0.293	&–	&–	&–	&0.349 \\ \hline
+5	&Art Gallery to Maitighar Main	&–	&–	&–	&–	&0.000	&0.137	&–	&–	&–	&0.120 \\ \hline
+6	&Maitighar Service to Anamnagar	&–	&–	&–	&–	&0.000	&0.000	&–	&–	&–	&0.000 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&–	&–	&1.480	&1.622	&1.594	&1.281	&2.043	&–	&0.733	&0.546 \\ \hline
+8	&Anamnagar to Art Gallery	&–	&–	&–	&–	&0.577	&0.000	&–	&–	&–	&0.254 \\ \hline
+9	&Anamnagar to Babarmahal Service	&–	&–	&–	&–	&1.033	&0.877	&–	&–	&–	&0.142 \\ \hline
+10	&Anamnagar to Maitighar Main	&–	&–	&–	&–	&1.414	&–	&–	&–	&–	&1.414 \\ \hline
+11	&Babarmahal Service to Art Gallery	&–	&–	&–	&–	&1.015	&0.289	&–	&0.632	&0.756	&0.892 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&–	&3.530	&–	&–	&0.227	&0.645	&1.000	&3.464	&1.078	&1.108 \\ \hline
+13	&Maitighar Main to Art Gallery	&–	&–	&–	&–	&0.181	&0.655	&1.155	&–	&–	&0.518 \\ \hline
+14	&Maitighar Main to Babarmahal Main	&1.414	&1.414	&2.000	&1.414	&1.549	&1.341	&2.121	&2.449	&0.392	&2.317 \\ \hline
+15	&Babarmahal Main to Anamnagar	&–	&–	&0.816	&0.471	&1.769	&2.912	&–	&2.449	&–	&3.523 \\ \hline
+16	&Babarmahal Main to Maitighar Main	&–	&–	&1.897	&1.095	&0.000	&1.525	&3.742	&0.324	&–	&1.675 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+
+\begin{landscape}
+\section{Day 3: Off Peak Hour}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	&0	&0	&0	&0	&45	&94	&5	&0	&0	&144 \\ \hline
+2	&Art Gallery to Maitighar Service	&0	&0	&0	&2	&21	&109	&0	&2	&0	&134 \\ \hline
+3	&Art Gallery to Babarmahal Service	&0	&0	&0	&0	&64	&272	&2	&2	&0	&340 \\ \hline
+4	&Art Gallery to Babarmahal Main	&0	&0	&0	&0	&38	&125	&5	&3	&0	&171 \\ \hline
+5	&Art Gallery to Maitighar Main	&0	&0	&0	&0	&29	&60	&0	&0	&0	&89 \\ \hline
+6	&Maitighar Service to Anamnagar	&0	&0	&0	&0	&7	&12	&0	&0	&0	&19 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&0	&0	&111	&22	&115	&355	&13	&57	&41	&714 \\ \hline
+8	&Anamnagar to Art Gallery	&0	&0	&0	&0	&3	&25	&0	&2	&0	&30 \\ \hline
+9	&Anamnagar to Babarmahal Service	&0	&0	&0	&0	&11	&18	&3	&0	&0	&32 \\ \hline
+10	&Anamnagar to Maitighar Main	&0	&0	&0	&0	&10	&19	&0	&0	&0	&29 \\ \hline
+11	&Babarmahal Service to Art Gallery	&0	&0	&0	&0	&59	&146	&2	&0	&0	&207 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&0	&1	&124	&36	&159	&632	&25	&25	&32 1034 \\ \hline
+13  &Maitighar Main to Art Gallery &0 &0 &0 &0 &34 &133 &1 &13 &0 &181 \\ \hline
+14  &Maitighar Main to Babarmahal Main &0 &0 &0 &0 &216 &1263 &36 &16 &6 &1537 \\ \hline
+15  &Babarmahal Main to Anamnagar &0 &0 &1 &0 &16 &39 &1 &0 &0 &57 \\ \hline
+16  &Babarmahal Main to Maitighar Main &0 &9 &0 &6 &198 &1218 &25 &10&0&1466 \\ \hline
+
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	    &0	&0	&0	&0	&39	&114	&5	&1	&0	&159 \\ \hline
+2	&Art Gallery to Maitighar Service	&0	&1	&0	&2	&34	&110	&2	&1	&0	&150 \\ \hline
+3	&Art Gallery to Babarmahal Service	&0	&0	&0	&1	&73	&280	&3	&1	&0	&358 \\ \hline
+4	&Art Gallery to Babarmahal Main	&0	&0	&0	&0	&54	&121	&5	&4	&0	&184 \\ \hline
+5	&Art Gallery to Maitighar Main	&0	&0	&0	&0	&34	&50	&2	&1	&0	&87 \\ \hline
+6	&Maitighar Service to Anamnagar	&0	&0	&0	&0	&6	&11	&0	&0	&0	&17 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&0	&0	&126	&27	&107	&374	&18	&39	&35	&726 \\ \hline
+8	&Anamnagar to Art Gallery	&0	&0	&0	&0	&5	&25	&0	&1	&0	&31 \\ \hline
+9	&Anamnagar to Babarmahal Service	&0	&0	&0	&0	&9	&23	&1	&0	&0	&33 \\ \hline
+10	&Anamnagar to Maitighar Main	&0	&0	&0	&0	&5	&20	&1	&0	&0	&26 \\ \hline
+11	&Babarmahal Service to Art Gallery	&0	&0	&0	&0	&69	&140	&3	&1	&0	&213 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&0	&2	&120	&42	&159	&667	&23	&17	&36	&1066 \\ \hline
+13	&Maitighar Main to Art Gallery	&0	&0	&0	&0	&27	&122	&4	&16	&0	&169 \\ \hline
+14	&Maitighar Main to Babarmahal Main	&0	&0	&2	&1	&230	&1336	&25	&22	&7	&1623 \\ \hline
+15	&Babarmahal Main to Anamnagar	&0	&0	&2	&1	&19	&38	&1	&1	&0	&62 \\ \hline
+16	&Babarmahal Main to Maitighar Main	&0	&5	&1	&2	&198	&1272	&27	&22	&0	&1527 \\ \hline
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\begin{landscape}
+\begin{table}[h!]
+\centering
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
+\hline
+S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & Bike & LUV & Pick up & Tempo & Vehs ALL \\ \hline
+1	&Art Gallery to Anamnagar	&–	&–	&–	&–	&0.926	&1.961	&–	&–	&–	&1.219 \\ \hline
+2	&Art Gallery to Maitighar Service	&–	&–	&–	&–	&2.479	&0.096	&–	&–	&–	&1.343 \\ \hline
+3	&Art Gallery to Babarmahal Service	&–	&–	&–	&–	&1.087	&0.482	&0.632	&–	&–	&0.964 \\ \hline
+4	&Art Gallery to Babarmahal Main	&–	&–	&–	&–	&2.359	&0.361	&–	&–	&–	&0.976 \\ \hline
+5	&Art Gallery to Maitighar Main	&–	&–	&–	&–	&0.891	&1.348	&–	&–	&–	&0.213 \\ \hline
+6	&Maitighar Service to Anamnagar	&–	&–	&–	&–	&0.392	&0.295	&–	&–	&–	&0.471 \\ \hline
+7	&Maitighar Service to Babarmahal Service	&–	&–	&1.378	&1.010	&0.759	&0.995	&1.270	&–	&0.973	&0.447 \\ \hline
+8	&Anamnagar to Art Gallery	&–	&–	&–	&–	&1.000	&0.000	&–	&–	&–	&0.181 \\ \hline
+9	&Anamnagar to Babarmahal Service	&–	&–	&–	&–	&0.632	&1.104	&–	&–	&–	&0.175 \\ \hline
+10	&Anamnagar to Maitighar Main	&–	&–	&–	&–	&1.826	&–	&–	&–	&–	&0.572 \\ \hline
+11	&Babarmahal Service to Art Gallery	&–	&–	&–	&–	&1.250	&0.502	&–	&1.414	&–	&0.414 \\ \hline
+12	&Babarmahal Service to Maitighar Service	&–	&0.816	&–	&–	&0.000	&1.373	&0.408	&1.746	&0.686	&0.988 \\ \hline
+13	&Maitighar Main to Art Gallery	&–	&–	&–	&–	&1.268	&0.974	&1.897	&–	&–	&0.907 \\ \hline
+14	&Maitighar Main to Babarmahal Main	&–	&–	&2.000	&1.414	&0.938	&2.025	&1.992	&1.376	&0.392	&2.164 \\ \hline
+15	&Babarmahal Main to Anamnagar	&–	&–	&0.816	&1.414	&0.717	&0.161	&–	&1.414	&–	&0.648 \\ \hline
+16	&Babarmahal Main to Maitighar Main	&–	&–	&1.414	&2.000	&0.000	&1.530	&0.392	&3.000	&–	&1.577 \\ \hline
+
+
+\end{tabular}
+\end{table}
+\end{landscape}
+
+
+\chapter{ANNEX VIII (MODEL DEVELOPMENT USING VSSIM)}
+
+\section{Driving Behavior Parameters}
+
+Setting Wiedemann car-following model parameters and lane change 
+behavior suited to mixed traffic conditions. 
+
+\begin{figure}[ht]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{src/images/figures/db1.png}
+        \caption{}
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{src/images/figures/db2.png}
+        \caption{}
+    \end{subfigure}
+    \caption{Driving Behavior}
+\end{figure}
+
+\clearpage
+\section{Signal Controller Setup}
+Defining fixed-time signal phases, cycle length, green/amber/red times, and phase sequences.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/vissig.png}
+    \caption{Vissig - Signal Controller 5 }
+\end{figure}
+
+
+\section{Pedestrian Input}
+Adding pedestrian crossings and volume if considered in the study.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/pedinput.png}
+    \caption{Pedestrian Inputs}
+\end{figure}
+
+\clearpage
+\section{Queue Length}
+
+\textbf{Peak Hour:}
+\begin{table}[h!]
+\centering
+\caption{Queue Length Calculation Peak Hour: Day 1}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
+\hline
+Art Gallery to Intersection & 23.7 & 20.63 & 13.20 \\ \hline
+Babarmahal Service to Intersection & 35.54 & 31.31 & 11.90\\ \hline
+Anamnagar to Intersection & 6.43 & 7.22 & -12.24 \\ \hline
+Maitighar Service to Intersection & 23.75 & 19.67 & 17.18 \\ \hline
+Maitighar Main to Intersection & 44.62 & 39.18 & 12.19 \\ \hline
+Babarmahal Main to Anamnagar & 60.22 & 54.47 & 9.55 \\ \hline
+Babarmahal Main to Maitighar Main & 93.72 & 71.64 & 23.56 \\ \hline
+\end{tabular}
+\end{table}
+
+
+\begin{table}[h!]
+\centering
+\caption{Queue Length Calculation Peak Hour: Day 2}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
+\hline
+Art Gallery to Intersection & 32 & 38.42 & 20.06 \\ \hline
+Babarmahal Service to Intersection & 23 & 19.88 & -13.56 \\ \hline
+Anamnagar to Intersection & 4.5 & 5.4 & 20 \\ \hline
+Maitighar Service to Intersection & 22 & 18.74 & -14.81 \\ \hline
+Maitighar Main to Intersection & 25 & 27.19 & 8.76 \\ \hline
+Babarmahal Main to Anamnagar & 186 & 155.46 & -16.41 \\ \hline
+Babarmahal Main to Maitighar Main & 38 & 42.28 & 11.26 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Queue Length Calculation Peak Hour: Day 3}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
+\hline
+Art Gallery to Intersection & 40.75 & 35.67 & 12.46 \\ \hline
+Babarmahal Service to Intersection & 23.22 & 20.50 & 11.73 \\ \hline
+Anamnagar to Intersection & 6.24 & 5.83 & 6.54 \\ \hline
+Maitighar Service to Intersection & 17.65 & 15.74 & 10.80 \\ \hline
+Maitighar Main to Intersection & 37.85 & 29.77 & 21.35 \\ \hline
+Babarmahal Main to Anamnagar & 265.72 & 224.82 & 15.39 \\ \hline
+Babarmahal Main to Maitighar Main & 58.74 & 50.32 & 14.33 \\ \hline
+\end{tabular}
+\end{table}
+
+\textbf{Off-Peak Hour:}
+
+\begin{table}[h!]
+\centering
+\caption{Queue Length Calculation Off-Peak Hour: Day 1}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
+\hline
+Art Gallery to Intersection & 44.7 & 35.84 & 19.83 \\ \hline
+Babarmahal Service to Intersection & 23.63 & 20.21 & 14.48 \\ \hline
+Anamnagar to Intersection & 3.88 & 4.13 & -6.44 \\ \hline
+Maitighar Service to Intersection & 13.65 & 10.62 & 22.22 \\ \hline
+Maitighar Main to Intersection & 19.54 & 17.14 & 12.28 \\ \hline
+Babarmahal Main to Anamnagar & 4.55 & 3.88 & 14.68 \\ \hline
+Babarmahal Main to Maitighar Main & 38.45 & 30.84 & 19.78 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Queue Length Calculation Off-Peak Hour Day 2}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
+\hline
+Art Gallery to Intersection & 43 & 52.82 & 22.83 \\ \hline
+Babarmahal Service to Intersection & 16.8 & 19.56 & 16.42 \\ \hline
+Anamnagar to Intersection & 5 & 4.44 & -11.2 \\ \hline
+Maitighar Service to Intersection & 14.8 & 17.11 & 15.60 \\ \hline
+Maitighar Main to Intersection & 25 & 24.66 & -1.36 \\ \hline
+Babarmahal Main to Anamnagar & 25 & 24.66 & -1.36 \\ \hline
+Babarmahal Main to Maitighar Main & 3 & 3.63 & 21 \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[h!]
+\centering
+\caption{Queue Length Calculation Peak Hour: Day 3}
+\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
+\hline
+Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
+\hline
+Art Gallery to Intersection & 65.32 & 56.71 & 13.19 \\ \hline
+Babarmahal Service to Intersection & 25.32 & 19.08 & 24.64 \\ \hline
+Anamnagar to Intersection & 3.05 & 2.57 & 15.85 \\ \hline
+Maitighar Service to Intersection & 15.67 & 13.97 & 10.88 \\ \hline
+Maitighar Main to Intersection & 24.24 & 21.07 & 13.08 \\ \hline
+Babarmahal Main to Anamnagar & 2.98 & 3.37 & -13.22 \\ \hline
+Babarmahal Main to Maitighar Main & 33.47 & 28.76 & 14.08 \\ \hline
+\end{tabular}
+\end{table}
+
+\clearpage
+% \section{Consolidated Performance Comparison}
+
+% \begin{table}[h!]
+%     \centering
+%     \caption{Consolidated Overall Intersection Performance — All Scenarios}
+%     \begin{tabular}{|l|p{2cm}|p{2cm}|p{2cm}|}
+%         \hline
+%         Performance Measure	& Scenario1 (Existing) &	Scenario2 (VISSIM Optimized)	& Scenario3 (Manual Optimized) \\
+%         \hline
+%         Queue Delay (sec/veh)	& 59.60 &	64.16 &	43.73 \\
+%         \hline
+%         Level of Service &	E	& E	& D \\
+%         \hline
+%         Queue Length (m) &	34.87	& 38.38	& 24.95 \\
+%         \hline
+%         Vehicle Travel Time (sec) &	72.15	& 67.56	& 65.10 \\ 
+%         \hline
+
+%     \end{tabular}
+%     \label{tab:overall}
+% \end{table}
+
+
+
+
+
+

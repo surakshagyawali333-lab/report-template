@@ -1,7 +1,141 @@
 \chapter{METHODOLOGY}
 
+\section{Methodological Framework}
+The research methodology is presented in the flowchart as shown in \Cref{fig:res1}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/res1.png}
+    \caption{Flowchart of Research Methodology}
+    \label{fig:res1}
+\end{figure}
+\clearpage
+The conceptual framework of this research is presented in the \Cref{fig:res2}.
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/res2.png}
+    \caption{Flowchart of SATSC Approach}
+    \label{fig:res2}
+\end{figure}
+\clearpage
+\section{Study Area and Overview}
+The study focuses on the critical Babarmahal Road intersection (27.692506N,85.323863E) 
+located in the administrative and cultural heart of Kathmandu, Nepal. It is a
+four-legged signalized intersection. The intersection features four distinct
+legs:
 
-\section{Primary data collection. }
+\begin{enumerate}[label=\alph*.]
+    \item Major East leg: Carry a high-Volume Traffic along the Baneshwor-Babarmahal axis.
+    \item Major West leg: Carry a high-volume traffic along the Maitighar- Babarmahal axis.
+    \item Minor North leg: Leading directly towards the Department of Road (DOR). 
+    \item Minor south leg: leading towards the Arts Gallery.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics{src/images/figures/aerial.png}
+    \caption{Aerial view of Intersection from Google Earth Pro}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=\textwidth]{src/images/figures/visit.jpg}
+    \caption{Intersection during visit}
+    
+\end{figure}
+
+The traffic volume along the Maitighar (central) approach and the 
+Baneshwor approach is significantly higher, classifying them as 
+major roads within the intersection. In contrast, the Arts Gallery
+approach and the Department of Roads approach experience relatively 
+lower and more fluctuating traffic volumes throughout the day, making 
+them minor roads. Given this variation in traffic demand, implementing 
+a semi-actuated traffic signal control system at this intersection is 
+expected to be beneficial. Such a system can help reduce queue lengths, 
+minimize vehicle delays, improve the Level of Service (LOS), and 
+offer other operational advantages.
+
+\textbf{Geometric Specifications of Babarmahal Intersection}
+
+\begin{table}[h]
+    \centering
+    \caption{Geometrical Parameters}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{|l|V{8cm}|}
+        \hline
+        \textbf{Parameters} & \textbf{Specifications} \\
+        \hline
+        Number of Legs & 4(Four-legged intersection)\\
+        \hline
+        Approaches & Maitighar, Baneshwor, Arts Gallery, Department of Road (DOR)\\
+        \hline
+        Number of lanes Per Approach & Maitighar Approach: 8 lanes \\ 
+        & Baneshwor Approach: 8 lanes \\ 
+        & ArtsGallery Approach: 2 lanes \\ 
+        & DOR  Approach: 2 lanes \\
+        \hline
+        Lane Width & \textbf{Maitighar Approach:} \\ 
+        & Service Lane: 3.5m(Total 4 lanes) \\ 
+        & Main Lane: 3m(Total 4 lanes) \\
+        & \textbf{Baneshowr Approach:} \\
+        & Service Lane: 3.5m(Total 4 lanes) \\ 
+        & Main Lane: 3m(Total 4 lanes) \\
+        & \textbf{ArtsGallery Approach:} \\
+        & Main Lane: about 2.5m(Total 2 lanes) \\
+        & \textbf{DOR Approach:} \\
+        & Main Lane: 2.5m(Total 2 lanes) \\
+        \hline
+        Pedestrian Crosswalks & Present on two legs (Maitighar approach and Arts Gallery approach) \\
+        \hline
+        Crosswalk Length & About 3.1m \\
+        \hline
+        Existing Signal Poles & Present at all four corners (Fixed-Time Signal Control) \\
+        \hline
+    \end{tabular}
+    
+\end{table}
+
+NOTE: The above measurements are preliminary estimates obtained using Google Earth Pro 
+and will be verified through field surveys.
+
+\begin{table}[h]
+\centering
+\caption{Geometric and type of lane}
+\begin{tabular}{|p{3cm}|p{1.5cm}|l|p{1.8cm}|p{1.5cm}|}
+\hline
+\textbf{Orientations} & \textbf{No. of Lane} & \textbf{Movement} & \textbf{Wide of Lane} & \textbf{Lane Type} \\ \hline
+
+\multirow{2}{*}{DOR}
+ & Lane 1 & through/left/right & 3.0 m &  \\ \cline{2-5}
+ & Lane 2 & through/left/right & 3.0 m &  \\ \hline
+
+\multirow{2}{*}{Art-Gallery}
+ & Lane 3 & through/left/right & 2.5 m &  \\ \cline{2-5}
+ & Lane 4 & through/left/right & 4.0 m &  \\ \hline
+
+\multirow{6}{*}{Babar Mahal}
+ & Lane 5 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 6 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 7 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 8 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 9 & through & 3.5 m & Main \\ \cline{2-5}
+ & Lane 10 & through & 3.5 m & Main \\ \hline
+
+\multirow{10}{*}{Maitighar}
+ & Lane 11 & right & 3.5 m & Main \\ \cline{2-5}
+ & Lane 12 & through & 3.5 m & Main \\ \cline{2-5}
+ & Lane 13 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 14 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 15 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 16 & through/left & 3.5 m & Service \\ \cline{2-5}
+ & Lane 17 & through & 3.5 m & Main \\ \cline{2-5}
+ & Lane 18 & through/right & 3.5 m & Main \\ \cline{2-5}
+ & Lane 19 & through/left/right & 3.5 m & Main \\ \cline{2-5}
+ & Lane 20 & through/left/right & 3.5 m & Main \\ \hline
+
+\end{tabular}
+\end{table}
+
+\section{Primary Data Collection }
 The data used in this study were obtained from the District 
 Police Office, Bhadrakali, Kathmandu, which provided CCTV 
 video footage of the Babarmahal Intersection. The footage 
@@ -20,22 +154,22 @@ the microsimulation model in PTV VISSIM, as described in the
 subsequent sections. 
 
 The geometric data, including lane widths and GPS coordinates for 
-each lane, were obtained through \textbf{field measurement and a GPS survey} 
+each lane, were obtained through field measurement and a GPS survey 
 conducted on June 5th, 2025. Signal timing parameters, 
 including cycle length, phase sequences, and green times, 
 were recorded from the existing traffic signal controller at 
 the site.All collected data were subsequently used to 
 develop and calibrate the microsimulation model in 
-\textbf{PTV VISSIM}, as described in the subsequent sections.
+PTV VISSIM, as described in the subsequent sections.
 
 The video footage was processed and analyzed to determine 
 the peak and off-peak traffic conditions at the intersection. 
 Traffic volume observation extracted from the footage 
-revealed that \textbf{the maximum traffic flow was observed between 9:30 AM and 10:30 AM}, 
-which was therefore selected as the \textbf{peak hour} for this study. 
-Similarly, the period between \textbf{1:00 PM and 2:00 PM} was 
+revealed that the maximum traffic flow was observed between 9:30 AM and 10:30 AM, 
+which was therefore selected as the peak hour for this study. 
+Similarly, the period between 1:00 PM and 2:00 PM was 
 identified as representing comparatively lower traffic demand and 
-was selected as the \textbf{off-peak hour}. Classified 
+was selected as the off-peak hour. Classified 
 traffic volume counts and turning movement counts were 
 extracted from the CCTV footage for both these one-hour 
 periods and used as input data for the microsimulation model 
@@ -43,11 +177,13 @@ in PTV VISSIM.For the purpose of traffic volume count,
 vehicles were classified into eight categories, namely Heavy 
 Truck, Mini Truck, Big Bus, Micro Bus, Utility Van, Pickup, 
 Safa Tempo, and Bike, in accordance with the vehicle 
-classification system adopted by the \textbf{Department of Roads, 
-Nepal Road Standard 2070}.
+classification system adopted by the Department of Roads, 
+Nepal Road Standard 2070.
 
+\pagebreak
+\section{Existing Conditions Analysis using the HCM Manual.}
 
-\section{Existing Conditions analysis using the HCM manual.}
+\subsection{General Overview}
 
 The performance of the Babarmahal Intersection under the 
 existing fixed-time signal control was analytically assessed 
@@ -65,7 +201,7 @@ The existing signal operates on a cycle length of 157
 seconds, comprising four phases. The green time allocations 
 for each phase are summarized in \cref{tab:ftsplan}
 
-\begin{table}[h!]
+\begin{table}[h]
 \centering
 \renewcommand{\arraystretch}{1.5}
 \caption{Existing Fixed-Time Signal Phase Plan — Babarmahal Intersection}
@@ -91,7 +227,7 @@ for each phase are summarized in \cref{tab:ftsplan}
 \end{table}
 
 
-\subsection{Step 1: Peak Hour Factor (PHF)}
+\subsection{Peak Hour Factor (PHF)}
 The Peak Hour Factor (PHF) quantifies how uniformly 
 traffic is distributed within the peak hour. It is 
 defined as the ratio of the total hourly volume to 
@@ -109,44 +245,9 @@ where:
 . PHF values closer to 1.0 indicate a more uniform distribution of traffic, 
 while lower values indicate a sharply peaked flow pattern.
 
-For the Maitighar approach, the 15-minute PCU totals across 
-all turning movements (towards Baneshwor service lane, 
-Baneshwor main lane, DOR, and Art Gallery) were summed 
-for each interval as follows: 9:30–9:45 = 403.00; 9:45–10:00 = 386.25; 
-10:00–10:15 = 451.50; and 10:15–10:30 = 491.00. The total 
-hourly volume is 1731.75 PCU/hr, with the peak 15-minute 
-interval occurring at 10:15–10:30. Substituting into the 
-formula:
-\begin{align*}
-    PHF &= 1731.75 / (4 \times 491.00) \\
-    &= 1731.75 / 1964.00 \\
-    &= 0.882
-\end{align*}
-
-The PHF values for all four approaches were similarly computed and are 
-presented in \cref{tab:phf}
-
-\begin{table} [h!]
-    \centering
-    \caption{Peak Hour Factor (PHF) by Approach}
-    \begin{tabular}{|p{2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|p{1.7cm}|p{1.2cm}|p{1.2cm}|}
-    \hline
-    \textbf{Approach}  & \textbf{9:30- 9:45} & \textbf{9:45- 10:00} & \textbf{10:00- 10:15} & \textbf{10:15- 10:30} & \textbf{Total\ (PCU/hr)} & \textbf{Peak}\ \boldmath{$V_{15}$} & \textbf{PHF} \\
-    \hline
-    Maitighar &403.00	&386.25	&451.50	&491.00	&1731.75	&491.00	&0.882 \\
-    \hline
-    Baneshwor & 621.50	&533.75	&490.25	&538.75	&2184.25	&621.50	&0.879 \\
-    \hline
-    Art Gallery &92.25	&85.00	&85.75	&89.50	&352.50	&92.25	&0.955 \\
-    \hline
-    DOR	& 5.50	&12.25	&15.00	&20.50	&53.25	&20.50	&0.649 \\
-    \hline
-    \end{tabular}
-    \label{tab:phf}
-\end{table}
 
 
-\subsection{Step 2: Peak 15-Minute Flow Rate}
+\subsection{Peak 15-Minute Flow Rate}
 
 The hourly field volume V (PCU/hr) is converted to a peak 15-minute 
 equivalent flow rate v using the PHF. This conversion accounts 
@@ -157,40 +258,18 @@ governs capacity and delay. The flow rate is given by:
 \begin{equation*}
     v = V / PHF
 \end{equation*}
-For the Maitighar approach:
-\begin{align*}
-    v &= 1731.75 / 0.882\\
-        &= 1963.44 PCU/hr
-\end{align*}
+% For the Maitighar approach:
+% \begin{align*}
+%     v &= 1731.75 / 0.882\\
+%         &= 1963.44 PCU/hr
+% \end{align*}
 
-Dividing by a PHF less than 1.0 yields a flow rate 
-higher than the raw hourly count, representing the 
-worst-case demand intensity that the intersection must 
-accommodate. The flow rates, along with the corresponding 
-signal phase and green time, for all approaches are 
-presented in \cref{tab:pfr}.
+% Dividing by a PHF less than 1.0 yields a flow rate 
+% higher than the raw hourly count, representing the 
+% worst-case demand intensity that the intersection must 
+% accommodate. 
 
-\begin{table} [h!]
-    \centering
-    \caption{Peak Flow Rates by Approach}
-    \begin{tabular}{|p{2cm}|p{1.7cm}|p{1cm}|p{1.7cm}|p{1.1cm}|p{1.2cm}|p{1.2cm}|p{1.2cm}|}
-    \hline
-    \textbf{Approach} &	\textbf{V\ (PCU/hr)}	& \textbf{PHF} &\textbf{v\ (PCU/hr)} & \textbf{Phase} & \textbf{Green\ (s)} & \textbf{Cycle\ (s)} & \textbf{g/C} \\
-    \hline
-    Maitighar	&1731.75	&0.882	&1963.44	&B	&80	&157	&0.5096 \\
-    \hline
-    Baneshwor	&2184.25	&0.879	&2484.93	&B	&80	&157	&0.5096 \\
-    \hline
-    Art Gallery	&352.50	    &0.955	&369.11	    &C	&25	&157	&0.1592 \\
-    \hline
-    DOR	        &53.25	    &0.649	&82.05	    &D	&27	&157	&0.1720 \\
-    \hline
-    \end{tabular}
-    \label{tab:pfr}
-\end{table}
-
-
-\subsection{Step 3: Saturation Flow Rate}
+\subsection{Saturation Flow Rate}
 
 The saturation flow rate (s) represents the maximum 
 number of PCUs that can be discharged from an approach 
@@ -212,10 +291,10 @@ where:
     \item $f_g$ = grade adjustment factor
     \item $f_a$ = area type adjustment factor 
     \item $f_{LU}$ = lane utilisation factor
-    \item  N = number of lanes
+    \item  $N$ = number of lanes
 \end{itemize}
 
-    \subsection{Heavy Vehicle Factor ($f_{HV}$)}
+\subsection{Heavy Vehicle Factor ($f_{HV}$)}
 
     Among the adjustment factors, the heavy vehicle factor 
     is the most significant for the Maitighar and Baneshwor 
@@ -231,30 +310,12 @@ where:
     \item $P_{HV}$ = is the proportion of heavy vehicles in the traffic stream 
     \item $E_T$ = passenger car equivalent for heavy vehicles, taken as 2.0
 \end{itemize}
-For the Maitighar service lane, 131 out of 689 counted 
-vehicles were big buses ($P_{HV}$ = 0.19), yielding a weighted 
-average $f_{HV}$ = 0.9241 across both lanes combined. The 
-adjustment factor values applied to each approach are 
-summarised in \cref{tab:sfr}.
-
-\begin{table} [h!]
-    \centering
-    \caption{Saturation Flow Rate Adjustment Factors and Results}
-.   \begin{tabular}{|p{1.9cm}|p{0.3cm}|p{1cm}|p{1cm}|p{1.3cm}|p{1cm}|p{1cm}|p{1cm}|p{1.7cm}|}
-    \hline
-    \textbf{Approach} & \textbf{N}  & \boldmath{$S_o$} & \boldmath{$f_w$}  & \boldmath{$f_{HV}$}  & \boldmath{$f_g$} & \boldmath{$f_a$}  & \boldmath{$f_{LU}$} & \textbf{s\ (PCU/hr)}\\
-    \hline
-    Maitighar	    &2	&1900	&1.00	&0.9241	&1.00	&0.90	&0.95	&3002.31 \\
-    Baneshwor	    &2	&1900	&1.00	&0.9509	&1.00	&0.90	&0.95	&3089.44 \\
-    Art Gallery	    &1	&1900	&1.00	&1.0000	&1.00	&0.90	&1.00	&1710.00 \\
-    DOR	            &1	&1900	&1.00	&1.0000	&1.00	&0.90	&1.00	&1710.00 \\
-    \hline
-    \end{tabular}
-        \label{tab:sfr}
-\end{table}
+% For the Maitighar service lane, 131 out of 689 counted 
+% vehicles were big buses ($P_{HV}$ = 0.19), yielding a weighted 
+% average $f_{HV}$ = 0.9241 across both lanes combined. 
 
 
-\subsection{Step 4: Capacity and Degree of Saturation}
+\subsection{Capacity and Degree of Saturation}
 
 The effective capacity (c) of each approach lane group is 
 the product of the saturation flow rate and the green ratio 
@@ -273,41 +334,22 @@ capacity:
     X = v / c
 \end{equation*}
 
-An X value below 1.0 indicates that the approach is 
-operating within capacity. An X value exceeding 1.0 
-signals oversaturation, meaning vehicles cannot all be 
-discharged within a single cycle, and residual queues 
-accumulate progressively. For the Maitighar approach:
-\begin{align*}
-    c &= 3002.31 \times (80 / 157) \\
-      &= 1529.84 \   \text{PCU/hr} \\
-    X &= 1963.44 / 1529.84 \\
-      &= 1.2834
-\end{align*}
+% An X value below 1.0 indicates that the approach is 
+% operating within capacity. An X value exceeding 1.0 
+% signals oversaturation, meaning vehicles cannot all be 
+% discharged within a single cycle, and residual queues 
+% accumulate progressively. 
+% For the Maitighar approach:
+% \begin{align*}
+%     c &= 3002.31 \times (80 / 157) \\
+%       &= 1529.84 \   \text{PCU/hr} \\
+%     X &= 1963.44 / 1529.84 \\
+%       &= 1.2834
+% \end{align*}
 
-The capacity and degree of saturation for all 
-approaches are presented in \cref{tab:cads}.
 
-\begin{table}[h!]
-    \centering
-    \caption{Capacity and Degree of Saturation by Approach}
-    \begin{tabular}{|l|l|l|l|l|}
-    \hline
-    \textbf{Approach}	& \textbf{s\ (PCU/hr)}	&\textbf{c\ (PCU/hr)}	&\textbf{v\ (PCU/hr)}	&\textbf{v/c\ Ratio (X)} \\
-    \hline
-    Maitighar	& 3002.31	    &1529.84	&1963.44	&1.2834 \\
-    \hline
-    Baneshwor	& 3089.44	    &1574.24	&2484.93	&1.5785 \\
-    \hline
-    Art Gallery	& 1710.00	    &272.29	    &369.11	    &1.3556 \\
-    \hline
-    DOR	        & 1710.00	    &294.08	    &82.05	    &0.2790 \\
-    \hline
-    \end{tabular}
-    \label{tab:cads}
-\end{table}
 
-\subsection{Step 5: Control Delay}
+\subsection{Control Delay}
 
 Control delay per vehicle is the primary performance 
 measure for signalized intersections under the HCM 
@@ -324,14 +366,14 @@ steady rate throughout the cycle. It is given by:
     d_1 = [0.5 \times C \times (1 - g/C)^2]  /  [1 - \text{min}(1, X) \times (g/C)]
 \end{equation*}
 
-The term min(1, X) prevents the denominator from 
-becoming negative or zero under oversaturated 
-conditions. For the Maitighar approach:
-\begin{align*}
-    d_1 &= [0.5 \times 157 \times (1 - 0.5096)^2] / [1 - \text{min}(1, 1.2834) \times 0.5096]\\
-            &= 18.88 / 0.4904 \\
-            &= 38.50 \   \text{sec/veh}
-\end{align*}
+% The term min(1, X) prevents the denominator from 
+% becoming negative or zero under oversaturated 
+% conditions. For the Maitighar approach:
+% \begin{align*}
+%     d_1 &= [0.5 \times 157 \times (1 - 0.5096)^2] / [1 - \text{min}(1, 1.2834) \times 0.5096]\\
+%             &= 18.88 / 0.4904 \\
+%             &= 38.50 \   \text{sec/veh}
+% \end{align*}
 
 \subsection{Incremental Delay ($d_2$)}
 
@@ -348,14 +390,14 @@ where:
     \item k = incremental delay factor (0.5 for fixed-time signals)
     \item I = upstream filtering factor (1.0 for isolated intersections)
 \end{itemize}
-For the Maitighar approach:
-\begin{align*}
-    d_2 &= 900 \times 0.25 \times [(1.2834 - 1) + \sqrt{((1.2834 - 1)^2 + \frac{(8 \times 0.5 \times 1.0 \times 1.2834)}{(1529.84 \times 0.25))}}]\\
-        &= 225 \times [0.2834 + \sqrt{(0.0803 + 0.01342)]}\\
-        &=225 \times [0.2834 + 0.3062] \\
-        &= 225 \times 0.5896 \\
-        &= 132.66 \ sec/veh
-\end{align*}
+% For the Maitighar approach:
+% \begin{align*}
+%     d_2 &= 900 \times 0.25 \times [(1.2834 - 1) + \sqrt{((1.2834 - 1)^2 + \frac{(8 \times 0.5 \times 1.0 \times 1.2834)}{(1529.84 \times 0.25))}}]\\
+%         &= 225 \times [0.2834 + \sqrt{(0.0803 + 0.01342)]}\\
+%         &=225 \times [0.2834 + 0.3062] \\
+%         &= 225 \times 0.5896 \\
+%         &= 132.66 \ sec/veh
+% \end{align*}
 
 
 \subsection{Initial Queue Delay ($d_3$)}
@@ -369,41 +411,18 @@ $d_3$= 0 for all approaches.
 \subsection{Total Control Delay — Maitighar Approach}
 
 \begin{align*}
-    d &= d_1 + d_2 + d_3 \\
-        &= 38.50 + 132.66 + 0 \\
-        &= 171.16 \ sec/veh
+    d &= d_1 + d_2 + d_3
+        % &= 38.50 + 132.66 + 0 \\
+        % &= 171.16 \ sec/veh
 \end{align*}
 
 At 171.16 sec/veh, the Maitighar approach operates at 
 Level of Service F, indicating a breakdown condition 
 where demand substantially exceeds the signal's serving 
 capacity, causing progressive queue accumulation across 
-cycles. The complete delay results for all approaches are 
-given in Table X+5.
+cycles. 
 
-\begin{table} [h!]
-    \centering
-    \caption{Control Delay and Level of Service by Approach}
-    \begin{tabular}{|l|p{2cm}|p{1.5cm}|p{1.5cm}|p{3cm}|l|}
-        \hline
-        Approach & $d_1$ sec/veh & $d_2$ sec/veh & $d_3$ sec/veh & Total Delay (sec/veh) & LOS \\
-        \hline
-        Maitighar	&38.50	& 132.66	& 0	& 171.16 & F \\
-        \hline
-        Baneshwor	& 38.50 &	263.41	& 0	& 301.91 & F \\
-        \hline
-        Art Gallery	& 66.00	& 182.14	& 0	& 248.14 & F \\
-        \hline
-        DOR	& 56.53	& 2.35	& 0	& 58.89	& E \\
-        \hline
-        Intersection Overall & (weighted average) & & & 241.39 & F \\
-        \hline
-    \end{tabular}
-    \label{tab:4.6}
-
-\end{table}
-
-\subsection{Step 6: Intersection-Wide Delay and Level of Service}
+\subsection{Intersection-Wide Delay and Level of Service}
 The overall intersection delay is computed as the 
 flow-weighted average of all approach delays, giving 
 proportionally greater weight to approaches carrying higher 
@@ -412,56 +431,16 @@ traffic volumes:
 \begin{equation*}
     d_{intersection} = \frac{\sum(v_i\times d_i) }{\sum v_i}
 \end{equation*}
-Substituting the values from \cref{tab:4.6}
-\begin{equation*}
-    d_{intersection} =\frac{1963.44 \times 171.16+2484.93 \times 301.91+369.11 \times 248.14+82.05 \times 58.89}{[1963.44 + 2484.93 + 369.11 + 82.05]}
-\end{equation*}
+% Substituting the values from \cref{tab:4.6}
+% \begin{equation*}
+%     d_{intersection} =\frac{1963.44 \times 171.16+2484.93 \times 301.91+369.11 \times 248.14+82.05 \times 58.89}{[1963.44 + 2484.93 + 369.11 + 82.05]}
+% \end{equation*}
 
-\begin{align*}
-    d_{intersection} &= \frac{335,876 + 750,218 + 91,606 + 4,832} {4,899.53 }\\
-    &= 1,182,532 / 4,899.53 \\
-    &= 241.39 \ sec/veh 
-\end{align*}
-
-
-
-\subsection{Key Observations}
-
-The HCM analysis of the existing fixed-time signal control 
-at Babarmahal Intersection reveals a severely deficient 
-operating condition during the morning peak hour. Three 
-out of four approaches — Maitighar (X = 1.2834), Baneshwor 
-(X = 1.5785), and Art Gallery (X = 1.3556) — operate at 
-degrees of saturation well above 1.0, confirming heavily 
-oversaturated conditions where vehicular demand cannot be 
-cleared within a single signal cycle. This results in 
-progressive queue accumulation and excessively high 
-incremental delays, particularly at the Baneshwor approach 
-($d_2$ = 263.41 sec/veh) which carries the highest traffic 
-demand.
-
-The Art Gallery approach, despite carrying a relatively 
-modest volume, records a disproportionately high delay of 
-248.14 sec/veh primarily due to its short allocated green 
-time of 25 seconds — corresponding to a green ratio of only 
-0.1592. This highlights a significant mismatch between the 
-existing green time distribution and the actual traffic 
-demand across phases.
-
-The DOR approach is the only one operating below capacity 
-(X = 0.279), reflecting its comparatively low traffic 
-demand. Its delay of 58.89 sec/veh at LOS E is attributable 
-primarily to the long red time it experiences within the 
-157-second cycle rather than to demand-induced overflow.
-
-The intersection-wide control delay of 241.39 sec/veh at 
-LOS F represents a critical breakdown condition, providing 
-a strong quantitative justification for the signal timing 
-optimisation explored in Scenarios 2 and 3 of this study. 
-These HCM-derived values serve as the analytical baseline 
-against which the VISSIM simulation outputs for Scenario 1 
-are validated.
-
+% \begin{align*}
+%     d_{intersection} &= \frac{335,876 + 750,218 + 91,606 + 4,832} {4,899.53 }\\
+%     &= 1,182,532 / 4,899.53 \\
+%     &= 241.39 \ sec/veh 
+% \end{align*}
 
 \subsection{Comparison of HCM and VISSIM Results for Existing Scenario}
 
@@ -499,168 +478,13 @@ movement-level VISSIM delay values were aggregated by
 approach through a simple arithmetic average to derive an 
 approach-level LOS, as described below.
 
-
-
-\subsection{Aggregation of VISSIM Movement-Level Results}
-
-PTV VISSIM reports queue delay for each individual 
-turning movement within the intersection. To derive 
-approach-level LOS values comparable to those from HCM, 
-the movement delays were averaged for each approach and 
-the resulting value was classified against HCM LOS 
-thresholds. The procedure is illustrated using the 
-Maitighar approach as a sample calculation.
-
-\begin{table}[h!]
-    \centering
-    \caption{VISSIM Movement-Level Queue Delays — Maitighar Approach (Scenario 1)}
-    \begin{tabular}{|l|l|}
-        \hline
-        \textbf{Movement} & \textbf{Queue\ Delay\ (sec/veh)}\\
-        \hline
-        Maitighar Service $\rightarrow$ Anamnagar & 28.43 \\
-        \hline
-        Maitighar Service $\rightarrow$ Babarmahal Service	& 45.05 \\
-        \hline
-        Maitighar Main $\rightarrow$ Art Gallery	& 139.64 \\
-        \hline
-        Maitighar Main $\rightarrow$ Babarmahal Main	& 51.40 \\
-        \hline
-    \end{tabular}
-    \label{tab:vissimmov}
-
-\end{table}
-The approach-level average queue delay is computed as:
-\begin{align*}
-    Average Delay &= (28.43 + 45.05 + 139.64 + 51.40) / 4 \\
-    &= 264.52 / 4 \\
-    &= 66.13 \ sec/veh
-\end{align*}
-
-Based on \cref{tab:vissimmov} HCM LOS thresholds, a delay of 66.13 sec/veh 
-falls within the range of 55–80 sec/veh, corresponding to 
-Level of Service E. The same procedure was applied to the 
-remaining three approaches. The aggregated approach-level 
-VISSIM results are presented in \cref{tab:aggvissim}.
-
-
-\begin{table}[h!]
-        \centering
-        \caption{Aggregated VISSIM Approach-Level Queue Delay and LOS — Scenario 1}
-        \begin{tabular}{|l|l|p{3.2cm}|l|}
-            \hline
-            \textbf{Approach} &	\textbf{Movements\ Averaged} & \textbf{Avg. Queue Delay (sec/veh)}	& \textbf{LOS} \\
-            \hline
-            Maitighar &	4 movements	& 66.13 &	E \\
-            \hline
-            Babarmahal	& 4 movements &	66.28 &	E \\
-            \hline
-            Art Gallery	& 5 movements & 45.71 & D \\
-            \hline
-            Anamnagar &	3 movements	& 57.93 & E \\
-            \hline
-            \textbf{Overall Intersection} &	\textbf{(VISSIM node result)} &  \textbf{59.60}	& \textbf{E} \\
-            \hline
-            
-        \end{tabular}
-        \label{tab:aggvissim}
-
-\end{table}
-
-\subsection{HCM vs VISSIM — Comparison of Level of Service}
-
-\cref{tab:hcmvissim} presents a side-by-side comparison of the Level of Service assigned by 
-HCM and VISSIM for each approach and the overall intersection 
-under the existing signal control scenario. As discussed 
-above, LOS is used as the basis for comparison since it is 
-derived from the same HCM thresholds in both methods, making 
-it the most appropriate common metric.
-
-\begin{table}[h!]
-    \centering
-    \caption{Comparison of HCM and VISSIM Level of Service — Existing Scenario (Scenario 1)
-Approach HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS}
-    \begin{tabular}{|l|p{3.8cm}|l|l|}
-        \hline
-        \textbf{Approach} &	\textbf{HCM Control Delay (sec/veh)} & \textbf{HCM LOS} & \textbf{VISSIM LOS}\\
-        \hline
-        Maitighar &	171.16 & F & E \\
-        \hline
-        Babarmahal & 301.91	& F &E \\
-        \hline
-        Art Gallery	 &248.14 &	F & D \\
-        \hline
-        Anamnagar & 58.89 & E &	E\\
-        \hline
-        \textbf{Overall Intersection} &\textbf{	241.39}	& \textbf{F} & \textbf{E} \\
-        \hline
-    \end{tabular}
-    \label{tab:hcmvissim}
-\end{table}
-\pagebreak
-    \subsection{Discussion}
-
-    The LOS-based comparison presented in \cref{tab:hcmvissim} reveals 
-    both areas of agreement and divergence between the HCM 
-    and VISSIM methods. The following observations are drawn 
-    from the comparison:
-
-    \textbf{Methodological Differences in Delay Parameters:} As 
-    noted earlier, HCM control delay and VISSIM queue delay 
-    are related but not equivalent parameters. HCM derives 
-    control delay analytically using deterministic formulas 
-    that assume idealized lane discipline, uniform vehicle 
-    behavior, and standardized saturation flow adjustment 
-    factors. VISSIM, on the other hand, measures queue delay 
-    empirically from simulated vehicle trajectories, 
-    incorporating field-calibrated driver behavior parameters 
-    that more realistically reflect the mixed traffic 
-    conditions and poor lane discipline characteristic of 
-    Kathmandu urban intersections. These methodological 
-    differences are the primary reason for the LOS divergence 
-    observed across most approaches.
-
-   \textbf{Anamnagar Approach — Agreement:} Both HCM and 
-   VISSIM assign LOS E to the Anamnagar approach, 
-   representing the strongest point of agreement between 
-   the two methods. This convergence is expected given that 
-   the Anamnagar approach operates well below capacity, 
-   where overflow queuing is minimal, and the deterministic 
-   HCM formula more closely approximates real conditions 
-   simulated by VISSIM.
-
-  \textbf{ Qualitative Agreement on Overall Congestion:} 
-  Despite the LOS differences at individual approaches, both 
-  methods consistently identify Babarmahal Intersection as 
-  operating under severely congested conditions during the 
-  morning peak hour. HCM classifies three approaches at LOS 
-  F and one at LOS E, while VISSIM classifies the overall 
-  intersection at LOS E. The directional agreement — that 
-  the intersection is significantly over-stressed under the 
-  existing fixed-time signal plan — validates the general 
-  conclusion drawn from both methods and reinforces the need 
-  for signal timing optimization.
-
-  \textbf{Basis for Methodology Decision:} Given the 
-  fundamental differences between HCM control delay and 
-  VISSIM queue delay, and the inherent limitations of 
-  applying HCM's idealized assumptions to the complex mixed 
-  traffic environment of Kathmandu, VISSIM node results are 
-  adopted as the primary and consistent source of performance 
-  data across all three scenarios in this study. The HCM 
-  analysis serves as a supplementary analytical reference 
-  that corroborates the qualitative finding of poor 
-  intersection performance under the existing signal control.
-
-
 \section{Model Development using VISSIM}
-
 \subsection{Network Coding}
 
 Here we draw links, connectors and intersection geometry based on field data.  
 Link represents a single or multiple road ways and connectors are used for joining the two links. 
 
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{src/images/figures/vissimfig.png}
     \caption{Study Area in VISSIM}
@@ -673,78 +497,47 @@ By taking speed data of various classes of vehicles, we have done the speed dist
 The speed data was extracted from the CCTV footage by dividing the certain distance with time required for that vehicle class to travel that distance.
  Multiple observations were made and the manual speed data was taken and compared with the one taken from CCTV footage. 
 
-\textbf{Firstly}, traffic volume count was entered for various approaches. 
-It was further divided into \textbf{4-time} intervals with \textbf{15 minutes intervals }each, 
-but while entering in VISSIM we multiply it by 4 since it asks us for \textbf{Number of vehicles per hour and not per time interval.}  
+Firstly, traffic volume count was entered for various approaches. 
+It was further divided into 4-time intervals with 15 minutes intervals each, 
+but while entering in VISSIM we multiply it by 4 since it asks us for Number of vehicles per hour and not per time interval.  
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/vehicleinput.png}
-    \caption{Vehicle Inputs/Vehicle volume by time interval}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=\textwidth]{src/images/figures/vehicleinput.png}
+%     \caption{Vehicle Inputs/Vehicle volume by time interval}
+% \end{figure}
 
 2D/3D models of various vehicle classes was taken from Sketch-UP and entered into the VISSIM with standard dimensions of the
 vehicle as Nepal Road Standard(2070).
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/2d3d.png}
-    \caption{2D/3D Model Distributions/Elements}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=\textwidth]{src/images/figures/2d3d.png}
+%     \caption{2D/3D Model Distributions/Elements}
+% \end{figure}
 
 Then we perform the vehicle composition, where we divide the traffic input into different vehicle classes.
-
 $$
 Vehicle\ Composition (Bike) = \frac{Traffic\ count\ of\ Bike}{Total\ traffic\ count} (\text{for specific purpose})
 $$
 Similarly, the vehicle composition was done for each vehicle present in that approach.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/vcrf.png}
-    \caption{Vehicle Composition/ Relative Flow}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=\textwidth]{src/images/figures/vcrf.png}
+%     \caption{Vehicle Composition/ Relative Flow}
+% \end{figure}
 
 \subsection{Routing Decisions (Turning Movements)}
 For each vehicle classes it was defined the proportion of vehicles turning left, going through, and turning right at each 
 leg from Static Vehicle Routing Decision/ Static Vehicle Routes. 
 %insert figure
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/svrd.png}
-    \caption{Static Vehicles Routing Decisions/ Static vehicles Routes}
-\end{figure}
+% \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=\textwidth]{src/images/figures/svrd.png}
+%     \caption{Static Vehicles Routing Decisions/ Static vehicles Routes}
+% \end{figure}
 
-\subsection{Driving Behavior Parameters }
-
-Setting Wiedemann car-following model parameters and lane change 
-behavior suited to mixed traffic conditions. 
-
-\begin{figure}[ht]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{src/images/figures/db1.png}
-        \caption{}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{src/images/figures/db2.png}
-        \caption{}
-    \end{subfigure}
-    \caption{Driving Behavior}
-
-\end{figure}
-
-\pagebreak
-\subsection{Signal Controller Setup}
-
-Defining fixed-time signal phases, cycle length, green/amber/red times, and phase sequences.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/vissig.png}
-    \caption{Vissig - Signal Controller 5 }
-\end{figure}
 
 \subsection{Conflict Areas and Priority Rules}
  Defining vehicle interaction zones within the intersection. The conflict areas were modelled using passive priority 
@@ -752,34 +545,26 @@ Defining fixed-time signal phases, cycle length, green/amber/red times, and phas
  intersection operates under signal control, explicit priority assignment was not needed. The setting of passive 
  conflict zones allowed smoother vehicle interactions and improved simulation stability that closely resembled the 
  real driver behavior in congested urban intersections.
- \begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/conflict.png}
-    \caption{Conflict Area}
-\end{figure}
+%  \begin{figure}[ht]
+%     \centering
+%     \includegraphics[width=\textwidth]{src/images/figures/conflict.png}
+%     \caption{Conflict Area}
+% \end{figure}
 
-\subsection{Pedestrian Input}
-Adding pedestrian crossings and volume if considered in the study.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{src/images/figures/pedinput.png}
-    \caption{Pedestrian Inputs}
-\end{figure}
 
 
 \section{Calibration and Validation}
 The developed VISSIM model was calibrated and validated using the traffic data extracted from the CCTV footage 
 obtained from the District Police Office, Bhadrakali. For the purpose of calibration, traffic volume data collected 
-during \textbf{two consecutive days (July 20th and July 21st)} were utilized. The model parameters, including Wiedemann 
+during two consecutive days (July 20th and July 21st) were utilized. The model parameters, including Wiedemann 
 car-following model coefficients and desired speed distributions, were iteratively adjusted until the simulated traffic 
 volumes and queue lengths sufficiently replicated the observed field conditions. 
 
-The calibrated model was subsequently validated using the traffic data from the \textbf{third day (July 22nd)}, which was kept 
+The calibrated model was subsequently validated using the traffic data from the third day (July 22nd), which was kept 
 independent of the calibration process to ensure an unbiased assessment of model performance.  
 
 
-\begin{table}[h!]
+\begin{table}[h]
     \centering
     \caption{Calibrated VISSIM Parameters for Mixed Traffic Simulation}
 \begin{tabular}{|l|l|l|}
@@ -792,9 +577,9 @@ independent of the calibration process to ensure an unbiased assessment of model
     \hline
     3 &	Average standstill distance	& 0.3 m \\
     \hline
-    4 &	Additive part of safety distance	& 0.19 \\
+    4 &	Additive part of safety distance	& 0.23 \\
     \hline
-    5 &	Multiplicative part of safety distance	& 0.70 \\
+    5 &	Multiplicative part of safety distance	& 0.80 \\
     \hline
     6 &	Min. headway (front/rear)	& 0.50 m \\
     \hline
@@ -807,170 +592,31 @@ independent of the calibration process to ensure an unbiased assessment of model
 \end{tabular}
 \end{table}
 
-\pagebreak
-\subsection{Volume}
-Calculation of GEH value:
-The GEH statistic is calculated using the formula:
+% \subsection{Volume}
+% Calculation of GEH value:
+% The GEH statistic is calculated using the formula:
 
-\begin{equation}
-    GEH = \sqrt{\frac{2(V_s - V_o)^2}{V_s + V_o}}
-\end{equation}
+% \begin{equation}
+%     GEH = \sqrt{\frac{2(V_s - V_o)^2}{V_s + V_o}}
+% \end{equation}
 
-Where:
-\begin{itemize}
-    \item $V_s$ = Simulated volume (from VISSIM)
-    \item $V_o$ = Observed volume (from field data)
-\end{itemize}
+% Where:
+% \begin{itemize}
+%     \item $V_s$ = Simulated volume (from VISSIM)
+%     \item $V_o$ = Observed volume (from field data)
+% \end{itemize}
 
-Acceptance Criteria:
-\begin{itemize}
-    \item $GEH$ < 5.0 → Good fit 
-    \item $GEH$ 5.0 – 10.0 → Acceptable (investigate further)
-    \item $GEH$ > 10.0 → Poor fit  (recalibrate)
-\end{itemize}
+% Acceptance Criteria:
+% \begin{itemize}
+%     \item $GEH$ < 5.0 → Good fit 
+%     \item $GEH$ 5.0 – 10.0 → Acceptable (investigate further)
+%     \item $GEH$ > 10.0 → Poor fit  (recalibrate)
+% \end{itemize}
 
-\newpage
+% \newpage
 
-\begin{landscape}
-\begin{table}
-\centering
-\caption{Software Simulation Data for Vehicle Classification : Peak Hour Day 1}
-\small
-\setlength{\tabcolsep}{6pt}
-\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{S.N.} & \textbf{Movement (From To)} &\multicolumn{10}{|c|}{\textbf{Vehicle Classification -- Software Simulation Data}} \\
-\cline{3-12}
-& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
-\hline
-    1 & Art Gallery to Anamnagar & 0 & 0 & 0 & 0 & 40 & 151 & 0 & 0 & 0 & 191 \\
-    \hline
-    2 & Art Gallery to Maitighar Service & 0 & 0 & 0 & 0 & 7 & 200 & 0 & 0 & 0 & 207 \\
-    \hline
-    3 & Art Gallery to Babarmahal Service & 0 & 0 & 0 & 0 & 47 & 253 & 1 & 0 & 0 & 301 \\
-    \hline
-    4 & Art Gallery to Babarmahal Main & 0 & 0 & 0 & 0 & 25 & 118 & 2 & 0 & 0 & 145 \\
-    \hline
-    5 & Art Gallery to Maitighar Main & 0 & 0 & 0 & 0 & 8 & 46 & 0 & 0 & 0 & 54 \\
-    \hline
-    6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 9 & 18 & 5 & 0 & 0 & 32 \\
-    \hline
-    7 & Maitighar Service to Babarmahal Service & 0 & 0 & 136 & 33 & 178 & 391 & 42 & 0 & 49 & 829 \\
-    \hline
-    8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 14 & 58 & 0 & 0 & 0 & 72 \\
-    \hline
-    9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 18 & 51 & 3 & 1 & 0 & 73 \\
-    \hline
-    10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 2 & 2 & 0 & 0 & 0 & 4 \\
-    \hline
-    11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 90 & 254 & 0 & 0 & 7 & 351 \\
-    \hline
-    12 & Babarmahal Service to Maitighar Service & 0 & 11 & 138 & 37 & 186 & 830 & 7 & 2 & 28 & 1239 \\
-    \hline
-    13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 30 & 159 & 1 & 0 & 0 & 190 \\
-    \hline
-    14 & Maitighar Main to Babarmahal Main & 0 & 0 & 0 & 0 & 336 & 1585 & 28 & 0 & 6 & 1955 \\
-    \hline
-    15 & Babarmahal Main to Anamnagar & 0 & 0 & 6 & 5 & 191 & 499 & 0 & 0 & 0 & 701 \\
-    \hline
-    16 & Babarmahal Main to Maitighar Main & 0 & 0 & 0 & 9 & 221 & 1596 & 0 & 10 & 0 & 1836 \\
-    \hline   
-    \end{tabular}
-\end{table}
-\end{landscape}
-
-% \begin{figure}[ht]
-%     \centering
-%     \includegraphics[width=\textwidth]{src/images/figures/peakday2.png}
-%     \caption{Calculation of GEH values for different vehicle classes}
-% \end{figure}
-
-\begin{landscape}
-\begin{table}
-\centering
-\small
-\setlength{\tabcolsep}{5pt}
-\caption{Observed Field Count Data for Different Vehicle Classes and Movements: Peak Hour Day 2}
-\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Observed Field Count Data}} \\
-\cline{3-12}
-& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
-\hline
-1 & Art Gallery to Anamnagar & 0 & 0 & 0 & 0 & 46 & 168 & 0 & 0 & 0 & 214 \\ \hline
-2 & Art Gallery to Maitighar Service & 0 & 0 & 0 & 0 & 17 & 220 & 2 & 0 & 0 & 239 \\ \hline
-3 & Art Gallery to Babarmahal Service & 0 & 0 & 0 & 0 & 62 & 253 & 3 & 4 & 0 & 322 \\ \hline
-4 & Art Gallery to Babarmahal Main & 0 & 0 & 0 & 0 & 33 & 122 & 2 & 1 & 0 & 158 \\ \hline
-5 & Art Gallery to Maitighar Main & 0 & 0 & 0 & 0 & 12 & 47 & 0 & 0 & 0 & 59 \\ \hline
-6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 12 & 20 & 3 & 0 & 0 & 35 \\ \hline
-7 & Maitighar Service to Babarmahal Service & 0 & 0 & 138 & 45 & 168 & 403 & 34 & 0 & 50 & 838 \\ \hline
-8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 10 & 57 & 1 & 0 & 0 & 68 \\ \hline
-9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 16 & 53 & 3 & 0 & 0 & 72 \\ \hline
-10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 3 & 1 & 1 & 0 & 0 & 5 \\ \hline
-11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 96 & 272 & 0 & 2 & 5 & 375 \\ \hline
-12 & Babarmahal Service to Maitighar Service & 0 & 2 & 147 & 51 & 205 & 883 & 3 & 2 & 13 & 1306 \\ \hline
-13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 29 & 149 & 2 & 0 & 0 & 180 \\ \hline
-14 & Maitighar Main to Babarmahal Main & 0 & 1 & 4 & 9 & 401 & 1579 & 54 & 5 & 7 & 2060 \\ \hline
-15 & Babarmahal Main to Anamnagar & 1 & 0 & 7 & 3 & 197 & 559 & 0 & 3 & 0 & 770 \\ \hline
-16 & Babarmahal Main to Maitighar Main & 2 & 2 & 5 & 11 & 266 & 1604 & 10 & 8 & 0 & 1908 \\ \hline
-
-\end{tabular}
-\end{table}
-\end{landscape}
-
-
-\begin{landscape}
-\begin{table}
-\centering
-\caption{GEH Values for Vehicle Classification: Peak Hour Day 2}
-\small
-\setlength{\tabcolsep}{5pt}
-
-\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
-\cline{3-12}
-& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
-\hline
-1 & Art Gallery to Anamnagar & -- & -- & -- & --  & 2.887 &	1.380	& -- &  -- & -- &2.143 \\
-\hline
-2 & Art Gallery to Maitighar Service & -- & -- & -- & -- & 2.887 & 1.380 & -- & -- & -- & 2.143 \\
-\hline
-3 & Art Gallery to Babarmahal Service & -- & -- & -- & -- & 2.032 & 0.000 & 1.414 & 2.828 & -- & 1.190 \\
-\hline
-4 & Art Gallery to Babarmahal Main & -- & -- & -- & -- & 1.486 & 0.365 & 0.000 & 1.414 & -- & 1.056 \\
-\hline
-5 & Art Gallery to Maitighar Main & -- & -- & -- & -- & 1.265 & 0.147 & -- & -- & -- & 0.665 \\
-\hline
-6 & Maitighar Service to Anamnagar & -- & -- & -- & -- & 0.926 & 0.459 & 1.000 & -- & -- & 0.518 \\
-\hline
-7 & Maitighar Service to Babarmahal Service & -- & -- & 0.171 & 1.921 & 0.760 & 0.602 & 1.298 & -- & 0.142 & 0.312 \\
-\hline
-8 & Anamnagar to Art Gallery & -- & -- & -- & -- & 1.155 & 0.132 & -- & -- & -- & 0.478 \\
-\hline
-9 & Anamnagar to Babarmahal Service & -- & -- & -- & -- & 0.485 & 0.277 & -- & -- & -- & 0.117 \\
-\hline
-10 & Anamnagar to Maitighar Main & -- & -- & -- & -- & 0.632 & 0.817 & -- & -- & -- & 0.471 \\
-\hline
-11 & Babarmahal Service to Art Gallery & -- & -- & -- & -- & 0.622 & 1.110 & -- & 2.000 & 0.817 & 1.260 \\
-\hline
-12 & Babarmahal Service to Maitighar Service & -- & 3.530 & 0.754 & 2.111 & 1.359 & 1.811 & 1.789 & 0.000 & 3.313 & 1.878 \\
-\hline
-13 & Maitighar Main to Art Gallery & -- & -- & -- & -- & 0.184 & 0.806 & 0.817 & -- & -- & 0.735 \\
-\hline
-14 & Maitighar Main to Babarmahal Main & -- & 1.414 & 2.828 & 4.243 & 3.386 & 0.151 & 4.061 & 3.162 & 0.392 & 2.344 \\
-\hline
-15 & Babarmahal Main to Anamnagar & -- & -- & 0.392 & 1.000 & 0.431 & 2.609 & -- & 2.450 & -- & 2.544 \\
-\hline
-16 & Babarmahal Main to Maitighar Main & -- & 2.000 & 3.162 & 0.632 & 2.884 & 0.200 & 4.472 & 0.667 & -- & 1.664 \\
-\hline
-
-\end{tabular}
-\end{table}
-\end{landscape}
-
-
-\textbf{REGRESSION ANALYSIS:}
+\clearpage
+\textbf{Validation for Peak Hours} \\
 R-squared value after calibration was found to be 0.954902, which indicated that 95.49\% of the variance of the field data is explained by the variance of the VISSIM output. 
 The regression equation for this calibration:
 
@@ -978,7 +624,7 @@ Expected Traffic Volume(VISSIM)= 0.954902* Actual VISSIM Volume
 
 The obtained expected traffic volume was then compared with the traffic volume obtained after a simulation was performed on VISSIM.
 
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{src/images/figures/Pictureactual.png}
     \caption{Actual VISSIM Volume Line Fit Plot}
@@ -986,163 +632,8 @@ The obtained expected traffic volume was then compared with the traffic volume o
 
 The value of $R^2$ being close to 1 indicates that 2 days data validates the 3rd-day data. Hence, the calibration and validation were successfully performed.
 
-\textbf{Off Peak Hour}
 
-\begin{landscape}
-\begin{table}
-\centering
-\caption{Software Simulation Data for Vehicle Classification : Off Peak Hour Day 2}
-\small
-\setlength{\tabcolsep}{5pt}
-
-\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
-\cline{3-12}
-& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
-\hline
-1 & Art Gallery to Anamnagar & 0 & 0 & 0 & 0 & 38 & 76 & 5 & 0 & 0 & 119 \\
-\hline
-2 & Art Gallery to Maitighar Service & 0 & 3 & 0 & 0 & 27 & 108 & 2 & 2 & 0 & 142 \\
-\hline
-3 & Art Gallery to Babarmahal Service & 0 & 3 & 0 & 0 & 68 & 194 & 0 & 0 & 0 & 265 \\
-\hline
-4 & Art Gallery to Babarmahal Main & 0 & 0 & 0 & 0 & 38 & 118 & 4 & 2 & 0 & 162 \\
-\hline
-5 & Art Gallery to Maitighar Main & 0 & 0 & 0 & 0 & 38 & 51 & 2 & 2 & 0 & 93 \\
-\hline
-6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 8 & 12 & 4 & 0 & 0 & 24 \\
-\hline
-7 & Maitighar Service to Babarmahal Service & 0 & 0 & 124 & 40 & 147 & 239 & 26 & 41 & 57 & 674 \\
-\hline
-8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 16 & 38 & 1 & 2 & 0 & 57 \\
-\hline
-9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 22 & 31 & 2 & 0 & 0 & 55 \\
-\hline
-10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 9 & 28 & 0 & 0 & 0 & 37 \\
-\hline
-11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 49 & 138 & 4 & 0 & 0 & 191 \\
-\hline
-12 & Babarmahal Service to Maitighar Service & 0 & 0 & 114 & 30 & 183 & 639 & 23 & 21 & 20 & 1030 \\
-\hline
-13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 33 & 135 & 9 & 7 & 0 & 184 \\
-\hline
-14 & Maitighar Main to Babarmahal Main & 0 & 1 & 0 & 6 & 198 & 1312 & 61 & 72 & 0 & 1649 \\
-\hline
-15 & Babarmahal Main to Anamnagar & 0 & 0 & 6 & 0 & 14 & 42 & 0 & 0 & 0 & 62 \\
-\hline
-16 & Babarmahal Main to Maitighar Main & 0 & 9 & 0 & 6 & 228 & 1248 & 9 & 11 & 0 & 1511 \\
-\hline
-
-\end{tabular}
-\end{table}
-\end{landscape}
-
-\begin{landscape}
-\begin{table}
-\centering
-\caption{Observed Field Count Data for Different Vehicle Classes and Movements: Off-Peak Hour Day 2}
-\small
-\setlength{\tabcolsep}{5pt}
-
-\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
-\cline{3-12}
-& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
-\hline
-S.N. & Movement (From to To) & Heavy Truck & Mini Truck & Bus & Micro-Bus & Car & Bike & L.V & Pickup & Tempo & Vehs (ALL) \\
-\hline
-1 & Art Gallery to Anamnagar & 0 & 1 & 0 & 0 & 35 & 90 & 4 & 2 & 0 & 132 \\
-\hline
-2 & Art Gallery to Maitighar Service & 0 & 2 & 0 & 0 & 42 & 110 & 3 & 2 & 0 & 159 \\
-\hline
-3 & Art Gallery to Babarmahal Service & 0 & 3 & 0 & 0 & 77 & 196 & 2 & 2 & 0 & 280 \\
-\hline
-4 & Art Gallery to Babarmahal Main & 0 & 2 & 0 & 0 & 52 & 120 & 2 & 3 & 0 & 179 \\
-\hline
-5 & Art Gallery to Maitighar Main & 0 & 2 & 0 & 0 & 37 & 56 & 3 & 1 & 0 & 99 \\
-\hline
-6 & Maitighar Service to Anamnagar & 0 & 0 & 0 & 0 & 9 & 15 & 4 & 0 & 0 & 28 \\
-\hline
-7 & Maitighar Service to Babarmahal Service & 0 & 0 & 116 & 41 & 91 & 309 & 34 & 29 & 41 & 661 \\
-\hline
-8 & Anamnagar to Art Gallery & 0 & 0 & 0 & 0 & 12 & 39 & 1 & 1 & 0 & 53 \\
-\hline
-9 & Anamnagar to Babarmahal Service & 0 & 0 & 0 & 0 & 17 & 33 & 1 & 1 & 0 & 52 \\
-\hline
-10 & Anamnagar to Maitighar Main & 0 & 0 & 0 & 0 & 9 & 28 & 0 & 0 & 0 & 37 \\
-\hline
-11 & Babarmahal Service to Art Gallery & 0 & 0 & 0 & 0 & 62 & 133 & 4 & 1 & 0 & 200 \\
-\hline
-12 & Babarmahal Service to Maitighar Service & 0 & 1 & 108 & 38 & 177 & 661 & 23 & 16 & 31 & 1055 \\
-\hline
-13 & Maitighar Main to Art Gallery & 0 & 0 & 0 & 0 & 25 & 132 & 4 & 7 & 0 & 168 \\
-\hline
-14 & Maitighar Main to Babarmahal Main & 0 & 1 & 0 & 11 & 231 & 1375 & 53 & 72 & 0 & 1743 \\
-\hline
-15 & Babarmahal Main to Anamnagar & 0 & 0 & 5 & 0 & 21 & 39 & 1 & 1 & 0 & 67 \\
-\hline
-16 & Babarmahal Main to Maitighar Main & 0 & 5 & 0 & 2 & 233 & 1318 & 19 & 11 & 0 & 1588 \\
-\hline
-
-\end{tabular}
-\end{table}
-\end{landscape}
-
-\begin{landscape}
-\begin{table}
-\centering
-\caption{Calculation of GEH values for different vehicle classes: Off-Peak Hour Day 2}
-\small
-\setlength{\tabcolsep}{5pt}
-
-\begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
-\hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
-\cline{3-12}
-& & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
-\hline
-1 & Art Gallery to Anamnagar & -- & -- & -- & -- & 0.497 & 1.537 & 0.471 & 2.000 & -- & 1.160 \\
-\hline
-2 & Art Gallery to Maitighar Service & -- & -- & -- & -- & 2.554 & 0.192 & -- & -- & -- & 1.386 \\
-\hline
-3 & Art Gallery to Babarmahal Service & -- & -- & -- & -- & 1.057 & 0.143 & 2.000 & 2.000 & -- & 0.909 \\
-\hline
-4 & Art Gallery to Babarmahal Main & -- & -- & -- & -- & 2.087 & 0.183 & 1.155 & 0.632 & -- & 1.302 \\
-\hline
-5 & Art Gallery to Maitighar Main & -- & -- & -- & -- & 0.163 & 0.684 & -- & -- & -- & 0.612 \\
-\hline
-6 & Maitighar Service to Anamnagar & -- & -- & -- & -- & 0.343 & 0.816 & 0.000 & -- & -- & 0.784 \\
-\hline
-7 & Maitighar Service to Babarmahal Service & -- & -- & 0.730 & 0.157 & 5.134 & 4.229 & 1.461 & -- & 2.286 & 0.503 \\
-\hline
-8 & Anamnagar to Art Gallery & -- & -- & -- & -- & 1.069 & 0.161 & -- & -- & -- & 0.539 \\
-\hline
-9 & Anamnagar to Babarmahal Service & -- & -- & -- & -- & 1.132 & 0.354 & -- & -- & -- & 0.410 \\
-\hline
-10 & Anamnagar to Maitighar Main & -- & -- & -- & -- & 0.000 & 0.000 & -- & -- & -- & 0.000 \\
-\hline
-11 & Babarmahal Service to Art Gallery & -- & -- & -- & -- & 1.745 & 0.430 & -- & 1.414 & -- & 0.644 \\
-\hline
-12 & Babarmahal Service to Maitighar Service & -- & 1.414 & 0.569 & 1.372 & 0.447 & 0.863 & 0.000 & 1.162 & 2.178 & 0.774 \\
-\hline
-13 & Maitighar Main to Art Gallery & -- & -- & -- & -- & 1.486 & 0.260 & 1.961 & -- & -- & 1.206 \\
-\hline
-14 & Maitighar Main to Babarmahal Main & -- & 1.414 & -- & 1.715 & 2.253 & 1.719 & 1.060 & 0.000 & -- & 2.283 \\
-\hline
-15 & Babarmahal Main to Anamnagar & -- & -- & 0.426 & -- & 1.673 & 0.471 & -- & 1.414 & -- & 0.623 \\
-\hline
-16 & Babarmahal Main to Maitighar Main & -- & 1.512 & -- & 2.000 & 0.329 & 1.954 & 2.673 & 0.000 & -- & 1.956 \\
-\hline
-
-
-\end{tabular}
-\end{table}
-\end{landscape}
-
-
-\textbf{REGRESSION ANALYSIS:}
+\textbf{Validation for Off-Peak Hours}\\
 R-squared value after calibration was found to be 0.953183, which indicated that 95.31\% of the variance of the field data is explained by the variance of the VISSIM output. 
 The regression equation for this calibration:
 
@@ -1150,14 +641,13 @@ Expected Traffic Volume(VISSIM)= 0.95383* Actual VISSIM Volume
 
 The obtained expected traffic volume was then compared with the traffic volume obtained after a simulation was performed on VISSIM.
 
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{src/images/figures/Pictureactual2.png}
     \caption{Actual VISSIM Volume Line Fit Plot}
 \end{figure}
 
 The value of $R^2$ being close to 1 indicates that 2 days data validates the 3rd-day data. Hence, the calibration and validation were successfully performed.
-
 
 
 \subsection{Queue Length}
@@ -1175,51 +665,13 @@ percentage difference between the observed and simulated
 values was computed for each approach, and the model was 
 considered validated where the difference remained within 
 the acceptable threshold of $plusminus$20\%, consistent with 
-standard microsimulation practice. The results confirmed 
-that the calibrated model adequately reproduced field queue 
-conditions, establishing its suitability for scenario-based 
-analysis.
+standard microsimulation practice. 
 
+% The results confirmed 
+% that the calibrated model adequately reproduced field queue 
+% conditions, establishing its suitability for scenario-based 
+% analysis.
 
-\textbf{Peak Hour}
-
-\begin{table}[h!]
-\centering
-\caption{Peak Hour}
-\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
-\hline
-\textbf{Link} & \textbf{Queue Observed (m)} & \textbf{Queue From VISSIM (m)} & \textbf{Error (\%)} \\
-\hline
-Art Gallery to Intersection & 32 & 38.42 & 20.0625 \\ \hline
-Babarmahal Service to Intersection & 23 & 19.88 & -13.56522 \\ \hline
-Anamnagar to Intersection & 4.5 & 5.4 & 20 \\ \hline
-Maitighar Service to Intersection & 22 & 18.74 & -14.81818 \\ \hline
-Maitighar Main to Intersection & 25 & 27.19 & 8.76 \\ \hline
-Babarmahal Main to Anamnagar & 186 & 155.46 & -16.41935 \\ \hline
-Babarmahal Main to Maitighar Main & 38 & 42.28 & 11.263158 \\ \hline
-\hline
-\end{tabular}
-\end{table}
-
-\textbf{Off Peak Hour}
-
-\begin{table}[h!]
-\centering
-\caption{Off-Peak Hour}
-\begin{tabular}{|c|p{2cm}|p{2cm}|c|}
-\hline
-\textbf{Link} & \textbf{Queue Observed (m)} & \textbf{Queue From VISSIM (m)} & \textbf{Error (\%)} \\
-\hline
-Art Gallery to Intersection & 43 & 52.82 & 22.8372093 \\ \hline
-Babarmahal Service to Intersection & 16.8 & 19.56 & 16.42857143 \\ \hline
-Anamnagar to Intersection & 5 & 4.44 & -11.2 \\ \hline
-Maitighar Service to Intersection & 14.8 & 17.11 & 15.60810811 \\ \hline
-Maitighar Main to Intersection & 25 & 24.66 & -1.36 \\ \hline
-Babarmahal Main to Anamnagar & 25 & 24.66 & -1.36 \\ \hline
-Babarmahal Main to Maitighar Main & 3 & 3.63 & 21 \\ \hline
-\hline
-\end{tabular}
-\end{table}
 
 \section{Performance Comparison and Scenario Development.}
 
@@ -1236,305 +688,199 @@ vehicle travel time (sec). All results were extracted from
 VISSIM node evaluation outputs following a simulation 
 duration of 3600 seconds.
 
-Since VISSIM reports results at the individual turning movement 
-level, movement-level values were aggregated by approach 
-through a simple arithmetic average to enable consistent 
-approach-level comparison across all scenarios. The signal 
-timing parameters applied in each scenario are summarised 
-in Table X. Of the three scenarios, Scenario 3 — Manually 
-Optimized Fixed-Time Control — required the most involved 
-development process. Using the VISSIM built-in optimized 
-timing of Scenario 2 (A = 48 s, B = 51 s, C = 51 s, D = 7 s) 
-as the starting reference, green time was iteratively 
-adjusted in increments of 2 to 5 seconds by redistributing 
-time from over-served phases to under-served ones while 
-keeping the total cycle length constant. After each adjustment, 
-the simulation was re-run, and the resulting queue delay, 
-queue length, and vehicle travel time were evaluated to 
-determine whether the change yielded an improvement. This 
-hit-and-trial process was repeated across multiple 
-iterations until no further reduction in overall 
-intersection queue delay could be achieved without 
-worsening another approach, arriving at the final timing 
-plan of A = 28 s, B = 62 s, C = 33 s, and D = 10 s on a 
-133-second cycle.
+% Since VISSIM reports results at the individual turning movement 
+% level, movement-level values were aggregated by approach 
+% through a simple arithmetic average to enable consistent 
+% approach-level comparison across all scenarios. The signal 
+% timing parameters applied in each scenario are summarised 
+% in Table X. Of the three scenarios, Scenario 3 — Manually 
+% Optimized Fixed-Time Control — required the most involved 
+% development process. Using the VISSIM built-in optimized 
+% timing of Scenario 2 (A = 48 s, B = 51 s, C = 51 s, D = 7 s) 
+% as the starting reference, green time was iteratively 
+% adjusted in increments of 2 to 5 seconds by redistributing 
+% time from over-served phases to under-served ones while 
+% keeping the total cycle length constant. After each adjustment, 
+% the simulation was re-run, and the resulting queue delay, 
+% queue length, and vehicle travel time were evaluated to 
+% determine whether the change yielded an improvement. This 
+% hit-and-trial process was repeated across multiple 
+% iterations until no further reduction in overall 
+% intersection queue delay could be achieved without 
+% worsening another approach, arriving at the final timing 
+% plan of A = 28 s, B = 62 s, C = 33 s, and D = 10 s on a 
+% 133-second cycle.
 
 
-\subsection{Queue Delay}
-Queue delay represents the average additional time a vehicle 
-spends waiting due to signal control, including deceleration, 
-stopped time, and acceleration phases. Table X+1 presents 
-the approach-level average queue delay for all three 
-scenarios.
-
-%table
-\begin{table}[h!]
-\centering
-\caption{Approach-Level Average Queue Delay by Scenario (sec/veh)}
-\begin{tabular}{|l|p{2.5cm}|p{2.5cm}|p{2.5cm}|}
-\hline
-\textbf{Approach} & \textbf{Scenario 1 (sec/veh)} & \textbf{Scenario 2 (sec/veh)} & \textbf{Scenario 3 (sec/veh)} \\
-\hline
-Art Gallery & 45.71 & 50.82 & 54.28 \\
-Maitighar & 66.13 & 65.86 & 47.71 \\
-Anamnagar & 57.93 & 58.59 & 46.11 \\
-Babarmahal & 66.28 & 73.28 & 46.00 \\
-\hline
-\textbf{Overall Intersection} & \textbf{59.60} & \textbf{64.16} & \textbf{43.73} \\
-\hline
-\end{tabular}
-\end{table}
-
-The results indicate that Scenario 3 yields the lowest 
-queue delay across all approaches and at the overall 
-intersection level, with an intersection-wide average of 
-43.73 sec/veh compared to 59.60 sec/veh for Scenario 1 and 
-64.16 sec/veh for Scenario 2. Notably, Scenario 2 (VISSIM 
-built-in optimized) produces a higher overall delay than the 
-existing Scenario 1, suggesting that the automated 
-optimization may have redistributed green time in a manner 
-that benefits certain movements at the expense of others. 
-Scenario 3, through manual refinement of the VISSIM-optimized 
-timing, achieves a more balanced distribution of green time, 
-resulting in reduced delays across all four approaches.
+% !!!----------------------------------------!!! %
+% COMMENTED PORTION ADDED TO RESULT AND ANALYSIS %
+% ---------------------------------------------- %
 
 
-\subsection{ Level of Service (LOS)}
+% \subsection{Queue Delay}
+% Queue delay represents the average additional time a vehicle 
+% spends waiting due to signal control, including deceleration, 
+% stopped time, and acceleration phases. \cref{tab:qd} presents 
+% the approach-level average queue delay for all three 
+% scenarios.
 
-Level of Service (LOS) is a qualitative measure of 
-intersection performance derived from queue delay values 
-using HCM thresholds. Table X+2 presents the approach-level 
-LOS for all three scenarios based on the aggregated queue 
-delay values.
-
-%table
-\begin{table}[h!]
-\centering
-\caption{Approach-Level Level of Service by Scenario}
-\begin{tabular}{|l|c|c|c|}
-\hline
-\textbf{Approach} & \textbf{Scenario 1 LOS} & \textbf{Scenario 2 LOS} & \textbf{Scenario 3 LOS} \\
-\hline
-Art Gallery & D & D & D \\
-Maitighar & E & E & D \\
-Anamnagar & E & E & D \\
-Babarmahal & E & E & D \\
-\hline
-\textbf{Overall Intersection} & \textbf{E} & \textbf{E} & \textbf{D} \\
-\hline
-\end{tabular}
-\end{table}
-
-Scenario 3 records the shortest queue lengths at the 
-Maitighar (20.08 m), Anamnagar (5.15 m), and Babarmahal 
-(34.36 m) approaches, as well as the lowest overall average 
-queue length of 24.95 m. This represents a reduction of 
-approximately 28\% compared to Scenario 1 (34.87 m) and 35\% 
-compared to Scenario 2 (38.38 m) at the intersection level. 
-The exception is the Art Gallery approach, where Scenario 3 
-records a marginally higher queue length (26.24 m) compared 
-to Scenario 1 (20.63 m), which may be attributed to the 
-slightly increased green time allocated to competing phases 
-under the manual optimization. Scenario 2 consistently 
-produces longer queues than Scenario 1 across three out of 
-four approaches, further reinforcing that the VISSIM 
-built-in optimization does not yield an overall improvement 
-over existing conditions for this intersection.
+% The results indicate that Scenario 3 yields the lowest 
+% queue delay across all approaches and at the overall 
+% intersection level, with an intersection-wide average of 
+% 43.73 sec/veh compared to 59.60 sec/veh for Scenario 1 and 
+% 64.16 sec/veh for Scenario 2. Notably, Scenario 2 (VISSIM 
+% built-in optimized) produces a higher overall delay than the 
+% existing Scenario 1, suggesting that the automated 
+% optimization may have redistributed green time in a manner 
+% that benefits certain movements at the expense of others. 
+% Scenario 3, through manual refinement of the VISSIM-optimized 
+% timing, achieves a more balanced distribution of green time, 
+% resulting in reduced delays across all four approaches.
 
 
+% \subsection{Level of Service (LOS)}
 
-\subsection{ Queue Length}
+% Level of Service (LOS) is a qualitative measure of 
+% intersection performance derived from queue delay values 
+% using HCM thresholds. \cref{tab:los} presents the approach-level 
+% LOS for all three scenarios based on the aggregated queue 
+% delay values.
 
-Queue length reflects the spatial extent of vehicle queuing 
-at each approach during the simulation period. Average queue 
-lengths by approach for all three scenarios are presented in \cref{tab:queuelength}
+% \subsection{Queue Length}
 
-\begin{table}[h!]
-\centering
-\caption{Approach-Level Average Queue Length by Scenario (m)}
-\begin{tabular}{|l|c|c|c|}
-\hline
-\textbf{Approach} & \textbf{Scenario 1 (m)} & \textbf{Scenario 2 (m)} & \textbf{Scenario 3 (m)} \\
-\hline
-Art Gallery & 20.63 & 23.56 & 26.24 \\
-Maitighar & 29.42 & 29.71 & 20.08 \\
-Anamnagar & 7.22 & 7.50 & 5.15 \\
-Babarmahal & 52.47 & 59.39 & 34.36 \\
-\hline
-\textbf{Overall Intersection} & \textbf{34.87} & \textbf{38.38} & \textbf{24.95} \\
-\hline
-\end{tabular}
-\label{tab:queuelength}
-\end{table}
-
-\subsection{Vehicle Travel Time}
-Vehicle travel time represents the average time taken by 
-vehicles to traverse the intersection from entry to exit, 
-encompassing both waiting time and travel through the 
-signal-controlled area. Approach-level average travel times 
-are presented in Table X+4.
-
-\begin{table}[h!]
-\centering
-\caption{Approach-Level Average Vehicle Travel Time by Scenario (sec)}
-\begin{tabular}{|l|c|c|c|}
-\hline
-\textbf{Approach} & \textbf{Scenario 1 (sec)} & \textbf{Scenario 2 (sec)} & \textbf{Scenario 3 (sec)} \\
-\hline
-Art Gallery & 58.89 & 44.23 & 66.86 \\
-Maitighar & 85.05 & 83.24 & 66.72 \\
-Anamnagar & 77.33 & 70.19 & 67.92 \\
-Babarmahal & 73.47 & 81.23 & 59.26 \\
-\hline
-\textbf{Overall Intersection} & \textbf{72.15} & \textbf{67.56} & \textbf{65.10} \\
-\hline
-\end{tabular}
-\end{table}
-
-Scenario 3 achieves the lowest overall intersection travel 
-time of 65.10 seconds, compared to 72.15 seconds for Scenario 
-1 and 67.56 seconds for Scenario 2. At the approach level, 
-Scenario 3 records the shortest travel times for the 
-Maitighar (66.72 sec), Anamnagar (67.92 sec), and Babarmahal 
-(59.26 sec) approaches. The Art Gallery approach is an 
-exception, where Scenario 2 yields the lowest travel time 
-(44.23 sec) and Scenario 3 the highest (66.86 sec). This is 
-consistent with the queue length observation for Art 
-Gallery, suggesting that the manual optimization reallocated 
-green time away from this approach in favour of the 
-higher-volume Maitighar and Babarmahal approaches, 
-resulting in a trade-off at Art Gallery.
+% Queue length reflects the spatial extent of vehicle queuing 
+% at each approach during the simulation period. Average queue 
+% lengths by approach for all three scenarios are presented in \cref{tab:queuelength}
 
 
-\subsection{Overall Performance Summary}
-Table X+5 presents a consolidated summary of all four performance 
-measures at the overall intersection level across the three 
-scenarios.
-%table rakhne 
-
-The consolidated results consistently identify Scenario 3 — 
-manually optimized fixed-time control — as the best-performing 
-scenario across the majority of performance measures and 
-approaches. It achieves the lowest overall queue delay 
-(43.73 sec/veh), the best overall LOS (D), and the shortest 
-overall queue length (24.95 m) and vehicle travel time 
-(65.10 sec) at the intersection level. These improvements 
-are attributed to the iterative manual refinement of signal 
-timing that builds on the VISSIM-optimized values of Scenario 2, 
-allowing the analyst to fine-tune green time distribution in 
-a way that better reflects the actual demand patterns observed 
-at the Babarmahal Intersection.
-
-Scenario 2, despite employing an automated optimization algorithm, 
-does not outperform the existing Scenario 1 in terms of overall 
-queue delay and queue length. This highlights a key limitation 
-of automated optimization tools — they optimize for a specific 
-objective function that may not fully capture the complexity of
-mixed traffic behaviors at urban intersections in the Kathmandu 
-context. The manual optimization in Scenario 3 addresses this 
-limitation by incorporating engineering judgement informed by 
-the simulation outputs, resulting in a more effective and balanced 
-signal timing plan.
+% \subsection{Vehicle Travel Time}
+% Vehicle travel time represents the average time taken by 
+% vehicles to traverse the intersection from entry to exit, 
+% encompassing both waiting time and travel through the 
+% signal-controlled area. Approach-level average travel times 
+% are presented in \cref{tab:vtt}
 
 
-\section{Comparison and Recommendations.}
-
-Based on the performance evaluation presented in the preceding 
-sections, this section draws a consolidated comparison across 
-the three fixed-time signal control scenarios and provides a 
-recommendation for the most effective signal timing strategy 
-for the Babarmahal Intersection.
-
-\subsection{Consolidated Performance Comparison}
-
-\cref{tab:overall} summarizes the overall intersection-level performance of 
-all three scenarios across the four evaluation parameters.
-
-\begin{table}[h!]
-    \centering
-    \caption{Consolidated Overall Intersection Performance — All Scenarios}
-    \begin{tabular}{|l|p{2cm}|p{3cm}|p{3cm}|}
-        \hline
-        \textbf{Performance Measure}	& \textbf{Scenario1 (Existing)} &	\textbf{Scenario2 (VISSIM Optimized)}	& \textbf{Scenario3 (Manual Optimized)} \\
-        \hline
-        Queue Delay (sec/veh)	& 59.60 &	64.16 &	43.73 \\
-        \hline
-        Level of Service &	E	& E	& D \\
-        \hline
-        Queue Length (m) &	34.87	& 38.38	& 24.95 \\
-        \hline
-        Vehicle Travel Time (sec) &	72.15	& 67.56	& 65.10 \\ 
-        \hline
-
-    \end{tabular}
-    \label{tab:overall}
-\end{table}
+% Scenario 3 achieves the lowest overall intersection travel 
+% time of 65.10 seconds, compared to 72.15 seconds for Scenario 
+% 1 and 67.56 seconds for Scenario 2. At the approach level, 
+% Scenario 3 records the shortest travel times for the 
+% Maitighar (66.72 sec), Anamnagar (67.92 sec), and Babarmahal 
+% (59.26 sec) approaches. The Art Gallery approach is an 
+% exception, where Scenario 2 yields the lowest travel time 
+% (44.23 sec) and Scenario 3 the highest (66.86 sec). This is 
+% consistent with the queue length observation for Art 
+% Gallery, suggesting that the manual optimization reallocated 
+% green time away from this approach in favour of the 
+% higher-volume Maitighar and Babarmahal approaches, 
+% resulting in a trade-off at Art Gallery.
 
 
+% \subsection{Overall Performance Summary}
+% \cref{tab:op} presents a consolidated summary of all four performance 
+% measures at the overall intersection level across the three 
+% scenarios.
 
-\subsection{Comparison}
+% The consolidated results consistently identify Scenario 3 — 
+% manually optimized fixed-time control — as the best-performing 
+% scenario across the majority of performance measures and 
+% approaches. It achieves the lowest overall queue delay 
+% (43.73 sec/veh), the best overall LOS (D), and the shortest 
+% overall queue length (24.95 m) and vehicle travel time 
+% (65.10 sec) at the intersection level. These improvements 
+% are attributed to the iterative manual refinement of signal 
+% timing that builds on the VISSIM-optimized values of Scenario 2, 
+% allowing the analyst to fine-tune green time distribution in 
+% a way that better reflects the actual demand patterns observed 
+% at the Babarmahal Intersection.
 
-Across all four performance measures at the overall intersection 
-level, Scenario 3 consistently records the best values — 
-the lowest queue delay (43.73 sec/veh), the highest LOS 
-grade (D), the shortest queue length (24.95 m), and the 
-lowest vehicle travel time (65.10 sec). Scenarios 1 and 2 
-both operate at LOS E overall, with Scenario 2 performing 
-worse than the existing Scenario 1 in terms of queue delay 
-and queue length despite incorporating automated signal 
-optimization. This outcome underscores that the VISSIM built-in 
-optimization, while useful as a reference, does not 
-inherently guarantee an improvement over existing conditions 
-when applied to the complex mixed-traffic environment of the 
-Babarmahal Intersection.
-
-The only notable exception across all approach-level results is the 
-Art Gallery approach, where Scenario 3 records a higher 
-queue length and travel time compared to Scenarios 1 and 2. 
-This is a deliberate trade-off resulting from the real location of 
-green time towards the higher-demand Maitighar and Babarmahal 
-approaches in the manual optimization, and does not diminish 
-the overall superiority of Scenario 3 at the intersection 
-level.
-
-
-\subsection{Recommendations}
-
-Based on the comparative analysis, the following recommendations are made for signal timing at the Babarmahal Intersection:
-\begin{enumerate}
-    \item \textbf{Adoption of Manually Optimized Fixed-Time Signal Timing (Scenario 3):} Scenario 3 is recommended as the 
-    most effective fixed-time signal timing strategy for the 
-    Babarmahal Intersection during peak hours. With a phase 
-    plan of A = 28 s, B = 62 s, C = 33 s, and D = 10 s on a 
-    133-second cycle, it achieves the best overall 
-    intersection performance across all four evaluation 
-    parameters and represents a practical, implementable 
-    improvement over the existing signal plan.
-    \item \textbf{Caution Against Direct Adoption of Automated Optimization Outputs:} 
-    Scenario 2 demonstrates that the outputs of automated 
-    signal optimization tools should not be adopted directly 
-    without engineering review. In this case, the VISSIM 
-    built-in optimization produced a timing plan that 
-    increased overall queue delay and queue length relative 
-    to the existing condition. The manual optimization in 
-    Scenario 3, which used Scenario 2 as a starting 
-    reference and refined it through iterative adjustment, 
-    yielded substantially better results. It is therefore 
-    recommended that automated optimization outputs always 
-    be treated as a reference rather than a final solution.
-    \item \textbf{Further Investigation Using Semi-Actuated Control:}
-    While Scenario 3 offers a meaningful improvement over 
-    existing fixed-time control, fixed-time signal plans are 
-    inherently limited in their ability to respond to 
-    real-time fluctuations in traffic demand. The application 
-    of the VISVAP-programmed semi-actuated signal control, 
-    which is evaluated separately for off-peak conditions in 
-    this study, warrants further investigation as a strategy 
-    for improving intersection performance across varying 
-    demand periods.
-\end{enumerate}
+% Scenario 2, despite employing an automated optimization algorithm, 
+% does not outperform the existing Scenario 1 in terms of overall 
+% queue delay and queue length. This highlights a key limitation 
+% of automated optimization tools — they optimize for a specific 
+% objective function that may not fully capture the complexity of
+% mixed traffic behaviors at urban intersections in the Kathmandu 
+% context. The manual optimization in Scenario 3 addresses this 
+% limitation by incorporating engineering judgement informed by 
+% the simulation outputs, resulting in a more effective and balanced 
+% signal timing plan.
 
 
+% \section{Comparison and Recommendations.}
+
+% Based on the performance evaluation presented in the preceding 
+% sections, this section draws a consolidated comparison across 
+% the three fixed-time signal control scenarios and provides a 
+% recommendation for the most effective signal timing strategy 
+% for the Babarmahal Intersection.
+
+% % \subsection{Consolidated Performance Comparison}
+
+% % \cref{tab:overall} summarizes the overall intersection-level performance of 
+% % all three scenarios across the four evaluation parameters.
+
+
+% \subsection{Comparison}
+
+% Across all four performance measures at the overall intersection 
+% level, Scenario 3 consistently records the best values — 
+% the lowest queue delay (43.73 sec/veh), the highest LOS 
+% grade (D), the shortest queue length (24.95 m), and the 
+% lowest vehicle travel time (65.10 sec). Scenarios 1 and 2 
+% both operate at LOS E overall, with Scenario 2 performing 
+% worse than the existing Scenario 1 in terms of queue delay 
+% and queue length despite incorporating automated signal 
+% optimization. This outcome underscores that the VISSIM built-in 
+% optimization, while useful as a reference, does not 
+% inherently guarantee an improvement over existing conditions 
+% when applied to the complex mixed-traffic environment of the 
+% Babarmahal Intersection.
+
+% The only notable exception across all approach-level results is the 
+% Art Gallery approach, where Scenario 3 records a higher 
+% queue length and travel time compared to Scenarios 1 and 2. 
+% This is a deliberate trade-off resulting from the real location of 
+% green time towards the higher-demand Maitighar and Babarmahal 
+% approaches in the manual optimization, and does not diminish 
+% the overall superiority of Scenario 3 at the intersection 
+% level.
+
+
+% \subsection{Recommendations}
+
+% Based on the comparative analysis, the following recommendations are made for signal timing at the Babarmahal Intersection:
+% \begin{enumerate}
+%     \item \textbf{Adoption of Manually Optimized Fixed-Time Signal Timing (Scenario 3):} Scenario 3 is recommended as the 
+%     most effective fixed-time signal timing strategy for the 
+%     Babarmahal Intersection during peak hours. With a phase 
+%     plan of A = 28 s, B = 62 s, C = 33 s, and D = 10 s on a 
+%     133-second cycle, it achieves the best overall 
+%     intersection performance across all four evaluation 
+%     parameters and represents a practical, implementable 
+%     improvement over the existing signal plan.
+%     \item \textbf{Caution Against Direct Adoption of Automated Optimization Outputs:} 
+%     Scenario 2 demonstrates that the outputs of automated 
+%     signal optimization tools should not be adopted directly 
+%     without engineering review. In this case, the VISSIM 
+%     built-in optimization produced a timing plan that 
+%     increased overall queue delay and queue length relative 
+%     to the existing condition. The manual optimization in 
+%     Scenario 3, which used Scenario 2 as a starting 
+%     reference and refined it through iterative adjustment, 
+%     yielded substantially better results. It is therefore 
+%     recommended that automated optimization outputs always 
+%     be treated as a reference rather than a final solution.
+%     \item \textbf{Further Investigation Using Semi-Actuated Control:}
+%     While Scenario 3 offers a meaningful improvement over 
+%     existing fixed-time control, fixed-time signal plans are 
+%     inherently limited in their ability to respond to 
+%     real-time fluctuations in traffic demand. The application 
+%     of the VISVAP-programmed semi-actuated signal control, 
+%     which is evaluated separately for off-peak conditions in 
+%     this study, warrants further investigation as a strategy 
+%     for improving intersection performance across varying 
+%     demand periods.
+% \end{enumerate}
 
 
 
@@ -1576,7 +922,7 @@ Based on the comparative analysis, the following recommendations are made for si
  to install and maintain because it only needs sensors on the 
  minor street, not on the major street (Ni, 2020).
 
- \begin{figure}[ht]
+ \begin{figure}[h]
  \centering
  \includegraphics[width=0.8\textwidth]{src/images/figures/Mappli.png}
  \caption{Application scenario of Semi-Actuated}
@@ -1610,7 +956,7 @@ Based on the comparative analysis, the following recommendations are made for si
  allowing the stranded vehicle to proceed safely and effectively 
  (Ni, 2020)
 
- \begin{figure}[ht]
+ \begin{figure}[h]
     \centering
     \includegraphics[width=0.9\textwidth]{src/images/figures/Mwork.png}
     \caption{Working Principle of Semi-Actuated signal control}
@@ -1813,7 +1159,7 @@ P &= 0.136 \text{ seconds}
  Critical Traffic volume data for all phases is converted to Passenger Car 
  Units (pcu/h) as follows, according to the HCM protocols:
 
- \begin{table}[h!]
+ \begin{table}[h]
     \centering
     \begin{tabular}{|l|l|l|l|}
         \hline
@@ -1890,14 +1236,14 @@ Hence, we adopted 5sec Maximum Green Time for minor roads.
  enhanced to facilitate loops and other features. VisVAP can be used 
  for both stage-based and signal group-oriented design.
 
- \begin{figure}[ht]
+ \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{src/images/figures/Mflow.png}
     \caption{VisVAP Flowchart}
  \end{figure}
 
 
- \begin{table}[h!]
+ \begin{table}[h]
     \centering
     \caption{ (PTV Planung Transport Verkehr AG, Karlsruhe, Germany)}
 
@@ -1962,7 +1308,7 @@ This is the core application of VAP in this model, where the signal controller
 activates the DoR approach phase only when a vehicle is 
 detected, thereby optimizing signal efficiency. 
 
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{src/images/figures/Mblock.png}
     \caption{Block Diagram}
@@ -1979,19 +1325,19 @@ The logic files (*.pua and *.vap) are then imported to the
 Vissim model in the signal control menu. The signal controller 
 window in Vissim is as shown in Figure \ref{fig:sigwin}
 
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{src/images/figures/Msignal.jpg}
     \caption{Signal controller Window}
     \label{fig:sigwin}
 \end{figure}
 
-The inductive loop detector, with dimensions of \textbf{1.8 $\times$ 5 m,} has been positioned at an optimal 
+The inductive loop detector, with dimensions of 1.8 $\times$ 5 m, has been positioned at an optimal 
 distance of approximately d = 2 m from the stop line on the 
 DoR approach, determined through distance-ahead calculations. 
-The proposed vehicle speed on the DoR approach is set at \textbf{S = 40 km/h}, 
-and the unit extension duration is set as \textbf{U = 3 seconds}, 
-which is greater than the passage time \textbf{P = 0.57 seconds }from the 
+The proposed vehicle speed on the DoR approach is set at S = 40 km/h, 
+and the unit extension duration is set as U = 3 seconds, 
+which is greater than the passage time P = 0.57 seconds from the 
 detector to the stop line, in accordance with standard 
 recommendations. The cycle duration C at the Babar Mahal 
 Intersection varies dynamically depending on the traffic demand 
@@ -2008,7 +1354,7 @@ the actuated SG4, with the cycle duration Cmax = 72 seconds,
 accommodating traffic demand from all approaches of the 
 intersection. The signal plans of the SATSC strategy are shown 
 in Figure \ref{fig:sigplan}
-\begin{figure}[ht]
+\begin{figure}[h]
     \centering
     \includegraphics{src/images/figures/Msatsc.png}
     \caption{Signal plans for SATSC}
