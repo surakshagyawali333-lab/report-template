@@ -2,4 +2,52 @@
 
 \section{Conclusion}
 
+The Babarmahal Intersection plays a major role in the transportation network of Kathmandu Valley. 
+The signal controller at the intersection decides the capacity and efficiency of the intersection. 
+The objectives of the study were achieved, which were to evaluate the effectiveness of the signal control 
+system at the intersection and reduce congestion. The PTV VISSIM software along with VISVAP was used to 
+create different scenarios and simulations. Key performance measures such as queue delay, queue length, 
+and vehicle travel time were evaluated.
+
+The overall results were analyzed for peak hour and off-peak hour conditions separately. For peak 
+hour analysis, three scenarios were compared. Scenario 1 was the existing fixed-time signal timing, 
+Scenario 2 was the VISSIM-optimized signal timing, and Scenario 3 was the manually optimized signal timing. 
+The results show that Scenario 3 performs better than Scenario 1 and Scenario 2 in terms of queue delay, 
+queue length, and vehicle travel time. The overall Level of Service of the intersection also improved from 
+LOS E to LOS D after optimization.
+
+For off-peak hour analysis, three scenarios were compared. Scenario 1 was the existing fixed-time 
+signal timing, Scenario 2 was the VISSIM-optimized signal timing and Scenario 3 was the VAP-based 
+semi-actuated signal control using minimum green times. The results clearly show that Scenario 3 performs 
+the best among all three scenarios in terms of queue delay, queue length, and vehicle travel time. The overall 
+Level of Service of the intersection improved from LOS D to LOS C.
+
+The study also examined the performance of the intersection under both fixed-time signal control and 
+semi-actuated signal control using VISVAP. The analysis implies that the implementation of a semi-actuated 
+signal control system programmed using VISVAP could provide an effective solution for intersections with 
+asymmetric traffic distribution between major and minor approaches, as demonstrated by the improved efficiency 
+and reduced congestion at Babarmahal Intersection through dynamic allocation of green time based on real-time vehicle detection.
+
+The fixed-time optimized signal control is relatively simpler to implement and does not require any detector 
+installation. However, it cannot respond to the changing traffic demand at the intersection, especially 
+during off-peak hours when the traffic flow on the minor approaches is very low. The semi-actuated signal 
+control on the other hand dynamically adjusts the signal timing based on real-time vehicle detection, 
+which makes it a more efficient and suitable option for intersections where the traffic flow is highly 
+asymmetric between the major and minor approaches.
+
 \section{Recommendation}
+
+Considerable research effort was invested in conducting 6-hour traffic flow counts over a 3-day period. 
+To save time and enhance efficiency, the deployment of a machine learning powered software solution could be 
+used to automate the traffic counting process.
+
+The current analysis of the intersection was performed in isolation and did not consider the impact of 
+neighboring intersections. To enhance the accuracy and comprehensiveness of future research, it is recommended 
+to conduct a network-level analysis that incorporates the Maitighar Intersection, the Babarmahal Intersection, and Bijulibazar intersection.
+
+The model calibration and validation process currently relies solely on the 95th percentile back of queue as a 
+variable measure. To enhance the model's accuracy, saturation flow and degree of saturation could be used as 
+additional variables for calibration and validation.
+
+The interaction between pedestrians and vehicles was not considered in this study; however, it may be 
+incorporated in future research to enable a more comprehensive analysis.
