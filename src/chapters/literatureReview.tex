@@ -110,7 +110,7 @@ changed together based on that real time traffic conditions
 extensive surveillance, such as pavement loop detectors, and 
 infrastructure to connect with central and local controllers. 
 However, these systems are highly efficient, as they include 
-algorithms that adjust a signal’s split, offset, phase length, 
+algorithms that adjust a signal's split, offset, phase length, 
 and phase sequences to control and minimize delays, ultimately 
 reducing the number of stops \cite{stevanovic2010}. The analysis 
 results show that the developed vehicle-actuated management system 
@@ -144,7 +144,7 @@ high-demand lanes would start to affect the operations on the other
 approach lanes. The minimum green time is the amount of green time 
 required for the vehicle to clear the signalized intersections; it 
 should be enough for the vehicle to pass the intersection, otherwise 
-it will affect the efficiency of the intersection (Sinowatcher, n.d.).
+it will affect the efficiency of the intersection \cite{sinowatcher_actuatedsignals}.
 
 In a semi-actuated control system, the design logic control dynamically 
 adjusts signal timings by determining the green light duration for 
@@ -159,7 +159,7 @@ an intersection and adjusting green time accordingly.
 
 Although more efficient than fixed-time systems, vehicle-actuated 
 signals are still limited in their ability to coordinate across 
-multiple intersections (Brown \& Patel, 2019).
+multiple intersections \cite{brown2019strategies}.
 
 The cost for both the initial set-up and the maintenance is the 
 major disadvantage of fully actuated control. The high cost is 
@@ -169,11 +169,11 @@ is not held for upstream traffic. Another disadvantage is that,
 if the traffic patterns are regular, the extra benefit obtained 
 from the addition of local actuation is minimal or can be zero 
 \cite{fhwa2008}. Using a fuzzy logic-based vehicle actuated management 
-system reduced delays by 10% (Trabia et al). The green time extension 
+system reduced delays by 10\% \cite{trabia1999}. The green time extension 
 investigation for vehicle-actuated signal control \cite{wang2018}. 
 The green and red signal timings at each cycle were determined using 
 global optimization and complementarity for vehicle-actuated management 
-systems (Ribeiro and Simoes et al). At the end of the analysis, it 
+systems \cite{ribeiro2012fully}. At the end of the analysis, it 
 was concluded that a fully-actuated management system could provide 
 better and more encouraging results than the fixed- time and semi-actuated 
 management systems.
@@ -190,10 +190,38 @@ with control centers\cite{stevanovic2010}. Adaptive traffic control
 systems are developed to solve the limitations of pre-timed control 
 by instantly adapting to field conditions, such as changing traffic 
 signal timings based on the traffic present and fluctuations in 
-demand or movement\cite{martin2008}. Various adaptive traffic control 
+demand or movement\cite{stevanovic2008}. Various adaptive traffic control 
 systems like SCOOT, SCATS, and OPAC optimize signal timings based 
 on real-time and predicted traffic demand to improve flow through 
 coordinated green waves. However, the installation and maintenance 
 costs of these systems are very high, and they also require complex 
 infrastructure. As a result, they are not widely implemented and 
 are built in only a few cities around the world \cite{tomar2022}.  
+
+\section{Traffic Signal Control in Context of Nepal}
+
+Research on traffic efficiency in Nepal has traditionally focused on optimizing static, fixed-time signal cycles. 
+Historically, researchers at the Institute of Engineering (IOE) have prioritized determining optimal green splits 
+for saturated nodes to maximize capacity. For instance, a performance study at the Satdobato intersection demonstrated 
+that optimizing signal parameters, specifically cycle time and phasing, could lead to a substantial reduction in average 
+vehicle delays \cite{dhakal2023evaluation}.Similarly, an assessment of the New Plaza intersection in Kathmandu found that simply 
+re-timing the existing fixed-signal phases using field-validated data could significantly decrease queue length and average 
+delay in the intersection \cite{luitel2025performance}.However, these studies primarily address peak-hour congestion through pre-determined plans, 
+leaving the system unable to respond to the high fluctuation of traffic volumes characteristic of Kathmandu's roads. A major study by\cite{bajracharya2023urban}
+evaluated pretimed versus actuated signalization in a coordinated network at the Keshar Mahal and Durbar Marg intersections. 
+Using SIDRA INTERSECTION, the study found that pretimed coordination with an optimal network cycle was more effective than isolated actuation, 
+reducing average control delay by 49.2\%\cite{bajracharya2023urban}.While these results suggest a preference for pretimed systems, the study was conducted 
+using lane-based micro-analytical tools that assume disciplined driving behavior. In Kathmandu's heterogeneous, non-lane-based traffic, such lane-based 
+models often fail to capture the stochastic reality of vehicle interactions. Furthermore, while the study compared coordination strategies, 
+it did not explore semi-actuated control, a logic specifically suited for major-minor intersections like Babarmahal, where minor-street demand 
+is intermittent. To date, no research in Nepal has rigorously evaluated semi-actuation in a heterogeneous traffic context.
+
+In December 2024, Lalitpur Metropolitan City introduced Nepal's first real-world adaptive traffic system at five locations, including Pulchowk and Jawalakhel. 
+While these lights use vehicle detectors to adjust green times based on live density, there is a lack of academic documentation validating their performance with 
+engineering metrics like delay or queue length. To bridge this gap, recent frameworks explore Multi-Agent Reinforcement Learning (MARL). Specifically, utilizing 
+Multi-Agent Deep Deterministic Policy Gradient (MADDPG) integrated with Simulation of Urban Mobility (SUMO) and YOLOv5 for vehicle detection has shown that adaptive 
+systems can reduce average vehicle delay by 30-35\% and maximum queue length by 25\% compared to fixed-time mechanisms \cite{maharjan2025leveraging}. While SUMO is 
+used for high-level RL studies and SIDRA for basic analytical modeling, microscopic simulation using PTV VISSIM paired with the VISVAP algorithm provides a superior 
+platform for programming deployable, detector-based logic. in Nepal because it can be calibrated to account for the "non-lane-based" and "heterogeneous" nature of 
+Kathmandu's traffic \cite{manandhar2023calibration}. Unlike analytical models, VISSIM models individual vehicle trajectories, which is essential for designing context-sensitive, 
+semi-actuated systems that respond to specific vehicle arrivals on minor streets \cite{afshari2025calibrating}. 

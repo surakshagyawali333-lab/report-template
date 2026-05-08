@@ -1,9 +1,9 @@
 \chapter{RESULTS AND DISCUSSION}
 
-A set of performance indicators is employed to assess the 
-operational quality of a signalized intersection, with queue 
-lengths, delays, vehicle travel time, and LOS being primary 
-measures. These indicators are interrelated as output parameters.
+% A set of performance indicators is employed to assess the 
+% operational quality of a signalized intersection, with queue 
+% lengths, delays, vehicle travel time, and LOS being primary 
+% measures. These indicators are interrelated as output parameters.
 
 \section{Existing Conditions Analysis using the HCM Manual}
 
@@ -347,7 +347,7 @@ the signal controllers, the second scenario was developed using the optimized si
    \end{tabular}
    \label{tab:qd}
    \end{table}
-   The results indicate that Scenario 3 yields the lowest queue delay across all approaches and at the overall intersection level, with an intersection-wide average of 43.73 sec/veh compared to 59.60 sec/veh for Scenario 1 and 64.16 sec/veh for Scenario 2. Notably, Scenario 2 (VISSIM built-in optimized) produces a higher overall delay than the existing Scenario 1, suggesting that the automated optimization may have redistributed green time in a manner that benefits certain movements at the expense of others. Scenario 3, through manual refinement of the VISSIM-optimized timing, achieves a more balanced distribution of green time resulting in reduced delays across all four approaches.
+   \\The results indicate that Scenario 3 yields the lowest queue delay across all approaches and at the overall intersection level, with an intersection-wide average of 43.73 sec/veh compared to 59.60 sec/veh for Scenario 1 and 64.16 sec/veh for Scenario 2. Notably, Scenario 2 (VISSIM built-in optimized) produces a higher overall delay than the existing Scenario 1, suggesting that the automated optimization may have redistributed green time in a manner that benefits certain movements at the expense of others. Scenario 3, through manual refinement of the VISSIM-optimized timing, achieves a more balanced distribution of green time resulting in reduced delays across all four approaches.
 
    \item Level of Service (LOS) \\
    Level of Service (LOS) is a qualitative measure of intersection performance derived from queue delay values using HCM thresholds. \cref{tab:los} presents the approach-level LOS for all three scenarios based on the aggregated queue delay values.
@@ -368,7 +368,7 @@ the signal controllers, the second scenario was developed using the optimized si
    \end{tabular}
    \label{tab:los}
    \end{table}
-   Scenarios 1 and 2 both yield an overall intersection LOS of E, indicating poor operating conditions with significant delays experienced by most vehicles. Scenario 3 achieves an overall LOS of D, representing a meaningful improvement in intersection performance. At the approach level, Scenario 3 upgrades the Maitighar, Anamnagar, and Babarmahal approaches from LOS E (Scenarios 1 and 2) to LOS D. The Art Gallery approach remains at LOS D across all three scenarios, indicating that its performance is less sensitive to the signal timing changes evaluated in this study.
+   \\Scenarios 1 and 2 both yield an overall intersection LOS of E, indicating poor operating conditions with significant delays experienced by most vehicles. Scenario 3 achieves an overall LOS of D, representing a meaningful improvement in intersection performance. At the approach level, Scenario 3 upgrades the Maitighar, Anamnagar, and Babarmahal approaches from LOS E (Scenarios 1 and 2) to LOS D. The Art Gallery approach remains at LOS D across all three scenarios, indicating that its performance is less sensitive to the signal timing changes evaluated in this study.
    
    \item Queue Length \\
    Queue length reflects the spatial extent of vehicle queuing at each approach during the simulation period. Average queue lengths by approach for all three scenarios are presented in \cref{tab:queuelength}.
@@ -390,6 +390,7 @@ the signal controllers, the second scenario was developed using the optimized si
    \end{tabular}
    \label{tab:queuelength}
    \end{table}
+
    Scenario 3 records the shortest queue lengths at the Maitighar (20.08 m), Anamnagar (5.15 m), and Babarmahal (34.36 m) approaches, as well as the lowest overall average queue length of 24.95 m. This represents a reduction of approximately 28\% compared to Scenario 1 (34.87 m) and 35\% compared to Scenario 2 (38.38 m) at the intersection level. The exception is the Art Gallery approach, where Scenario 3 records a marginally higher queue length (26.24 m) compared to Scenario 1 (20.63 m), which may be attributed to the slightly increased green time allocated to competing phases under the manual optimization. Scenario 2 consistently produces longer queues than Scenario 1 across three out of four approaches, further reinforcing that the VISSIM built-in optimization does not yield an overall improvement over existing conditions for this intersection.
    
    \item Vehicle Travel Time \\
@@ -411,6 +412,7 @@ the signal controllers, the second scenario was developed using the optimized si
    \end{tabular}
    \label{tab:vtt}
    \end{table}
+
    Scenario 3 achieves the lowest overall intersection travel time of 65.10 seconds, compared to 72.15 seconds for Scenario 1 and 67.56 seconds for Scenario 2. At the approach level, Scenario 3 records the shortest travel times for the Maitighar (66.72 sec), Anamnagar (67.92 sec), and Babarmahal (59.26 sec) approaches. The Art Gallery approach is an exception, where Scenario 2 yields the lowest travel time (44.23 sec) and Scenario 3 the highest (66.86 sec). This is consistent with the queue length observation for Art Gallery, suggesting that the manual optimization reallocated green time away from this approach in favour of the higher-volume Maitighar and Babarmahal approaches, resulting in a trade-off at Art Gallery.
 \end{enumerate}
 
@@ -429,6 +431,7 @@ the signal controllers, the second scenario was developed using the optimized si
     \end{tabular}
     \label{tab:op}
 \end{table}
+
 The consolidated results consistently identify Scenario 3 manually optimized fixed-time control as the best-performing scenario across the majority of performance measures and approaches. It achieves the lowest overall queue delay (43.73 sec/veh), the best overall LOS (D), and the shortest overall queue length (24.95 m) and vehicle travel time (65.10 sec) at the intersection level. These improvements are attributed to the iterative manual refinement of signal timing that builds on the VISSIM-optimized values of Scenario 2, allowing the analyst to fine-tune green time distribution in a way that better reflects the actual demand patterns observed at the Babarmahal Intersection.
 
 Scenario 2, despite employing an automated optimization algorithm, does not outperform the existing Scenario 1 in terms of overall queue delay and queue length. This highlights a key limitation of automated optimization tools ; they optimize for a specific objective function that may not fully capture the complexity of mixed traffic behaviour at urban intersections in the Kathmandu context. The manual optimization in Scenario 3 addresses this limitation by incorporating engineering judgement informed by the simulation outputs, resulting in a more effective and balanced signal timing plan.
@@ -794,4 +797,3 @@ dramatically to LOS C, a jump of three service levels from
 the baseline, representing the most substantial LOS gain 
 recorded across the entire intersection. 
 
-\section{}

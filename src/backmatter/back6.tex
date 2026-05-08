@@ -785,21 +785,22 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 Setting Wiedemann car-following model parameters and lane change 
 behavior suited to mixed traffic conditions. 
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{src/images/figures/db1.png}
-        \caption{}
+        \label{fig:sub1}
     \end{subfigure}
-    
+    \hfill
     \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{src/images/figures/db2.png}
-        \caption{}
+        \label{fig:sub2}
     \end{subfigure}
     \caption{Driving Behavior}
+    \label{fig:combined}
 \end{figure}
 
-\clearpage
+
 \section{Signal Controller Setup}
 Defining fixed-time signal phases, cycle length, green/amber/red times, and phase sequences.
 
@@ -809,7 +810,7 @@ Defining fixed-time signal phases, cycle length, green/amber/red times, and phas
     \caption{Vissig - Signal Controller 5 }
 \end{figure}
 
-
+\pagebreak
 \section{Pedestrian Input}
 Adding pedestrian crossings and volume if considered in the study.
 
@@ -819,7 +820,6 @@ Adding pedestrian crossings and volume if considered in the study.
     \caption{Pedestrian Inputs}
 \end{figure}
 
-\clearpage
 \section{Queue Length}
 
 \textbf{Peak Hour:}
@@ -875,6 +875,7 @@ Babarmahal Main to Maitighar Main & 58.74 & 50.32 & 14.33 \\ \hline
 \end{tabular}
 \end{table}
 
+\pagebreak
 \textbf{Off-Peak Hour:}
 
 \begin{table}[h!]
@@ -911,7 +912,7 @@ Babarmahal Main to Maitighar Main & 3 & 3.63 & 21 \\ \hline
 \end{tabular}
 \end{table}
 
-\begin{table}[h!]
+\begin{table}[t]
 \centering
 \caption{Queue Length Calculation Peak Hour: Day 3}
 \begin{tabular}{|c|p{2cm}|p{2cm}|c|}
@@ -928,7 +929,7 @@ Babarmahal Main to Maitighar Main & 33.47 & 28.76 & 14.08 \\ \hline
 \end{tabular}
 \end{table}
 
-\clearpage
+
 % \section{Consolidated Performance Comparison}
 
 % \begin{table}[h!]
@@ -951,7 +952,141 @@ Babarmahal Main to Maitighar Main & 33.47 & 28.76 & 14.08 \\ \hline
 %     \label{tab:overall}
 % \end{table}
 
+\newpage
 
+\section{Calculation of Parameters:}
+ To demonstrate the application of signal timing parameters 
+ for the Babarmahal intersection, detailed VisVAP calculations 
+ are performed for the off-peak condition. The calculations 
+ follow the HCM methodology and incorporate sustainability 
+ principles for enhancing signal controller flexibility.
+
+ The total cycle length was set at 169 seconds, matching the 
+ current timing at the intersection and confirmed through 
+ field measurements. Following the HCM (2022) guidelines, 
+ the start-up lost time was taken as 2 seconds. The saturation 
+ headway was also set at 2 seconds, referencing the work of 
+ Duraku and Boshnjaku (2024). Additionally, yellow change 
+ intervals were set to 3 seconds to ensure intersection 
+ clearance safety.
+
+ For vehicle detection, inductive loop detectors with dimensions 
+ of 1.8m x 5m were used. These were placed approximately 2m 
+ from the stop line based on calculations for the distance 
+ ahead. The approach speed for the minor road (DOR approach) 
+ was calculated at 10 km/h, and vehicle spacing was set 
+ between 6 and 7m based on field observations.
+
+ Multiple simulations and observations showed that the 
+ minimum green time assigned was enough to clear all 
+ vehicles and satisfy passage time conditions. Since the 
+ traffic volume on the minor road was low, providing a unit 
+ extension only led to wasted green time. Therefore, no 
+ extension time was included in the final control logic.
+
+ \textbf{Input Parameters:}
+
+ The following parameters have been assumed based on 
+ field observations and HCM guidelines:
+ \begin{itemize}
+    \item Total Cycle Length (C) = 169 seconds
+    \item Start-up Time Loss ($T_L$) = 2.0 seconds 
+    \item Saturation Headway (h) = 2.0 seconds/vehicle
+    \item Distance from Detector to Stop Line (d) = 2.0 meters
+    \item Vehicle Spacing (x) = 6 to 7 meters
+    \item Approach Speed (S) of minor road= 10 km/h 
+ \end{itemize}
+
+
+\textbf{Minimum Green Time ($G_{min}$) Calculation}
+
+Using Equation \eqref{eq:gmin}
+
+\begin{align*}
+G_{min} &= T_L + [h \times \text{Integer}(d / x)] \\
+G_{min} &= 2.0 + [2.0 \times \text{Integer}(2.0 / 6.5)] \\
+G_{min} &= 2.0 + [2.0 \times 0] \\
+G_{min} &= 2.0  \text{seconds  (minimum)}
+\end{align*}
+
+
+However, based on FHWA recommendations for off-peak operations, 
+the applied minimum green time is:
+
+\begin{center}
+    $G_{min}$= 4 seconds
+\end{center}
+
+\textbf{Passage Time (P) and Unit Extension (U) Calculation}
+
+Using Equation \eqref{eq:pcal}:
+
+\begin{align*}
+P &= d / (1.47 \times S) \\
+P &= 2.0 / (1.47 \times 10) = 2.0 / 14.7 \\
+P &= 0.136 \text{ seconds}
+\end{align*}
+
+
+ \textbf{Unit Extension (U) Selection}
+
+  No extension time was included in the final control logic.
+
+ \textbf{Maxmimum Green Time ($G_{max}$) Calculation}
+
+ Critical Traffic volume data for all phases is converted to Passenger Car 
+ Units (pcu/h) as follows, according to the HCM protocols:
+
+ \begin{table}[h]
+    \centering
+    \caption{Critical Movement Calculation}
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{Phase} & \textbf{Volume in 15 mins} & \textbf{Factor} & \textbf{$V_{C_i}$ (pcu/h)} \\
+        \hline
+        Phase 1 & 24.5& 4 & 98 \\
+        \hline
+        Phase 2 & 250.75 & 4 & 1003 \\
+        \hline
+        Phase 3 & 46 & 4 & 184 \\
+        \hline
+        Phase 4 & 6.68 & 4 & 26.72 \\
+        \hline
+        
+    \end{tabular}
+ \end{table}
+
+ 
+ Total Critical Movement (VC):
+\begin{align*}
+V_C &= 98 + 1003 + 184 + 26.72 \\
+&= 1311.72 \text{ pcu/h}
+\end{align*}
+
+
+
+Using Equation \eqref{eq:gcal}, the effective green time for Phase 4  is calculated:
+\begin{align*}
+    g_i &= (C_i - L) \times (V_{C_i} / V_C) \\
+    g_i &= (169 - 4) \times (26.72 / 1311.72) \\
+    g_i &= 165 \times 0.02037 \\
+    g_i &= 3.36 \text{ seconds}
+\end{align*}
+
+
+
+ \textbf{Cycle-by-Cycle Adjustment}
+
+ According to  principles for enhancing controller flexibility to 
+ accommodate larger demands and enable cycle-by-cycle adjustments, 
+ the calculated green time is multiplied by an adjustment factor of 1.5:
+
+ \begin{align*}
+   g_i(\text{adjusted}) &= 1.5 \times 3.36 = 5.04 \text{seconds} \\
+ \end{align*}
+
+
+Hence, we adopted 5sec Maximum Green Time for minor roads.
 
 
 

@@ -238,10 +238,10 @@ four times the peak 15-minute volume, and is given by:
 \end{equation*}
 where:
 
-\begin{itemize}
-    \item $V_{hour}$ = the total PCU count during the peak hour
-    \item $V_{15,peak}$ = the highest 15-minute PCU count within that hour
-\end{itemize}
+
+$V_{hour}$ = the total PCU count during the peak hour\\
+$V_{15,peak}$ = the highest 15-minute PCU count within that hour
+
 . PHF values closer to 1.0 indicate a more uniform distribution of traffic, 
 while lower values indicate a sharply peaked flow pattern.
 
@@ -284,15 +284,15 @@ following expression:
 \end{equation*}
 
 where:
-\begin{itemize}
-    \item $s_o$ = base saturation flow rate
-    \item $f_w$ = lane width adjustment factor
-    \item $f_{HV}$ = heavy vehicle adjustment factor
-    \item $f_g$ = grade adjustment factor
-    \item $f_a$ = area type adjustment factor 
-    \item $f_{LU}$ = lane utilisation factor
-    \item  $N$ = number of lanes
-\end{itemize}
+
+$s_o$ = base saturation flow rate \\
+$f_w$ = lane width adjustment factor \\  
+$f_{HV}$ = heavy vehicle adjustment factor \\
+$f_g$ = grade adjustment factor \\
+$f_a$ = area type adjustment factor \\ 
+$f_{LU}$ = lane utilisation factor \\
+$N$ = number of lanes
+
 
 \subsection{Heavy Vehicle Factor ($f_{HV}$)}
 
@@ -306,10 +306,10 @@ where:
         f_{HV} = 1 / [1 + P_{HV} \times (E_T - 1)]
     \end{equation*}
     where:
-\begin{itemize}
-    \item $P_{HV}$ = is the proportion of heavy vehicles in the traffic stream 
-    \item $E_T$ = passenger car equivalent for heavy vehicles, taken as 2.0
-\end{itemize}
+
+$P_{HV}$ = is the proportion of heavy vehicles in the traffic stream \\
+$E_T$ = passenger car equivalent for heavy vehicles, taken as 2.0
+
 % For the Maitighar service lane, 131 out of 689 counted 
 % vehicles were big buses ($P_{HV}$ = 0.19), yielding a weighted 
 % average $f_{HV}$ = 0.9241 across both lanes combined. 
@@ -385,11 +385,11 @@ It is expressed as:
     d_2 = 900T \times [(X - 1) + \sqrt{((X - 1)^2 + (8 \times kIX / cT))}]
 \end{equation*}
 where:
-\begin{itemize}
-    \item T = analysis period duration (0.25 hr for a 15-minute period)
-    \item k = incremental delay factor (0.5 for fixed-time signals)
-    \item I = upstream filtering factor (1.0 for isolated intersections)
-\end{itemize}
+
+T = analysis period duration (0.25 hr for a 15-minute period) \\
+k = incremental delay factor (0.5 for fixed-time signals) \\
+I = upstream filtering factor (1.0 for isolated intersections)
+
 % For the Maitighar approach:
 % \begin{align*}
 %     d_2 &= 900 \times 0.25 \times [(1.2834 - 1) + \sqrt{((1.2834 - 1)^2 + \frac{(8 \times 0.5 \times 1.0 \times 1.2834)}{(1529.84 \times 0.25))}}]\\
@@ -664,7 +664,7 @@ evaluation outputs placed on each approach link. The
 percentage difference between the observed and simulated 
 values was computed for each approach, and the model was 
 considered validated where the difference remained within 
-the acceptable threshold of $plusminus$20\%, consistent with 
+the acceptable threshold of $\pm$ 20\%, consistent with 
 standard microsimulation practice. 
 
 % The results confirmed 
@@ -920,7 +920,7 @@ duration of 3600 seconds.
  minor street traffic is never completely stuck, and the 
  major road still gets priority. The system also costs less 
  to install and maintain because it only needs sensors on the 
- minor street, not on the major street (Ni, 2020).
+ minor street, not on the major street\cite{Ni2020}.
 
  \begin{figure}[h]
  \centering
@@ -954,7 +954,7 @@ duration of 3600 seconds.
  ‘artificial call’ to remember that vehicle. This ensures 
  the signal returns to the side street as soon as possible, 
  allowing the stranded vehicle to proceed safely and effectively 
- (Ni, 2020)
+ \cite{Ni2020}.
 
  \begin{figure}[h]
     \centering
@@ -972,7 +972,7 @@ duration of 3600 seconds.
  time (unit extension), passage time, maximum green time, 
  and cycle length. These parameters ensure that queues are 
  cleared efficiently while maintaining flexibility for 
- varying traffic demand (Duraku \& Boshnjaku, 2024).
+ varying traffic demand\cite{duraku2024}.
 
  \subsection{Minimum Green Time ($G_{min}$)}
  The minimum green time represents the shortest duration 
@@ -980,12 +980,11 @@ duration of 3600 seconds.
  This parameter ensures that vehicles queued at the stop 
  line have enough time to begin moving and pass through 
  the intersection. It also accounts for the start-up lost 
- time caused by driver reaction and vehicle acceleration 
- (Duraku \& Boshnjaku, 2024).
+ time caused by driver reaction and vehicle acceleration\cite{duraku2024}.
 
  The minimum green time is mathematically related to the 
  detector placement and queue length. It is calculated 
- using Equation \eqref{eq:gmin}:
+ using \cref{eq:gmin} \cite{duraku2024}:
 
 \begin{equation}
     G_{min} = T_L + [h * \text{Integer}(d / x)]
@@ -993,13 +992,13 @@ duration of 3600 seconds.
 \end{equation}
  
 where:
-\begin{itemize}
-    \item Gmin = Minimum green time (seconds)
-    \item TL = Start-up time loss (typically 2.0 – 4.0 seconds)
-    \item h = Saturation headway (seconds/vehicle)
-    \item d = Distance between detector and stop line (m)
-    \item x = Average spacing between stored vehicles (typically 6–7 m)
-\end{itemize}
+
+Gmin = Minimum green time (seconds) \\
+TL = Start-up time loss (typically 2.0 – 4.0 seconds) \\
+h = Saturation headway (seconds/vehicle) \\
+d = Distance between detector and stop line (m) \\
+x = Average spacing between stored vehicles (typically 6–7 m) \\
+
 	
 The integer function represents the number of vehicles
 stored between the detector and the stop line, which 
@@ -1012,7 +1011,7 @@ determines the minimum time required for queue clearance.
  green phase. This allows the signal to remain green as long 
  as vehicles continue arriving within a specified time gap. 
  According to the Traffic Detector Manual, the recommended 
- extension time is (Duraku \& Boshnjaku, 2024):
+ extension time is \cite{duraku2024}:
  \begin{itemize}
     \item 3.0 seconds for approach speeds $\le$ 45 km/h
     \item 3.5 seconds for higher speeds
@@ -1021,7 +1020,7 @@ determines the minimum time required for queue clearance.
  \subsection{Passage Time (P)}
 Passage time is the travel time required for a vehicle to 
 move from the detector location to the stop line. It is 
-calculated using Equation \eqref{eq:pcal}:
+calculated using \cref{eq:pcal} \cite{duraku2024}:
 
 \begin{equation}
     P = \frac{d}{1.47 \times S_{15}}
@@ -1030,11 +1029,11 @@ calculated using Equation \eqref{eq:pcal}:
 
 
 where:
-\begin{itemize}
-    \item P = Passage time (seconds)
-    \item d = Distance between detector and stop line (ft)
-    \item $S_{15}$ = 15th percentile approach speed of vehicles (mph)
-\end{itemize}
+
+P = Passage time (seconds) \\
+d = Distance between detector and stop line (ft) \\
+$S_{15}$ = 15th percentile approach speed of vehicles (mph) \\
+
 
 To ensure proper operation, the condition U $\ge$ P must be 
 satisfied, ensuring the green phase remains active long 
@@ -1044,197 +1043,59 @@ enough for the approaching vehicle to reach the stop line.
  The maximum green time defines the upper limit for a green 
  phase, preventing excessive delay for conflicting movements. 
  The effective green time ($g_i$) for each phase is distributed 
- proportionally based on traffic demand using Equation \eqref{eq:gcal}:
+ proportionally based on traffic demand using \cref{eq:gcal} \cite{duraku2024}:
  \begin{equation}
     g_i = (C_i - L) \times \frac{V_{C_i}}{V_C}
     \label{eq:gcal}
  \end{equation}
  Where:
- \begin{itemize}
-    \item $g_i$ = Effective green time for phase i (s)
-    \item $C_i$ = Cycle length (s)
-    \item L = Total lost time in the cycle (s)
-    \item $V_{C_i}$ = Traffic volume in the critical lane for phase i (pcu/h)
-    \item VC = Sum of volumes in all critical lanes (pcu/h)
- \end{itemize}
+
+$g_i$ = Effective green time for phase i (s) \\
+$C_i$ = Cycle length (s) \\ 
+L = Total lost time in the cycle (s) \\
+$V_{C_i}$ = Traffic volume in the critical lane for phase i (pcu/h) \\
+ VC = Sum of volumes in all critical lanes (pcu/h) \
+
 
  \subsection{Critical Cycle Length ($C_c$)}
  The critical cycle length is the total time for all phases 
  to complete one sequence when the side street reaches Gmax. 
- It is calculated using Equation \eqref{eq:Cc}
+ It is calculated using \cref{eq:Cc} \cite{duraku2024}. \\
 
  \begin{equation}
     C_c = \sum( G_i + Y_i )
     \label{eq:Cc}
  \end{equation}
 
+Where:
 
- where:
- \begin{itemize}
-    \item $C_c$ = Critical cycle length (seconds)
-    \item $G_i$ = Maximum green time for phase i
-    \item $Y_i$ = Yellow plus all-red interval for phase 
- \end{itemize}
-
- \subsection{Calculation of Parameters:}
- To demonstrate the application of signal timing parameters 
- for the Babarmahal intersection, detailed VisVAP calculations 
- are performed for the off-peak condition. The calculations 
- follow the HCM methodology and incorporate sustainability 
- principles for enhancing signal controller flexibility.
-
- The total cycle length was set at 169 seconds, matching the 
- current timing at the intersection and confirmed through 
- field measurements. Following the HCM (2022) guidelines, 
- the start-up lost time was taken as 2 seconds. The saturation 
- headway was also set at 2 seconds, referencing the work of 
- Duraku and Boshnjaku (2024). Additionally, yellow change 
- intervals were set to 3 seconds to ensure intersection 
- clearance safety.
-
- For vehicle detection, inductive loop detectors with dimensions 
- of 1.8m x 5m were used. These were placed approximately 2m 
- from the stop line based on calculations for the distance 
- ahead. The approach speed for the minor road (DOR approach) 
- was calculated at 10 km/h, and vehicle spacing was set 
- between 6 and 7m based on field observations.
-
- Multiple simulations and observations showed that the 
- minimum green time assigned was enough to clear all 
- vehicles and satisfy passage time conditions. Since the 
- traffic volume on the minor road was low, providing a unit 
- extension only led to wasted green time. Therefore, no 
- extension time was included in the final control logic.
-
- \textbf{Input Parameters:}
-
- The following parameters have been assumed based on 
- field observations and HCM guidelines:
- \begin{itemize}
-    \item Total Cycle Length (C) = 169 seconds
-    \item Start-up Time Loss ($T_L$) = 2.0 seconds 
-    \item Saturation Headway (h) = 2.0 seconds/vehicle
-    \item Distance from Detector to Stop Line (d) = 2.0 meters
-    \item Vehicle Spacing (x) = 6 to 7 meters
-    \item Approach Speed (S) of minor road= 10 km/h 
- \end{itemize}
+$C_c$ = Critical cycle length (seconds) \\
+$G_i$ = Maximum green time for phase $i$ \\
+$Y_i$ = Yellow plus all-red interval for phase 
 
 
-\textbf{Minimum Green Time ($G_{min}$) Calculation}
-
-Using Equation \eqref{eq:gmin}
-
-\begin{align*}
-G_{min} &= T_L + [h \times \text{Integer}(d / x)] \\
-G_{min} &= 2.0 + [2.0 \times \text{Integer}(2.0 / 6.5)] \\
-G_{min} &= 2.0 + [2.0 \times 0] \\
-G_{min} &= 2.0  \text{seconds  (minimum)}
-\end{align*}
+\section{Vehicle Actuated Programming}
 
 
-However, based on FHWA recommendations for off-peak operations, 
-the applied minimum green time is:
+Vehicle Actuated Programming (VAP) is a capability within PTV Vissim 
+that enables signal control strategies to be triggered based on the 
+detection and actuation of vehicles, allowing the software to replicate 
+programmable, actuated traffic signal operations. The control logic, 
+stored in a .VAP file, is developed using the VisVAP (Visual VAP) tool, 
+which allows users to design and represent the underlying signal control 
+logic through a flowchart-based programming interface. Alongside this, 
+an Interstage file (.pua) is also generated, which holds the VAP signal 
+data. This interstage definition file specifies the signal groups, intergreen 
+times, individual signal stages, and the interstage transitions. It is 
+manually created and then imported into the VISSIM environment.
 
-\begin{center}
-    $G_{min}$= 4 seconds
-\end{center}
-
-\textbf{Passage Time (P) and Unit Extension (U) Calculation}
-
-Using Equation \eqref{eq:pcal}:
-
-\begin{align*}
-P &= d / (1.47 \times S) \\
-P &= 2.0 / (1.47 \times 10) = 2.0 / 14.7 \\
-P &= 0.136 \text{ seconds}
-\end{align*}
-
-
- \textbf{Unit Extension (U) Selection}
-
-  No extension time was included in the final control logic.
-
- \textbf{Maxmimum Green Time ($G_{max}$) Calculation}
-
- Critical Traffic volume data for all phases is converted to Passenger Car 
- Units (pcu/h) as follows, according to the HCM protocols:
-
- \begin{table}[h]
-    \centering
-    \begin{tabular}{|l|l|l|l|}
-        \hline
-        \textbf{Phase} & \textbf{Volume in 15 mins} & \textbf{Factor} & \textbf{$V_{C_i}$ (pcu/h)} \\
-        \hline
-        Phase 1 & 24.5& 4 & 98 \\
-        \hline
-        Phase 2 & 250.75 & 4 & 1003 \\
-
-        \hline
-        Phase 3 & 46 & 4 & 184 \\
-
-        \hline
-        Phase 4 & 6.68 & 4 & 26.72 \\
-
-        \hline
-        
-    \end{tabular}
- \end{table}
-
- 
- Total Critical Movement (VC):
-\begin{align*}
-V_C &= 98 + 1003 + 184 + 26.72 \\
-&= 1311.72 \text{ pcu/h}
-\end{align*}
-
-
-
-Using Equation \eqref{eq:gcal}, the effective green time for Phase 4  is calculated:
-\begin{align*}
-    g_i &= (C_i - L) \times (V_{C_i} / V_C) \\
-    g_i &= (169 - 4) \times (26.72 / 1311.72) \\
-    g_i &= 165 \times 0.02037 \\
-    g_i &= 3.36 \text{ seconds}
-\end{align*}
-
-
-
- \textbf{Cycle-by-Cycle Adjustment}
-
- According to  principles for enhancing controller flexibility to 
- accommodate larger demands and enable cycle-by-cycle adjustments, 
- the calculated green time is multiplied by an adjustment factor of 1.5:
-
- \begin{align*}
-   g_i(\text{adjusted}) &= 1.5 \times 3.36 = 5.04 \text{seconds} \\
- \end{align*}
-
-
-Hence, we adopted 5sec Maximum Green Time for minor roads.
-
-
- \section{Vehicle Actuated Programming}
-
-
- Vehicle Actuated Programming (VAP) is a capability within PTV Vissim 
- that enables signal control strategies to be triggered based on the 
- detection and actuation of vehicles, allowing the software to replicate 
- programmable, actuated traffic signal operations. The control logic, 
- stored in a .VAP file, is developed using the VisVAP (Visual VAP) tool, 
- which allows users to design and represent the underlying signal control 
- logic through a flowchart-based programming interface. Alongside this, 
- an Interstage file (.pua) is also generated, which holds the VAP signal 
- data. This interstage definition file specifies the signal groups, intergreen 
- times, individual signal stages, and the interstage transitions. It is 
- manually created and then imported into the VISSIM environment.
-
- VisVAP enhances the use of freely definable signal control logics 
- using the VAP language (Vehicle Actuated Programming) in offering a 
- comfortable tool for creating and editing program logics as flow charts. 
- The appearance and design of flow charts in VisVAP is similar to 
- RiLSA 2010 (German de-facto law for signal controls) and has been 
- enhanced to facilitate loops and other features. VisVAP can be used 
- for both stage-based and signal group-oriented design.
+VisVAP enhances the use of freely definable signal control logics 
+using the VAP language (Vehicle Actuated Programming) in offering a 
+comfortable tool for creating and editing program logics as flow charts. 
+The appearance and design of flow charts in VisVAP is similar to 
+RiLSA 2010 (German de-facto law for signal controls) and has been 
+enhanced to facilitate loops and other features \cite{visvap2007}. VisVAP can be used 
+for both stage-based and signal group-oriented design.
 
  \begin{figure}[h]
     \centering
