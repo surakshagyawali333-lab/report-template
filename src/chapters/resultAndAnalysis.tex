@@ -128,8 +128,8 @@ given in Table \cref{tab:4.6}.
 The HCM analysis of the existing fixed-time signal control 
 at Babarmahal Intersection reveals a severely deficient 
 operating condition during the morning peak hour. Three 
-out of four approaches — Maitighar (X = 1.2834), Baneshwor 
-(X = 1.5785), and Art Gallery (X = 1.3556) — operate at 
+out of four approaches - Maitighar (X = 1.2834), Baneshwor 
+(X = 1.5785), and Art Gallery (X = 1.3556) - operate at 
 degrees of saturation well above 1.0, confirming heavily 
 oversaturated conditions where vehicular demand cannot be 
 cleared within a single signal cycle. This results in 
@@ -141,7 +141,7 @@ demand.
 The Art Gallery approach, despite carrying a relatively 
 modest volume, records a disproportionately high delay of 
 248.14 sec/veh primarily due to its short allocated green 
-time of 25 seconds — corresponding to a green ratio of only 
+time of 25 seconds - corresponding to a green ratio of only 
 0.1592. This highlights a significant mismatch between the 
 existing green time distribution and the actual traffic 
 demand across phases.
@@ -172,7 +172,7 @@ Maitighar approach as a sample calculation.
 
 \begin{table}[h!]
    \centering
-   \caption{VISSIM Movement-Level Queue Delays — Maitighar Approach (Scenario 1)}
+   \caption{VISSIM Movement-Level Queue Delays - Maitighar Approach (Scenario 1)}
    \begin{tabular}{|l|l|}
       \hline
       Movement & Queue\ Delay\ (sec/veh)\\
@@ -205,7 +205,7 @@ VISSIM results are presented in \cref{tab:aggvissim}.
 
 \begin{table}[h!]
    \centering
-   \caption{Aggregated VISSIM Approach-Level Queue Delay and LOS — Scenario 1}
+   \caption{Aggregated VISSIM Approach-Level Queue Delay and LOS - Scenario 1}
    \begin{tabular}{|l|l|p{3.2cm}|l|}
       \hline
       Approach &	Movements\ Averaged & Avg. Queue Delay (sec/veh)	& LOS \\
@@ -227,7 +227,7 @@ VISSIM results are presented in \cref{tab:aggvissim}.
 \end{table}
 
 
-\subsection{HCM vs VISSIM — Comparison of Level of Service}
+\subsection{HCM vs VISSIM - Comparison of Level of Service}
 
 \cref{tab:hcmvissim} presents a side-by-side comparison of the Level of Service assigned by 
 HCM and VISSIM for each approach and the overall intersection 
@@ -238,7 +238,7 @@ it the most appropriate common metric.
 
 \begin{table}[h!]
    \centering
-   \caption{Comparison of HCM and VISSIM Level of Service — Existing Scenario (Scenario 1)
+   \caption{Comparison of HCM and VISSIM Level of Service - Existing Scenario (Scenario 1)
 Approach HCM Control Delay (sec/veh)	HCM LOS	VISSIM LOS}
    \begin{tabular}{|l|p{3.8cm}|l|l|}
       \hline
@@ -267,23 +267,21 @@ both areas of agreement and divergence between the HCM
 and VISSIM methods. The following observations are drawn 
 from the comparison:
 
-Methodological Differences in Delay Parameters: As 
-noted earlier, HCM control delay and VISSIM queue delay 
+As noted earlier, HCM control delay and VISSIM queue delay 
 are related but not equivalent parameters. HCM derives 
 control delay analytically using deterministic formulas 
 that assume idealized lane discipline, uniform vehicle 
 behavior, and standardized saturation flow adjustment 
 factors. VISSIM, on the other hand, measures queue delay 
 empirically from simulated vehicle trajectories, 
-incorporating field-calibrated driver behavior parameters 
+incorporating field calibrated driver behavior parameters 
 that more realistically reflect the mixed traffic 
 conditions and poor lane discipline characteristic of 
 Kathmandu urban intersections. These methodological 
 differences are the primary reason for the LOS divergence 
 observed across most approaches.
 
-Anamnagar Approach — Agreement: Both HCM and 
-VISSIM assign LOS E to the Anamnagar approach, 
+Both HCM and VISSIM assign LOS E to the Anamnagar approach, 
 representing the strongest point of agreement between 
 the two methods. This convergence is expected given that 
 the Anamnagar approach operates well below capacity, 
@@ -291,20 +289,18 @@ where overflow queuing is minimal, and the deterministic
 HCM formula more closely approximates real conditions 
 simulated by VISSIM.
 
-Qualitative Agreement on Overall Congestion: 
 Despite the LOS differences at individual approaches, both 
 methods consistently identify Babarmahal Intersection as 
 operating under severely congested conditions during the 
 morning peak hour. HCM classifies three approaches at LOS 
 F and one at LOS E, while VISSIM classifies the overall 
-intersection at LOS E. The directional agreement — that 
-the intersection is significantly over-stressed under the 
-existing fixed-time signal plan — validates the general 
+intersection at LOS E. The directional agreement that 
+the intersection is significantly over stressed under the 
+existing fixed time signal plan validates the general 
 conclusion drawn from both methods and reinforces the need 
 for signal timing optimization.
 
-Basis for Methodology Decision: Given the 
-fundamental differences between HCM control delay and 
+Given the fundamental differences between HCM control delay and 
 VISSIM queue delay, and the inherent limitations of 
 applying HCM's idealized assumptions to the complex mixed 
 traffic environment of Kathmandu, VISSIM node results are 
@@ -420,7 +416,7 @@ the signal controllers, the second scenario was developed using the optimized si
 \cref{tab:op} presents a consolidated summary of all four performance measures at the overall intersection level across the three scenarios.
 \begin{table}[h!]
     \centering
-    \caption{Consolidated Overall Intersection Performance — All Scenarios}
+    \caption{Consolidated Overall Intersection Performance - All Scenarios}
     \begin{tabular}{|l|p{2cm}|p{2cm}|p{2cm}|}
         \hline
         Performance Measure&	Scenario 1&	Scenario 2&	Scenario 3 \\ \hline
@@ -450,7 +446,7 @@ Based on the comparative analysis, the following recommendations are made for th
 \end{enumerate}
 \end{enumerate}
 
-Further Investigation Using Semi-Actuated Control: While Scenario 3 offers a meaningful improvement over existing fixed-time control, fixed-time signal plans are inherently limited in their ability to respond to real-time fluctuations in traffic demand. The application of VISVAP-programmed semi-actuated signal control, which is evaluated separately for off-peak conditions in this study, warrants further investigation as a strategy for improving intersection performance across varying demand periods. \\
+%Further Investigation Using Semi-Actuated Control: While Scenario 3 offers a meaningful improvement over existing fixed-time control, fixed-time signal plans are inherently limited in their ability to respond to real-time fluctuations in traffic demand. The application of VISVAP-programmed semi-actuated signal control, which is evaluated separately for off-peak conditions in this study, warrants further investigation as a strategy for improving intersection performance across varying demand periods. \\
 
 
 \section{Queue Length as a Performance Indicator}
@@ -648,8 +644,8 @@ with Scenario 3 achieving the most significant reduction of
 approximately 23.7\% from the baseline. Babarmahal Main to 
 Anamnagar follows a similar pattern, rising from 103.45 sec 
 in Scenario 1 to 119.67 sec in Scenario 2 before dropping to 
-80.12 sec under Scenario 3 — a reduction of approximately 
-22.5\% — again highlighting that Scenario 2 worsened 
+80.12 sec under Scenario 3 - a reduction of approximately 
+22.5\% - again highlighting that Scenario 2 worsened 
 conditions on the heavily loaded West approach before manual 
 optimization provided meaningful relief. Notably, for 
 several movements, including Art Gallery to Maitighar Main, 
@@ -705,28 +701,7 @@ congestion experienced by road users. Defined by the
 Highway Capacity Manual (HCM), LOS is graded on a scale 
 from A to F, where LOS A represents free-flow conditions 
 with minimal delay and LOS F denotes a complete breakdown 
-of traffic flow with excessive delays. For signalized 
-intersections, LOS is typically determined based on the 
-average control delay per vehicle (in seconds), serving as 
-a key indicator of operational performance and intersection 
-efficiency.
-
-Scenario 3 records the shortest queue lengths at the 
-Maitighar (20.08 m), Anamnagar (5.15 m), and Babarmahal 
-(34.36 m) approaches, as well as the lowest overall average 
-queue length of 24.95 m. This represents a reduction of 
-approximately 28\% compared to Scenario 1 (34.87 m) and 35\% 
-compared to Scenario 2 (38.38 m) at the intersection level. 
-The exception is the Art Gallery approach, where Scenario 3 
-records a marginally higher queue length (26.24 m) compared 
-to Scenario 1 (20.63 m), which may be attributed to the 
-slightly increased green time allocated to competing phases 
-under the manual optimization. Scenario 2 consistently 
-produces longer queues than Scenario 1 across three out of 
-four approaches, further reinforcing that the VISSIM 
-built-in optimization does not yield an overall improvement 
-over existing conditions for this intersection.
-
+of traffic flow with excessive delays. 
 
 \subsection{Peak Hour Analysis}
 
@@ -741,30 +716,33 @@ three scenarios for various traffic routes and intersections:
 \end{figure}
 
 
-The off-peak hour LOS comparison across the three scenarios 
-demonstrates that Scenario 3 consistently achieves the lowest 
-or equal LOS values across nearly all movements, confirming 
-its superiority as the most effective signal timing plan. 
-The overall intersection LOS improves from 4 (Scenario 1) $\rightarrow$ 
-4 (Scenario 2) $\rightarrow$ 4 (Scenario 3), indicating that 
-while the overall grade remains unchanged during off-peak 
-conditions, movement-level improvements are evident throughout. 
-The most notable reductions are observed at Art Gallery to 
-Maitighar Main and Maitighar Service to Babarmahal Service, 
-where LOS drops from 5 under Scenarios 1 and 2 to 3 under 
-Scenario 3, representing a two-grade improvement. The 
-Maitighar Main to Art Gallery movement records the highest 
-LOS of 6 across all three scenarios, indicating persistent 
-congestion on this movement even during off-peak hours that 
-could not be resolved through fixed-time signal optimization 
-alone. For the majority of movements, including Art Gallery 
-to Anamnagar, Art Gallery to Babarmahal Service, Art Gallery 
-to Babarmahal Main, and Anamnagar-related movements, LOS 
-remains at 4 across all scenarios, suggesting that off-peak 
-traffic demand on these approaches is moderate and relatively 
-insensitive to signal timing changes. Overall, Scenario 3 
-delivers the most consistent and balanced LOS distribution 
-across the intersection during off-peak conditions.
+The peak hour LOS comparison at Babarmahal Intersection tells a 
+clear story — the existing signal timing is struggling, and only 
+the manually optimized Scenario 3 delivers meaningful system-wide 
+relief. The most significant headline finding is the overall 
+intersection LOS improving from LOS E under both Scenarios 1 and 2 
+to LOS D under Scenario 3, confirming that the manually optimized 
+timing plan is the only one capable of upgrading the intersection's 
+overall service grade. The Maitighar Main to Art Gallery movement 
+remains at LOS F across all three scenarios, indicating a persistent 
+demand-capacity problem on this movement that fixed-time 
+optimization alone cannot resolve. Encouragingly, Maitighar Main to 
+Babarmahal Main, Babarmahal Service to Art Gallery, Babarmahal 
+Service to Maitighar Service, and Anamnagar to Babarmahal Service 
+all improve to LOS C under Scenario 3, representing the most 
+impactful gains of the study. A noteworthy concern is the Anamnagar 
+to Art Gallery movement, which actually worsens from LOS E to LOS F 
+under Scenario 2 before recovering to LOS E under Scenario 3, 
+exposing the limitations of the VISSIM-optimized plan. Minor 
+trade-offs are observed at the Art Gallery to Babarmahal Main and 
+Art Gallery to Maitighar Main movements, which slip from LOS D to 
+LOS E under Scenario 3, reflecting a slight redistribution of green 
+time away from this approach. Overall, Scenario 3 improves nine out 
+of seventeen movements compared to the baseline, achieving the most 
+balanced and effective LOS distribution across the Babarmahal 
+Intersection during peak hours.
+
+
 
 
 \subsection{Off-Peak Hour Analysis}

@@ -225,3 +225,105 @@ used for high-level RL studies and SIDRA for basic analytical modeling, microsco
 platform for programming deployable, detector-based logic. in Nepal because it can be calibrated to account for the "non-lane-based" and "heterogeneous" nature of 
 Kathmandu's traffic \cite{manandhar2023calibration}. Unlike analytical models, VISSIM models individual vehicle trajectories, which is essential for designing context-sensitive, 
 semi-actuated systems that respond to specific vehicle arrivals on minor streets \cite{afshari2025calibrating}. 
+
+\subsection{Operational Principles of Vis-VAP}
+
+Vis-VAP operates by defining actuated signal control logic based on 
+detector configurations and phase operation parameters for an 
+intersection. The software allows users to configure detector types 
+and locations, phase sequences following the NEMA dual-ring 
+structure, minimum and maximum green times, passage time extensions, 
+gap reduction parameters, and yellow and all-red clearance 
+intervals to realistically model actuated controller behavior 
+\cite{ptv2022vissim}. Once the control parameters are specified, 
+VISVAP generates a Vehicle Actuated Programming (VAP) file that 
+can be integrated with PTV VISSIM, where the VAP module dynamically 
+controls signal operations in response to simulated vehicle 
+detections, enabling realistic evaluation of traffic-responsive 
+signal performance\cite{fellendorf2010vissim}.
+
+
+
+\subsection{Level of Service (LOS)}
+Level of Service (LOS) is a qualitative measure used to evaluate the 
+operational performance and quality of traffic flow on a roadway 
+segment or at an intersection based on factors such as speed, travel 
+time, maneuverability, traffic interruptions, and delay 
+\cite{trb2022hcm}. Both the Highway Capacity 
+Manual (HCM) and the A Policy on Geometric Design of Highways and 
+Streets classify traffic operating conditions into six categories 
+ranging from LOS A to LOS F, where LOS A represents free-flow 
+conditions with minimal delay and high driving comfort, while LOS F 
+indicates heavily congested conditions with unstable flow, excessive 
+delay, and demand exceeding roadway capacity \cite{aashto2018geometric}. LOS A, 
+B, and C generally represent stable traffic conditions with 
+relatively high operating speeds and acceptable maneuverability, 
+whereas LOS D and E reflect increasingly unstable operations near 
+roadway capacity with reduced driver comfort and higher sensitivity 
+to disturbances. LOS F corresponds to breakdown flow conditions 
+characterized by stop-and-go movement, long delays, and unreliable 
+travel times. LOS is widely used in traffic engineering studies for 
+assessing roadway performance, evaluating signalized intersections, 
+and identifying the need for operational or geometric improvements.
+
+
+
+
+\subsection{Calibration Parameters}
+
+The results of the simulation are compared on the basis of the Geoffrey E. Havers (GEH) statistic as per \cite{analysis_procedures_manual}. 
+
+The GEH formula is given by the equation given below:
+
+
+ \begin{equation}
+     GEH = \sqrt{\frac{2(V_s - V_o)^2}{V_s + V_o}}
+ \end{equation}
+
+ Where:
+ \begin{itemize}
+     \item $V_s$ = Simulated volume (from VISSIM)
+     \item $V_o$ = Observed volume (from field data)
+ \end{itemize}
+
+Acceptance Criteria:
+ \begin{itemize}
+     \item $GEH$ < 5.0 → Good fit 
+     \item $GEH$ 5.0 – 10.0 → Acceptable (investigate further)
+     \item $GEH$ > 10.0 → Poor fit  (recalibrate)
+\end{itemize}
+
+
+The calibrated parameters \cite{manandhar2026calibration} are 
+presented in the table below and were used as a reference for the 
+calibration of VISSIM. The table shows various parameters as listed 
+below.
+
+
+\begin{table}[h]
+    \centering
+    \caption{Calibrated VISSIM Parameters for Mixed Traffic Simulation}
+\begin{tabular}{|l|l|l|}
+    \hline
+    \textbf{S.N} & \textbf{Parameters} & \textbf{Calibrated Values} \\
+    \hline
+    1 &	Look ahead distance-min &	20 m \\
+    \hline
+    2 &	Look-back distance-min	& 18.71 m \\
+    \hline
+    3 &	Average standstill distance	& 1.5 m \\
+    \hline
+    4 &	Additive part of safety distance	& 0.5 \\
+    \hline
+    5 &	Multiplicative part of safety distance	& 1 \\
+    \hline
+    6 &	Min. headway (front/rear)	& 0.50 m \\
+    \hline
+    7 &	General Behavior	& Free lane selection \\
+    \hline
+    8 &	Desired Position at Free Flow &	Any \\
+    \hline
+
+    
+\end{tabular}
+\end{table}

@@ -12,7 +12,7 @@ The research methodology is presented in the flowchart as shown in \Cref{fig:res
 The conceptual framework of this research is presented in the \Cref{fig:res2}.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=\textwidth]{src/images/figures/res2.png}
+    \includegraphics[width=\textwidth]{src/images/figures/annex3/fffloww1.png}
     \caption{Flowchart of SATSC Approach}
     \label{fig:res2}
 \end{figure}
@@ -48,7 +48,7 @@ Baneshwor approach is significantly higher, classifying them as
 major roads within the intersection. In contrast, the Arts Gallery
 approach and the Department of Roads approach experience relatively 
 lower and more fluctuating traffic volumes throughout the day, making 
-them minor roads. Given this variation in traffic demand, implementing 
+them minor approaches. Given this variation in traffic demand, implementing 
 a semi-actuated traffic signal control system at this intersection is 
 expected to be beneficial. Such a system can help reduce queue lengths, 
 minimize vehicle delays, improve the Level of Service (LOS), and 
@@ -204,7 +204,7 @@ for each phase are summarized in \cref{tab:ftsplan}
 \begin{table}[h]
 \centering
 \renewcommand{\arraystretch}{1.5}
-\caption{Existing Fixed-Time Signal Phase Plan — Babarmahal Intersection}
+\caption{Existing Fixed-Time Signal Phase Plan - Babarmahal Intersection}
 \begin{tabular}{|l|p{8cm}|l|}
     \hline
     \textbf{Phase} & \textbf{Movement Description} & \textbf{Green Time (s)} \\
@@ -233,9 +233,9 @@ traffic is distributed within the peak hour. It is
 defined as the ratio of the total hourly volume to 
 four times the peak 15-minute volume, and is given by:
 
-\begin{equation*}
+\begin{equation}
     \text{PHF} = \frac{V_{hour}}{4 \times V_{15,peak}}  
-\end{equation*}
+\end{equation}
 where:
 
 
@@ -255,9 +255,9 @@ for the fact that traffic demand within the peak hour
 is not uniform, and the highest intensity period 
 governs capacity and delay. The flow rate is given by:
 
-\begin{equation*}
+\begin{equation}
     v = V / PHF
-\end{equation*}
+\end{equation}
 % For the Maitighar approach:
 % \begin{align*}
 %     v &= 1731.75 / 0.882\\
@@ -279,9 +279,9 @@ flow rate ($s_o$) of 1900 PCU/hr/ln. This base value is
 adjusted for prevailing field conditions using the 
 following expression:
 
-\begin{equation*}
+\begin{equation}
     s = s_o \times f_w \times f_{HV} \times f_g \times f_a \times f_{LU} \times N
-\end{equation*}
+\end{equation}
 
 where:
 
@@ -302,9 +302,9 @@ $N$ = number of lanes
     observed, particularly in the service lanes. The factor 
     is computed as:
 
-    \begin{equation*}
+    \begin{equation}
         f_{HV} = 1 / [1 + P_{HV} \times (E_T - 1)]
-    \end{equation*}
+    \end{equation}
     where:
 
 $P_{HV}$ = is the proportion of heavy vehicles in the traffic stream \\
@@ -322,17 +322,17 @@ the product of the saturation flow rate and the green ratio
 (g/C), representing the number of PCUs that can be served 
 per hour given the available green time:
 
-\begin{equation*}
+\begin{equation}
     c = s \times (g / C)
-\end{equation*}
+\end{equation}
 
 The degree of saturation, or volume-to-capacity ratio (X), 
 is then computed as the ratio of the peak flow rate to the 
 capacity:
 
-\begin{equation*}
+\begin{equation}
     X = v / c
-\end{equation*}
+\end{equation}
 
 % An X value below 1.0 indicates that the approach is 
 % operating within capacity. An X value exceeding 1.0 
@@ -354,17 +354,17 @@ capacity:
 Control delay per vehicle is the primary performance 
 measure for signalized intersections under the HCM 
 methodology. It comprises three components:
-\begin{equation*}
+\begin{equation}
     d = d_1 + d_2 + d_3
-\end{equation*}
+\end{equation}
 
 \subsection{Uniform Delay ($d_1$)}
 
 Uniform delay assumes vehicles arrive at a perfectly 
 steady rate throughout the cycle. It is given by:
-\begin{equation*}
+\begin{equation}
     d_1 = [0.5 \times C \times (1 - g/C)^2]  /  [1 - \text{min}(1, X) \times (g/C)]
-\end{equation*}
+\end{equation}
 
 % The term min(1, X) prevents the denominator from 
 % becoming negative or zero under oversaturated 
@@ -381,9 +381,9 @@ Incremental delay accounts for the additional waiting
 caused by random vehicle arrivals and, more critically, 
 by residual overflow queues when demand exceeds capacity. 
 It is expressed as:
-\begin{equation*}
+\begin{equation}
     d_2 = 900T \times [(X - 1) + \sqrt{((X - 1)^2 + (8 \times kIX / cT))}]
-\end{equation*}
+\end{equation}
 where:
 
 T = analysis period duration (0.25 hr for a 15-minute period) \\
@@ -408,13 +408,13 @@ Since the analysis begins at the start of the peak hour
 with no assumed carry-over queue from a prior period, 
 $d_3$= 0 for all approaches.
 
-\subsection{Total Control Delay — Maitighar Approach}
+\subsection{Total Control Delay - Maitighar Approach}
 
-\begin{align*}
+\begin{align}
     d &= d_1 + d_2 + d_3
         % &= 38.50 + 132.66 + 0 \\
         % &= 171.16 \ sec/veh
-\end{align*}
+\end{align}
 
 At 171.16 sec/veh, the Maitighar approach operates at 
 Level of Service F, indicating a breakdown condition 
@@ -428,9 +428,9 @@ flow-weighted average of all approach delays, giving
 proportionally greater weight to approaches carrying higher 
 traffic volumes:
 
-\begin{equation*}
+\begin{equation}
     d_{intersection} = \frac{\sum(v_i\times d_i) }{\sum v_i}
-\end{equation*}
+\end{equation}
 % Substituting the values from \cref{tab:4.6}
 % \begin{equation*}
 %     d_{intersection} =\frac{1963.44 \times 171.16+2484.93 \times 301.91+369.11 \times 248.14+82.05 \times 58.89}{[1963.44 + 2484.93 + 369.11 + 82.05]}
@@ -450,7 +450,7 @@ two independent methods: the Highway Capacity Manual (HCM)
 analytical procedure and PTV VISSIM microsimulation. While 
 both methods assessed the same intersection under identical 
 traffic demand and signal timing conditions, they differ 
-fundamentally in their underlying approach — HCM employs 
+fundamentally in their underlying approach - HCM employs 
 deterministic analytical formulas, whereas VISSIM models 
 individual vehicle behaviour stochastically through 
 microsimulation.
@@ -606,14 +606,28 @@ independent of the calibration process to ensure an unbiased assessment of model
 %     \item $V_o$ = Observed volume (from field data)
 % \end{itemize}
 
-% Acceptance Criteria:
-% \begin{itemize}
-%     \item $GEH$ < 5.0 → Good fit 
-%     \item $GEH$ 5.0 – 10.0 → Acceptable (investigate further)
-%     \item $GEH$ > 10.0 → Poor fit  (recalibrate)
-% \end{itemize}
 
 % \newpage
+
+\section{Driving Behavior Parameters}
+
+Setting Wiedemann car-following model parameters and lane change 
+behavior suited to mixed traffic conditions. 
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{src/images/figures/driveeee1.png}
+        \label{fig:sub1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \includegraphics[width=\textwidth]{src/images/figures/drive2.png}
+        \label{fig:sub2}
+    \end{subfigure}
+    \caption{Driving Behavior}
+    \label{fig:combined}
+\end{figure}
 
 \clearpage
 \textbf{Validation for Peak Hours} \\
@@ -677,9 +691,9 @@ standard microsimulation practice.
 
 This section presents a comparative evaluation of the three fixed-time signal control scenarios developed and simulated in PTV VISSIM for the Babarmahal Intersection. The three scenarios are:
 \begin{itemize}
-    \item Scenario 1 — Existing Fixed-Time Signal Control (baseline)
-    \item Scenario 2 — VISSIM Built-in Optimized Fixed-Time Control
-    \item Scenario 3 — Manually Optimized Fixed-Time Control
+    \item Scenario 1 - Existing Fixed-Time Signal Control (baseline)
+    \item Scenario 2 - VISSIM Built-in Optimized Fixed-Time Control
+    \item Scenario 3 - Manually Optimized Fixed-Time Control
 \end{itemize}
 
 Performance is evaluated across four measures: queue delay 
@@ -693,8 +707,8 @@ duration of 3600 seconds.
 % through a simple arithmetic average to enable consistent 
 % approach-level comparison across all scenarios. The signal 
 % timing parameters applied in each scenario are summarised 
-% in Table X. Of the three scenarios, Scenario 3 — Manually 
-% Optimized Fixed-Time Control — required the most involved 
+% in Table X. Of the three scenarios, Scenario 3 - Manually 
+% Optimized Fixed-Time Control - required the most involved 
 % development process. Using the VISSIM built-in optimized 
 % timing of Scenario 2 (A = 48 s, B = 51 s, C = 51 s, D = 7 s) 
 % as the starting reference, green time was iteratively 
@@ -781,8 +795,8 @@ duration of 3600 seconds.
 % measures at the overall intersection level across the three 
 % scenarios.
 
-% The consolidated results consistently identify Scenario 3 — 
-% manually optimized fixed-time control — as the best-performing 
+% The consolidated results consistently identify Scenario 3 - 
+% manually optimized fixed-time control - as the best-performing 
 % scenario across the majority of performance measures and 
 % approaches. It achieves the lowest overall queue delay 
 % (43.73 sec/veh), the best overall LOS (D), and the shortest 
@@ -797,7 +811,7 @@ duration of 3600 seconds.
 % Scenario 2, despite employing an automated optimization algorithm, 
 % does not outperform the existing Scenario 1 in terms of overall 
 % queue delay and queue length. This highlights a key limitation 
-% of automated optimization tools — they optimize for a specific 
+% of automated optimization tools - they optimize for a specific 
 % objective function that may not fully capture the complexity of
 % mixed traffic behaviors at urban intersections in the Kathmandu 
 % context. The manual optimization in Scenario 3 addresses this 
@@ -823,7 +837,7 @@ duration of 3600 seconds.
 % \subsection{Comparison}
 
 % Across all four performance measures at the overall intersection 
-% level, Scenario 3 consistently records the best values — 
+% level, Scenario 3 consistently records the best values - 
 % the lowest queue delay (43.73 sec/veh), the highest LOS 
 % grade (D), the shortest queue length (24.95 m), and the 
 % lowest vehicle travel time (65.10 sec). Scenarios 1 and 2 
@@ -1100,17 +1114,17 @@ for both stage-based and signal group-oriented design.
  \begin{figure}[h]
     \centering
     \includegraphics[width=0.8\textwidth]{src/images/figures/Mflow.png}
-    \caption{VisVAP Flowchart}
+    \caption{VisVAP Flowchart \cite{visvap2007}}
  \end{figure}
 
 
  \begin{table}[h]
     \centering
-    \caption{ (PTV Planung Transport Verkehr AG, Karlsruhe, Germany)}
+    \caption{ VAP functions and their meaning \cite{ptv2022vissim}}
 
     \begin{tabular}{|V{6cm}|V{8cm}|}
         \hline
-        \textbf{Vap Functions} & \textbf{Meaning} \\
+        \textbf{VAP Functions} & \textbf{Meaning} \\
         \hline
         Interstage(<stage1>, <stage2>) & Runs an interstage \\
         \hline
@@ -1189,7 +1203,7 @@ window in Vissim is as shown in Figure \ref{fig:sigwin}
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{src/images/figures/Msignal.jpg}
-    \caption{Signal controller Window}
+    \caption{Signal Controller Window}
     \label{fig:sigwin}
 \end{figure}
 
@@ -1209,18 +1223,6 @@ The time that would have been allocated to the DoR approach is
 directly transferred to the main road fixed phases, maximizing 
 their operational efficiency.
 
-When vehicles are detected on the DoR approach, the full signal 
-cycle is activated, engaging all four signal groups, including 
-the actuated SG4, with the cycle duration Cmax = 72 seconds, 
-accommodating traffic demand from all approaches of the 
-intersection. The signal plans of the SATSC strategy are shown 
-in Figure \ref{fig:sigplan}
-\begin{figure}[h]
-    \centering
-    \includegraphics{src/images/figures/Msatsc.png}
-    \caption{Signal plans for SATSC}
-    \label{fig:sigplan}
-\end{figure}
 
 \newpage
  \section{Logic Design Controls}
@@ -1255,7 +1257,7 @@ Stage\_active(4), the controller triggers Interstage(4,1),
 returning to Stage 1, restarting TimerMain and stopping 
 TimerSub.
 
-\textbf{No Detection case:} When Stage\_active(3) AND TimerMain $\ge$ Interstage\_length(2,3) 
+No Detection case: When Stage\_active(3) AND TimerMain $\ge$ Interstage\_length(2,3) 
 with no vehicle detected, Stage 4 is bypassed, and Interstage(3,1) 
 is triggered directly, maintaining the minimum cycle of Cmin = 64 
 seconds with only the three fixed signal groups active.

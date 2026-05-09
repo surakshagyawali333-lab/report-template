@@ -5,7 +5,6 @@
 \begin{figure}[h]
     \centering
     \includegraphics[width=\textwidth]{src/images/figures/annex3/flow1.jpg}
-    \caption{Flowchart}
 \end{figure}
 
 \begin{figure}[h]
@@ -92,8 +91,21 @@ D	3	127 \\
 
 \$END \\
 
+\pagebreak
+\subsection{No Detection Case}
+When vehicles are detected on the DoR approach, the full signal 
+cycle is activated, engaging all four signal groups, including 
+the actuated SG4, with the cycle duration Cmax = 72 seconds, 
+accommodating traffic demand from all approaches of the 
+intersection. The signal plans of the SATSC strategy are shown 
+in Figure \ref{fig:sigplan}
 
-
+\begin{figure}[h]
+    \centering
+    \includegraphics{src/images/figures/Msatsc.png}
+    \caption{Signal plans for SATSC}
+    \label{fig:sigplan}
+\end{figure}
 
 
 
@@ -136,7 +148,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{Observed Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
 \small
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
@@ -167,7 +179,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{GEH Calculation by Vehicle Class for Each Movement (Peak, Day 1)}
 \small
 \setlength{\tabcolsep}{5pt}
 
@@ -201,7 +213,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \section{Day 1: Off Peak Hour}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Off Peak, Day 1)}
 \small
 \setlength{\tabcolsep}{5pt}
 
@@ -233,7 +245,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{Observed Traffic Volumes by Vehicle Class for Each Movement (Off Peak, Day 1)}
 \small
 \setlength{\tabcolsep}{5pt}
 
@@ -266,7 +278,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{GEH Calculation by Vehicle Class for Each Movement ( Off Peak, Day 1)}
 \small
 \setlength{\tabcolsep}{5pt}
     
@@ -299,7 +311,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \section{Day 2: Peak Hour}
 \begin{table}[h!]
 \centering
-\caption{Software Simulation Data for Vehicle Classification : Peak Hour Day 1}
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement: Peak Hour Day 2}
 \small
 \setlength{\tabcolsep}{6pt}
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
@@ -349,10 +361,10 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \centering
 \small
 \setlength{\tabcolsep}{5pt}
-\caption{Observed Field Count Data for Different Vehicle Classes and Movements: Peak Hour Day 2}
+\caption{Observed Traffic Volumes by Vehicle Class for Each Movement : Peak Hour Day 2}
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Observed Field Count Data}} \\
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification - Observed Field Count Data}} \\
 \cline{3-12}
 & & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
 \hline
@@ -381,13 +393,13 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h]
 \centering
-\caption{GEH Values for Vehicle Classification: Peak Hour Day 2}
+\caption{GEH Calculation by Vehicle Class for Each Movement: Peak Hour Day 2}
 \small
 \setlength{\tabcolsep}{5pt}
 
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification - Software Simulation Data}} \\
 \cline{3-12}
 & & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
 \hline
@@ -434,13 +446,13 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \centering
 \begin{table}[h]
 \centering
-\caption{Software Simulation Data for Vehicle Classification : Off Peak Hour Day 2}
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement: Off Peak Hour Day 2}
 \small
 \setlength{\tabcolsep}{5pt}
 
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification - Software Simulation Data}} \\
 \cline{3-12}
 & & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
 \hline
@@ -484,13 +496,13 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h]
 \centering
-\caption{Observed Field Count Data for Different Vehicle Classes and Movements: Off-Peak Hour Day 2}
+\caption{Observed Traffic Volumes by Vehicle Class for Each Movement : Off-Peak Hour Day 2}
 \small
 \setlength{\tabcolsep}{5pt}
 
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification - Software Simulation Data}} \\
 \cline{3-12}
 & & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
 \hline
@@ -536,13 +548,13 @@ S.N. & Movement (From to To) & Heavy Truck & Mini Truck & Bus & Micro-Bus & Car 
 \begin{landscape}
 \begin{table}[h]
 \centering
-\caption{Calculation of GEH values for different vehicle classes: Off-Peak Hour Day 2}
+\caption{GEH Calculation by Vehicle Class for Each Movement: Off-Peak Hour Day 2}
 \small
 \setlength{\tabcolsep}{5pt}
 
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
 \hline
-\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification — Software Simulation Data}} \\
+\textbf{S.N.} & \textbf{Movement (From to To)} & \multicolumn{10}{c|}{\textbf{Vehicle Classification - Software Simulation Data}} \\
 \cline{3-12}
 & & \textbf{Heavy Truck} & \textbf{Mini Truck} & \textbf{Bus} & \textbf{Micro Bus} & \textbf{Car} & \textbf{Bike} & \textbf{LUV} & \textbf{Pick up} & \textbf{Tempo} & \textbf{Vehs ALL} \\
 \hline
@@ -590,7 +602,7 @@ S.N. & Movement (From to To) & Heavy Truck & Mini Truck & Bus & Micro-Bus & Car 
 \section{Day 3: Peak Hour}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement(Peak, Day 3)}
 \small
 \setlength{\tabcolsep}{5pt}
     
@@ -622,7 +634,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{Observed Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 3)}
 \small
 \setlength{\tabcolsep}{5pt}
 
@@ -653,7 +665,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{GEH Calculation by Vehicle Class for Each Movement(Peak, Day )}
 \small
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
@@ -686,7 +698,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \section{Day 3: Off Peak Hour}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement(Off Peak, Day 3)}
 \small
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
@@ -718,7 +730,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{Observed Traffic Volumes by Vehicle Class for Each Movement (Off Peak, Day 3)}
 \small
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
@@ -749,7 +761,7 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 \begin{landscape}
 \begin{table}[h!]
 \centering
-\caption{Simulated Traffic Volumes by Vehicle Class for Each Movement (Peak, Day 1)}
+\caption{GEH Calculation by Vehicle Class for Each Movement(Off Peak, Day 3)}
 \small
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{|c|p{6cm}|c|c|c|c|c|c|c|c|c|c|}
@@ -779,26 +791,6 @@ S.N& Movement (From to To)& Heavy Truck & Mini Truck & Bus & Micro Bus & Car & B
 
 
 \chapter{ANNEX VIII (MODEL DEVELOPMENT USING VSSIM)}
-
-\section{Driving Behavior Parameters}
-
-Setting Wiedemann car-following model parameters and lane change 
-behavior suited to mixed traffic conditions. 
-
-\begin{figure}[htbp]
-    \centering
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{src/images/figures/db1.png}
-        \label{fig:sub1}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
-        \includegraphics[width=\textwidth]{src/images/figures/db2.png}
-        \label{fig:sub2}
-    \end{subfigure}
-    \caption{Driving Behavior}
-    \label{fig:combined}
-\end{figure}
 
 
 \section{Signal Controller Setup}
@@ -832,7 +824,7 @@ Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
 \hline
 Art Gallery to Intersection & 23.7 & 20.63 & 13.20 \\ \hline
 Babarmahal Service to Intersection & 35.54 & 31.31 & 11.90\\ \hline
-Anamnagar to Intersection & 6.43 & 7.22 & -12.24 \\ \hline
+Anamnagar to Intersection & 6.43 & 7.22 & 12.24 \\ \hline
 Maitighar Service to Intersection & 23.75 & 19.67 & 17.18 \\ \hline
 Maitighar Main to Intersection & 44.62 & 39.18 & 12.19 \\ \hline
 Babarmahal Main to Anamnagar & 60.22 & 54.47 & 9.55 \\ \hline
@@ -849,11 +841,11 @@ Babarmahal Main to Maitighar Main & 93.72 & 71.64 & 23.56 \\ \hline
 Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
 \hline
 Art Gallery to Intersection & 32 & 38.42 & 20.06 \\ \hline
-Babarmahal Service to Intersection & 23 & 19.88 & -13.56 \\ \hline
+Babarmahal Service to Intersection & 23 & 19.88 & 13.56 \\ \hline
 Anamnagar to Intersection & 4.5 & 5.4 & 20 \\ \hline
-Maitighar Service to Intersection & 22 & 18.74 & -14.81 \\ \hline
+Maitighar Service to Intersection & 22 & 18.74 & 14.81 \\ \hline
 Maitighar Main to Intersection & 25 & 27.19 & 8.76 \\ \hline
-Babarmahal Main to Anamnagar & 186 & 155.46 & -16.41 \\ \hline
+Babarmahal Main to Anamnagar & 186 & 155.46 & 16.41 \\ \hline
 Babarmahal Main to Maitighar Main & 38 & 42.28 & 11.26 \\ \hline
 \end{tabular}
 \end{table}
@@ -887,7 +879,7 @@ Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
 \hline
 Art Gallery to Intersection & 44.7 & 35.84 & 19.83 \\ \hline
 Babarmahal Service to Intersection & 23.63 & 20.21 & 14.48 \\ \hline
-Anamnagar to Intersection & 3.88 & 4.13 & -6.44 \\ \hline
+Anamnagar to Intersection & 3.88 & 4.13 & 6.44 \\ \hline
 Maitighar Service to Intersection & 13.65 & 10.62 & 22.22 \\ \hline
 Maitighar Main to Intersection & 19.54 & 17.14 & 12.28 \\ \hline
 Babarmahal Main to Anamnagar & 4.55 & 3.88 & 14.68 \\ \hline
@@ -904,10 +896,10 @@ Link & Queue Observed (m) & Queue From VISSIM (m) & Error (\%) \\
 \hline
 Art Gallery to Intersection & 43 & 52.82 & 22.83 \\ \hline
 Babarmahal Service to Intersection & 16.8 & 19.56 & 16.42 \\ \hline
-Anamnagar to Intersection & 5 & 4.44 & -11.2 \\ \hline
+Anamnagar to Intersection & 5 & 4.44 & 11.2 \\ \hline
 Maitighar Service to Intersection & 14.8 & 17.11 & 15.60 \\ \hline
-Maitighar Main to Intersection & 25 & 24.66 & -1.36 \\ \hline
-Babarmahal Main to Anamnagar & 25 & 24.66 & -1.36 \\ \hline
+Maitighar Main to Intersection & 25 & 24.66 & 1.36 \\ \hline
+Babarmahal Main to Anamnagar & 25 & 24.66 & 1.36 \\ \hline
 Babarmahal Main to Maitighar Main & 3 & 3.63 & 21 \\ \hline
 \end{tabular}
 \end{table}
@@ -924,7 +916,7 @@ Babarmahal Service to Intersection & 25.32 & 19.08 & 24.64 \\ \hline
 Anamnagar to Intersection & 3.05 & 2.57 & 15.85 \\ \hline
 Maitighar Service to Intersection & 15.67 & 13.97 & 10.88 \\ \hline
 Maitighar Main to Intersection & 24.24 & 21.07 & 13.08 \\ \hline
-Babarmahal Main to Anamnagar & 2.98 & 3.37 & -13.22 \\ \hline
+Babarmahal Main to Anamnagar & 2.98 & 3.37 & 13.22 \\ \hline
 Babarmahal Main to Maitighar Main & 33.47 & 28.76 & 14.08 \\ \hline
 \end{tabular}
 \end{table}
@@ -934,7 +926,7 @@ Babarmahal Main to Maitighar Main & 33.47 & 28.76 & 14.08 \\ \hline
 
 % \begin{table}[h!]
 %     \centering
-%     \caption{Consolidated Overall Intersection Performance — All Scenarios}
+%     \caption{Consolidated Overall Intersection Performance - All Scenarios}
 %     \begin{tabular}{|l|p{2cm}|p{2cm}|p{2cm}|}
 %         \hline
 %         Performance Measure	& Scenario1 (Existing) &	Scenario2 (VISSIM Optimized)	& Scenario3 (Manual Optimized) \\
@@ -973,14 +965,14 @@ Babarmahal Main to Maitighar Main & 33.47 & 28.76 & 14.08 \\ \hline
  For vehicle detection, inductive loop detectors with dimensions 
  of 1.8m x 5m were used. These were placed approximately 2m 
  from the stop line based on calculations for the distance 
- ahead. The approach speed for the minor road (DOR approach) 
+ ahead. The approach speed for the minor approach (DoR) 
  was calculated at 10 km/h, and vehicle spacing was set 
  between 6 and 7m based on field observations.
 
  Multiple simulations and observations showed that the 
  minimum green time assigned was enough to clear all 
  vehicles and satisfy passage time conditions. Since the 
- traffic volume on the minor road was low, providing a unit 
+ traffic volume on the minor approach was low, providing a unit 
  extension only led to wasted green time. Therefore, no 
  extension time was included in the final control logic.
 
@@ -994,7 +986,7 @@ Babarmahal Main to Maitighar Main & 33.47 & 28.76 & 14.08 \\ \hline
     \item Saturation Headway (h) = 2.0 seconds/vehicle
     \item Distance from Detector to Stop Line (d) = 2.0 meters
     \item Vehicle Spacing (x) = 6 to 7 meters
-    \item Approach Speed (S) of minor road= 10 km/h 
+    \item Approach Speed (S) of minor approach= 10 km/h 
  \end{itemize}
 
 
@@ -1086,7 +1078,7 @@ Using Equation \eqref{eq:gcal}, the effective green time for Phase 4  is calcula
  \end{align*}
 
 
-Hence, we adopted 5sec Maximum Green Time for minor roads.
+Hence, we adopted 5sec Maximum Green Time for minor approach.
 
 
 

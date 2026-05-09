@@ -33,11 +33,11 @@ based on vehicle or pedestrian demand, detected through sensor (e.g. inductive l
 
 A semi-Actuated Traffic signal is a type of Traffic Control system that combines 
 elements of both fixed-time and fully actuated signals. It is mostly designed for the intersection
-where the major road carries a significantly higher traffic volume most of the time,
-while intersecting road i.e. minor road have experience lower, variable traffic flow.
+where the major approach carries a significantly higher traffic volume most of the time,
+while intersecting road i.e. side road have experience lower, variable traffic flow.
 Semi-actuated signals operate with vehicle detection only on the minor approaches.
-The major road usually receives a consistent green phase by default. Vehicle arriving
-on the minor road are detected by sensors (like inductive loops or cameras).
+The major approach usually receives a consistent green phase by default. Vehicle arriving
+on the minor approach are detected by sensors (like inductive loops or cameras).
 
 Microsimulation tools like PTV VISSIM with VISVAP are widely used to modal 
 and optimize actuated signal control. VISSIM is best software to simulation
@@ -73,10 +73,26 @@ dynamically adjusts minor leg green time based on real-time vehicle detection
 the major leg while there are no vehicles on the minor leg.
 
 \section{Objectives}
-This study aims to:
+
+
+\subsection{General Objectives:}
+
+
 \begin{enumerate}
-    \item Assess the performance of a four-legged signalized intersection under existing fixed-time control using PTV VISSIM.
-    \item Optimize signal timings via actuated control in VISVAP, focusing on parameters like detector placement and green time allocation.
-    \item Compare the results with fixed-time control to quantify improvements in delay and queue length.
+    \item To evaluate the effectiveness of the VISVAP-programmed semi-actuated signal control over existing pre-timed signal control at the proposed intersection using PTV VISSIM microsimulation.
+    \item To reduce overall congestion and improve overall intersection performance through optimized signal timing strategies under both fixed-time and semi-actuated control frameworks.
+    \item To develop a framework that is replicable, which can be extended and applied to other signalized intersections operating under heterogeneous mixed-traffic conditions similar to those found in Kathmandu and other South Asian urban contexts.
+
+\end{enumerate}
+
+
+\subsection{Specific Objectives:}
+
+\begin{enumerate}
+    \item To assess the performance of the existing fixed-time signal control at Babarmahal Intersection using PTV VISSIM microsimulation in terms of delay, Level of Service (LOS), queue length, and vehicle travel time.
+    \item To develop and calibrate a microsimulation model of Babarmahal Intersection using field-collected traffic volume, vehicle composition, geometric, and signal timing data.
+    \item To optimize fixed-time signal timings and evaluate the resulting improvements in intersection performance.
+    \item To program semi-actuated signal control using VISVAP and compare its performance against fixed-time control scenarios across key performance measures.
+    \item To recommend the most effective signal control strategy for Babarmahal Intersection based on the comparative evaluation of all scenarios.
 
 \end{enumerate}
