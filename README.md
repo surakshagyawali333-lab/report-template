@@ -1,10 +1,17 @@
 # LaTeX Report Template (Thapathali Campus, DOECE)
+# LaTeX Major Report (Thapathali Campus, DOCE)
 
-This repository is a LaTeX template for **major/minor project** proposal, progress, and final reports.
+This repository contains the Major Project Report titled **"Evaluating the Effectiveness of VisVap-Programmed  Semi-actuated Signal Control Over Existing Fixed-Time Control: A Case Study of BabarMahal Intersection, Kathmandu Valley"**
 
-# Important: To use the newer version: just replace the thapathaliece.cls file of your existing repo with the new one given here!
+Project Members:
+1. **Aayam Jung Karki (THA078BCE004)**
+2. **Ayush Poudel (THA078BCE025)**
+3. **Bidur Ghimire (THA078BCE028)**
+4. **Bishal Chapagain (THA078BCE033)**
+5. **Ek Bahadur Thapa (THA078BCE044)**
+6. **Suraksha Gyawali (THA078BCE132)**
 
-## Quick Start
+# Project Build Details 
 
 1. Edit project metadata in [vars.tex](vars.tex) (title, authors, supervisor, dates, etc.).
 2. Write content in the chapter files under [src/chapters/](src/chapters/) and front/back matter under [src/frontmatter/](src/frontmatter/) and [src/backmatter/](src/backmatter/).
