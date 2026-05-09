@@ -1,4 +1,3 @@
-# LaTeX Report Template (Thapathali Campus, DOECE)
 # LaTeX Major Report (Thapathali Campus, DOCE)
 
 This repository contains the Major Project Report titled **"Evaluating the Effectiveness of VisVap-Programmed  Semi-actuated Signal Control Over Existing Fixed-Time Control: A Case Study of BabarMahal Intersection, Kathmandu Valley"**
